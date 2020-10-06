@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("GreycliffCF-Thin.woff2") format("woff2"),
+    url("GreycliffCF-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("GreycliffCF-ExtraLight.woff2") format("woff2"),
+    url("GreycliffCF-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("GreycliffCF-Light.woff2") format("woff2"),
+    url("GreycliffCF-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("GreycliffCF-Regular.woff2") format("woff2"),
+    url("GreycliffCF-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("GreycliffCF-Medium.woff2") format("woff2"),
+    url("GreycliffCF-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("GreycliffCF-DemiBold.woff2") format("woff2"),
+    url("GreycliffCF-DemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("GreycliffCF-Bold.woff2") format("woff2"),
+    url("GreycliffCF-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("GreycliffCF-ExtraBold.woff2") format("woff2"),
+    url("GreycliffCF-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("GreycliffCF-Heavy.woff2") format("woff2"),
+    url("GreycliffCF-Heavy.woff") format("woff");
+}
