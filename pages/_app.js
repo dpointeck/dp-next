@@ -5,19 +5,12 @@ import "../fonts/Greycliff/greycliff.css";
 import "../fonts/CodeSaver/codesaver.css";
 import "../styles/index.css";
 
-import NavHome from "../components/homeNav";
-import NavDefault from "../components/defaultNav";
-
-const isHome = () => {
-  const router = useRouter();
-  console.log(router.pathname);
-  return router.pathname === "/";
-};
+import Nav from "../components/nav";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      {isHome() ? <NavHome /> : <NavDefault />}
+      <Nav />
       <Component {...pageProps} />
     </>
   );
