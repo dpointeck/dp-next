@@ -41,16 +41,27 @@ const StyledContainer = styled.div`
   background-image: transparent;
   border-radius: 2rem;
   position: relative;
-  overflow: hidden;
 `;
 
 const StyledNav = styled.nav`
   display: none;
   background: #fff85c;
   padding: 1rem 2rem;
-  border-radius: 1rem;
   position: relative;
   z-index: 10;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -5rem;
+    left: 0;
+    width: 100%;
+    height: 16rem;
+    background-image: ${props => props.theme.gradient[100]};
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    z-index: -1;
+  }
   a {
     display: inline-block;
     transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
@@ -78,7 +89,7 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${props => props.theme.screens.md}) {
     display: block;
   }
 `;
@@ -128,7 +139,7 @@ const Menu = ({ pages }) => {
   return (
     <StyledNav className="font-mono text-sm">
       {pages.map((page) => (
-        <Link href={page.href}>
+        <Link href={page.href} key={page.name}>
           <a>{page.name}</a>
         </Link>
       ))}
