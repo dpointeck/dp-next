@@ -45,6 +45,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledNav = styled.nav`
+  display: none;
   background: #fff85c;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -76,6 +77,10 @@ const StyledNav = styled.nav`
       }
     }
   }
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 const StyledBrand = styled.div`
@@ -86,7 +91,7 @@ const StyledBrand = styled.div`
 
 const Brand = ({ profiles }) => {
   return (
-    <StyledBrand className="brand flex items-center">
+    <StyledBrand className="brand w-full md:w-auto flex justify-between items-center">
       <Link href="/">
         <a className="text-xl font-bold mr-4 flex items-center">
           <div className="brand__image-wrap p-1 rounded-full mr-4">
@@ -134,7 +139,7 @@ const Menu = ({ pages }) => {
 export default function Nav() {
   return (
     <div className="container mx-auto text-gray-800">
-      <StyledContainer className="w-full p-10 flex flex-wrap items-start mt-10">
+      <StyledContainer className="w-full p-4 md:p-10 flex flex-wrap items-start mt-10">
         <header className="w-full flex items-center justify-between">
           <Brand profiles={socialLinks} />
           <Menu pages={pages} />
