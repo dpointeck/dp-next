@@ -1,4 +1,6 @@
-import { useRouter } from "next/router";
+import {ThemeProvider} from "styled-components"
+
+import theme from '../styles/theme'
 
 import "../fonts/Inter/inter.css";
 import "../fonts/Greycliff/greycliff.css";
@@ -10,8 +12,10 @@ import Nav from "../components/nav";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Nav />
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Nav />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

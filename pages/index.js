@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
+import Dots from '../svg/dots'
+
 const Hi = styled.h1`
+  position: relative;
+  z-index: 20;
+  
   .hi {
     &__wavy {
       font-size: 2.25rem;
       margin-left: 3rem;
       margin-right: 1rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: ${props => props.theme.screens.md}) {
         font-size: 5rem;
         margin-left: 3rem;
         margin-right: 2rem;
@@ -16,7 +21,7 @@ const Hi = styled.h1`
     &__top {
       font-size: 1.5rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: ${props => props.theme.screens.md}) {
         font-size: 2rem;
       }
     }
@@ -24,7 +29,7 @@ const Hi = styled.h1`
       font-size: 20vw;
       line-height: 1;
 
-      @media (min-width: 768px) {
+      @media (min-width: ${props => props.theme.screens.md}) {
         font-size: 8.75rem;
       }
     }
@@ -33,16 +38,28 @@ const Hi = styled.h1`
       line-height: 1;
       margin-left: 3rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: ${props => props.theme.screens.md}) {
         font-size: 6rem;
       }
     }
   }
 `;
 
+const StyledHomepage = styled.div`
+  .dots1 {
+    top: 0rem;
+    left: -1rem;
+  }
+  
+  .dots2 {
+    top: -16rem;
+    right: -.75rem;
+  }
+`;
+
 export default function IndexPage() {
   return (
-    <div class="container p-4 md:p-10 mx-auto">
+    <StyledHomepage className="container p-4 md:p-10 mx-auto relative">
       <div className="overflow-hidden">
         <Hi className="hi font-mono">
           <span className="hi__wavy">👋</span>
@@ -60,6 +77,8 @@ export default function IndexPage() {
           here’s something helpfulf for youfeel free to grab it.
         </p>
       </div>
-    </div>
+      <Dots className="dots1 absolute text-gray-500 max-w-md"/>
+      <Dots className="dots2 absolute hidden lg:block text-gray-900 max-w-md"/>
+    </StyledHomepage>
   );
 }
