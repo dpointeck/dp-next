@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
-import Dots from '../svg/dots'
+const Dots = styled.div`
+
+  position: absolute;
+  width: 400px;
+  height: 700px;
+  color: black;
+  background-image: url('/images/dots.svg');
+  background-size: 160px 160px;
+
+`;
 
 const Hi = styled.h1`
   position: relative;
