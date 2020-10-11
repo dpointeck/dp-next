@@ -45,7 +45,6 @@ const StyledContainer = styled.div`
 
 const StyledNav = styled.nav`
   display: none;
-  background: #fff85c;
   padding: 1rem 2rem;
   position: relative;
   z-index: 10;
@@ -56,7 +55,7 @@ const StyledNav = styled.nav`
     top: -5rem;
     left: 0;
     width: 100%;
-    height: 16rem;
+    height: 9rem;
     background-image: ${props => props.theme.gradient[100]};
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
