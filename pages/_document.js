@@ -12,7 +12,7 @@ class DpDocument extends Document {
         <Head>
         <link rel="shortcut icon" href="/favicon.svg" />
         </Head>
-          <body className="overflow-hidden xl:overflow-visible">
+          <body className="overflow-x-hidden xl:overflow-x-visible">
             <Main />
             <NextScript />
           </body>
