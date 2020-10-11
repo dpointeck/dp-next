@@ -55,6 +55,7 @@ const Hi = styled.h1`
 `;
 
 const StyledHomepage = styled.div`
+
   .dots1 {
     top: 0rem;
     left: -1rem;
@@ -70,22 +71,24 @@ const StyledBgTile = styled.div`
   position: absolute;
   background-image: ${props => props.theme.gradient[100]};
   height: 14rem;
-  width: 40rem;
+  width: 34rem;
   max-width: 100%;
   top: 6rem;
   left: 4rem;
+  right: 1rem;
   border-radius: 2rem;
   z-index: -1;
 
   @media (min-width: ${props => props.theme.screens.md}){
     top: 12rem;
     height: 20rem;
+    width: 40rem;
   }
 `;
 
 export default function IndexPage() {
   return (
-    <StyledHomepage className="container p-4 md:p-10 mx-auto relative">
+    <StyledHomepage className="container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible">
       <div className="relative">
         <Hi className="hi font-mono">
           <span className="hi__wavy">👋</span>
