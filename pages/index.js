@@ -57,10 +57,27 @@ const StyledHomepage = styled.div`
   }
 `;
 
+const StyledBgTile = styled.div`
+  position: absolute;
+  background-image: ${props => props.theme.gradient[100]};
+  height: 14rem;
+  width: 40rem;
+  max-width: 100%;
+  top: 6rem;
+  left: 4rem;
+  border-radius: 2rem;
+  z-index: -1;
+
+  @media (min-width: ${props => props.theme.screens.md}){
+    top: 12rem;
+    height: 20rem;
+  }
+`;
+
 export default function IndexPage() {
   return (
     <StyledHomepage className="container p-4 md:p-10 mx-auto relative">
-      <div className="overflow-hidden">
+      <div className="relative">
         <Hi className="hi font-mono">
           <span className="hi__wavy">👋</span>
           <span className="hi__top">Hi there I'm</span>
@@ -68,13 +85,14 @@ export default function IndexPage() {
           <span className="hi__daniel">daniel</span>
           <br />
           <span className="hi__pointecker text-gray-600">pointecker</span>
+          <StyledBgTile />  
         </Hi>
       </div>
-      <div className="max-w-3xl mx-auto mt-10 md:mt-16">
+      <div className="max-w-3xl mx-auto mt-10 md:mt-16 relative z-30">
         <p className="font-mono text-xl md:text-3xl leading-relaxed">
-          This site is ment to be a collection of stuff, i constantly forget and
-          have to search everytime I need it. So it’s kinda egoistictake but if
-          here’s something helpfulf for youfeel free to grab it.
+          This site is ment to be a collection of stuff i constantly forget and
+          have to search everytime I need it. So it’s kinda egoistic take but if
+          here’s something helpfulf for you feel free to grab it.
         </p>
       </div>
       <Dots className="dots1 absolute text-gray-500 max-w-md"/>
