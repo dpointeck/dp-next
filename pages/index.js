@@ -35,6 +35,7 @@ const Hi = styled.h1`
       font-size: 12vw;
       line-height: 1;
       margin-left: 3rem;
+      color: #c6b901;
 
       @media (min-width: ${(props) => props.theme.screens.md}) {
         font-size: 6rem;
@@ -74,7 +75,7 @@ export default function IndexPage() {
           <br />
           <span className='hi__daniel'>daniel</span>
           <br />
-          <span className='hi__pointecker text-gray-600'>pointecker</span>
+          <span className='hi__pointecker'>pointecker</span>
           <StyledBgTile />
         </Hi>
       </div>

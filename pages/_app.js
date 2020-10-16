@@ -14,7 +14,6 @@ import Nav from '../components/nav';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  console.log(router);
   const isHome = router.pathname === '/';
   return (
     <>
