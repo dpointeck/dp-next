@@ -1,50 +1,63 @@
-import Link from "next/link";
-import styled from "styled-components";
+import Link from 'next/link';
+import styled from 'styled-components';
 
-import IconTwitter from "../svg/twitter.svg";
-import IconGithub from "../svg/github.svg";
+import IconTwitter from '../svg/twitter.svg';
+import IconGithub from '../svg/github.svg';
 
-import IconAbout from "../svg/about.svg";
-import IconJournal from "../svg/journal.svg";
-import IconResources from "../svg/resources.svg";
-import IconUses from "../svg/uses.svg";
+import IconAbout from '../svg/about.svg';
+import IconJournal from '../svg/journal.svg';
+import IconResources from '../svg/resources.svg';
+import IconUses from '../svg/uses.svg';
 
 const socialLinks = [
   {
-    name: "twitter",
+    name: 'twitter',
     icon: IconTwitter,
-    url: "https://twitter.com/home",
+    url: 'https://twitter.com/home',
   },
   {
-    name: "github",
+    name: 'github',
     icon: IconGithub,
-    url: "https://github.com/dpointeck",
+    url: 'https://github.com/dpointeck',
   },
 ];
 
 const pages = [
   {
-    name: "about",
-    href: "/about",
-    icon: IconAbout
+    name: 'about',
+    href: '/about',
+    icon: IconAbout,
   },
   {
-    name: "journal",
-    href: "/journal",
-    icon: IconJournal
+    name: 'journal',
+    href: '/journal',
+    icon: IconJournal,
   },
   {
-    name: "resources",
-    href: "/resources",
-    icon: IconResources
+    name: 'resources',
+    href: '/resources',
+    icon: IconResources,
   },
   {
-    name: "uses",
-    href: "/uses",
-    icon: IconUses
+    name: 'uses',
+    href: '/uses',
+    icon: IconUses,
   },
-  
 ];
+
+const StyledHeader = styled.div`
+  position: relative;
+
+  .dots1 {
+    top: 6rem;
+    left: -1rem;
+  }
+
+  .dots2 {
+    top: -12rem;
+    right: -0.75rem;
+  }
+`;
 
 const StyledContainer = styled.div`
   background-color: transparent;
@@ -60,13 +73,13 @@ const StyledNav = styled.nav`
   z-index: 10;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -5rem;
     left: 0;
     width: 100%;
     height: 12rem;
-    background-image: ${props => props.theme.gradient[100]};
+    background-image: ${(props) => props.theme.gradient[100]};
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     z-index: -1;
@@ -87,16 +100,15 @@ const StyledNav = styled.nav`
     &:nth-child(2) svg {
       height: 2.5rem;
     }
-    
+
     &:nth-child(3) svg {
       height: 2.5rem;
     }
 
     &:nth-child(4) svg {
       height: 2rem;
-      margin-left: -.75rem;
+      margin-left: -0.75rem;
     }
-
 
     &:hover {
       &:nth-child(1) {
@@ -117,7 +129,7 @@ const StyledNav = styled.nav`
     }
   }
 
-  @media (min-width: ${props => props.theme.screens.md}) {
+  @media (min-width: ${(props) => props.theme.screens.md}) {
     display: flex;
   }
 `;
@@ -128,32 +140,40 @@ const StyledBrand = styled.div`
   }
 `;
 
+const Dots = styled.div`
+  position: absolute;
+  width: 400px;
+  height: 700px;
+  color: black;
+  background-image: url('/images/dots.svg');
+  background-size: 160px 160px;
+`;
+
 const Brand = ({ profiles }) => {
   return (
-    <StyledBrand className="brand mt-4 w-full md:w-auto flex justify-between items-center">
-      <Link href="/">
-        <a className="text-xl font-bold mr-4 flex items-center">
-          <div className="brand__image-wrap p-1 rounded-full mr-4">
+    <StyledBrand className='brand mt-4 w-full md:w-auto flex justify-between items-center'>
+      <Link href='/'>
+        <a className='text-xl font-bold mr-4 flex items-center'>
+          <div className='brand__image-wrap p-1 rounded-full mr-4'>
             <img
-              src="/images/daniel_tanja.jpg"
-              alt="Daniel & Tanja"
-              className="rounded-full"
+              src='/images/daniel_tanja.jpg'
+              alt='Daniel & Tanja'
+              className='rounded-full'
             />
           </div>
           <span>daniel pointecker</span>
         </a>
       </Link>
-      <nav className="flex items-center">
+      <nav className='flex items-center'>
         {profiles.map((link) => {
           return (
             <a
               href={link.url}
               key={link.name}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+              target='_blank'
+              rel='noopener noreferrer'>
               {React.createElement(link.icon, {
-                className: "w-5 h-5 mr-3",
+                className: 'w-5 h-5 mr-3',
               })}
             </a>
           );
@@ -165,10 +185,10 @@ const Brand = ({ profiles }) => {
 
 const Menu = ({ pages }) => {
   return (
-    <StyledNav className="font-mono text-sm">
+    <StyledNav className='font-mono text-sm'>
       {pages.map((page) => (
         <Link href={page.href} key={page.name}>
-          <a className="flex flex-col items-center justify-end">
+          <a className='flex flex-col items-center justify-end'>
             {React.createElement(page.icon)}
             <span>{page.name}</span>
           </a>
@@ -180,13 +200,15 @@ const Menu = ({ pages }) => {
 
 export default function Nav() {
   return (
-    <div className="container mx-auto text-gray-800">
-      <StyledContainer className="w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5">
-        <header className="w-full flex items-center justify-between">
+    <StyledHeader className='container mx-auto text-gray-800'>
+      <StyledContainer className='w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5'>
+        <header className='w-full flex items-center justify-between relative z-50'>
           <Brand profiles={socialLinks} />
           <Menu pages={pages} />
         </header>
       </StyledContainer>
-    </div>
+      <Dots className='dots1 absolute text-gray-500 max-w-md' />
+      <Dots className='dots2 absolute hidden lg:block text-gray-900 max-w-md' />
+    </StyledHeader>
   );
 }

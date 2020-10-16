@@ -8,13 +8,13 @@ class DpDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           <link rel='shortcut icon' href='/favicon.svg' />
         </Head>
         <body>
           <Main />
-          <NextScript />
+          <NextScript className='relative' />
         </body>
       </Html>
     );

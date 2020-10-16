@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { useRouter } from 'next/router';
+import styled from 'styled-components';
 
 import theme from '../styles/theme';
 
@@ -19,9 +20,11 @@ function MyApp({ Component, pageProps }) {
     <>
       <Helmet
         titleTemplate={
-          isHome ? 'Daniel Pointecker - Software Engineer' : 'Wos ondas'
+          isHome
+            ? 'Daniel Pointecker - Software Engineer'
+            : '%s | dpointeck.dev'
         }>
-        <title>Daniel Pointecker - Software Engineer</title>
+        <title>Daniel Pointecker</title>
       </Helmet>
       <ThemeProvider theme={theme}>
         <Nav />
