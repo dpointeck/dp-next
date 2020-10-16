@@ -1,7 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 
 import theme from '../styles/theme';
 

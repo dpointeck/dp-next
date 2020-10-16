@@ -87,6 +87,9 @@ const StyledNav = styled.nav`
 
   a {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 
     &:not(:last-child) {
@@ -188,7 +191,7 @@ const Menu = ({ pages }) => {
     <StyledNav className='font-mono text-sm'>
       {pages.map((page) => (
         <Link href={page.href} key={page.name}>
-          <a className='flex flex-col items-center justify-end'>
+          <a>
             {React.createElement(page.icon)}
             <span>{page.name}</span>
           </a>
