@@ -141,15 +141,24 @@ const StyledBrand = styled.div`
   .brand__image-wrap {
     background-image: linear-gradient(to bottom, #fff95a, #fff22e);
   }
+
+  .social-nav a:not(:last-child) {
+    margin-right: 0.75rem;
+  }
 `;
 
 const Dots = styled.div`
   position: absolute;
-  width: 400px;
-  height: 700px;
+  width: 340px;
+  height: 600px;
   color: black;
   background-image: url('/images/dots.svg');
   background-size: 160px 160px;
+
+  @media (min-width: ${(props) => props.theme.screens.md}) {
+    width: 400px;
+    height: 700px;
+  }
 `;
 
 const Brand = ({ profiles }) => {
@@ -167,7 +176,7 @@ const Brand = ({ profiles }) => {
           <span>daniel pointecker</span>
         </a>
       </Link>
-      <nav className='flex items-center'>
+      <nav className='social-nav flex items-center'>
         {profiles.map((link) => {
           return (
             <a
@@ -176,7 +185,7 @@ const Brand = ({ profiles }) => {
               target='_blank'
               rel='noopener noreferrer'>
               {React.createElement(link.icon, {
-                className: 'w-5 h-5 mr-3',
+                className: 'w-5 h-5',
               })}
             </a>
           );
@@ -185,6 +194,61 @@ const Brand = ({ profiles }) => {
     </StyledBrand>
   );
 };
+
+const StyledMobileMenu = styled.div`
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-image: ${(props) => props.theme.gradient[100]};
+  z-index: 100;
+  padding: 0.5rem 2rem;
+
+  nav {
+    display: flex;
+    max-width: 480px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &:nth-child(1) svg {
+      height: 2rem;
+    }
+
+    &:nth-child(2) svg {
+      height: 1.5rem;
+    }
+
+    &:nth-child(3) svg {
+      height: 1.5rem;
+    }
+
+    &:nth-child(4) svg {
+      height: 1.25rem;
+      margin-left: -0.75rem;
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.screens.md}) {
+    display: none;
+  }
+`;
 
 const Menu = ({ pages }) => {
   return (
@@ -201,7 +265,24 @@ const Menu = ({ pages }) => {
   );
 };
 
-export default function Nav() {
+export const MobileNav = (props) => {
+  return (
+    <StyledMobileMenu className='font-mono text-sm'>
+      <nav>
+        {pages.map((page) => (
+          <Link href={page.href} key={page.name}>
+            <a>
+              {React.createElement(page.icon)}
+              <span>{page.name}</span>
+            </a>
+          </Link>
+        ))}
+      </nav>
+    </StyledMobileMenu>
+  );
+};
+
+export function Nav() {
   return (
     <StyledHeader className='container mx-auto text-gray-800'>
       <StyledContainer className='w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5'>

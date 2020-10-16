@@ -9,7 +9,7 @@ import '../fonts/Greycliff/greycliff.css';
 import '../fonts/CodeSaver/codesaver.css';
 import '../styles/index.css';
 
-import Nav from '../components/nav';
+import { Nav, MobileNav } from '../components/nav';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider theme={theme}>
         <Nav />
         <Component {...pageProps} />
+        <MobileNav />
       </ThemeProvider>
     </>
   );
