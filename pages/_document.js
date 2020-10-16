@@ -16,7 +16,7 @@ class DpDocument extends Document {
     const styleTags = sheet.getStyleElement();
 
     // Step 4: Pass styleTags as a prop
-    return { ...initialProps, ...page, styleTags };
+    return { ...page, styleTags };
   }
 
   render() {
