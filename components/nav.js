@@ -161,7 +161,7 @@ const Brand = ({ profiles }) => {
             <img
               src='/images/daniel_tanja.jpg'
               alt='Daniel & Tanja'
-              className='rounded-full'
+              className='rounded-full h-10 w-10'
             />
           </div>
           <span>daniel pointecker</span>
