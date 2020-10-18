@@ -8,6 +8,7 @@ import '../fonts/Inter/inter.css';
 import '../fonts/Greycliff/greycliff.css';
 import '../fonts/CodeSaver/codesaver.css';
 import '../styles/index.css';
+import 'prismjs/themes/prism-tomorrow.css';
 
 import { Nav, MobileNav } from '../components/nav';
 

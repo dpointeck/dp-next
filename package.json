@@ -8,7 +8,9 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "next": "latest",
+    "prismjs": "^1.22.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
@@ -17,8 +19,12 @@
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-styled-components": "^1.11.1",
+    "gray-matter": "^4.0.2",
+    "js-yaml": "^3.7.0",
+    "marked": "^1.2.0",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^1.8.10"
   },
   "license": "MIT"
