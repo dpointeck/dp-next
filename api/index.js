@@ -1,6 +1,6 @@
 import matter from 'gray-matter';
-import marked from 'marked';
 import yaml from 'js-yaml';
+import markdownToHtml from '@util/markdown';
 
 export async function getAllPosts() {
   const ctx = require.context('../posts/', false, /\.md$/);
@@ -20,8 +20,8 @@ export async function getAllPosts() {
 
 export async function getPostBySlug(slug) {
   const fileContent = await import(`../posts/${slug}.md`);
-  const meta = matter(fileContent.default);
-  const content = marked(meta.content);
+  const meta = await matter(fileContent.default);
+  const content = await markdownToHtml(meta.content);
   return {
     title: meta.data.title,
     content: content,
