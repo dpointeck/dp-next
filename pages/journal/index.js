@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import PageLayout from '../layouts/pageLayout';
+import PageLayout from '../../layouts/pageLayout';
 
 export default function JournalPage() {
   return (
