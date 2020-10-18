@@ -2,14 +2,13 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import PageLayout from '@layouts/pageLayout';
 import { getAllPosts, getPostBySlug } from '../../api';
-import Prism from 'Prismjs';
+//import Prism from 'Prismjs';
 import 'prismjs/components/prism-jsx.min';
 
 const StyledArticle = styled.article``;
 
 export default function Post(props) {
   const router = useRouter();
-  const { slug } = router.query;
   return (
     <PageLayout className='relative z-50'>
       <h1 className='text-center text-3xl md:text-4xl font-bold'>
