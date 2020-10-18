@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import PageLayout from '@layouts/pageLayout';
 import { getAllPosts, getPostBySlug } from '../../api';
-//import Prism from 'Prismjs';
+import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.min';
 
 const StyledArticle = styled.article``;
