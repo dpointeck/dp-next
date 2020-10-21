@@ -4,9 +4,9 @@
     "paths": {
       "@layouts/*": ["layouts/*"],
       "@components/*": ["components/*"],
-      "@posts/*": ["posts/*"],
       "@api/*": ["api/*"],
-      "@util/*": ["util/*"]
+      "@util/*": ["util/*"],
+      "@posts/*": ["_posts/*"]
     }
   }
 }
