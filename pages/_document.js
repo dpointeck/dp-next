@@ -34,7 +34,7 @@ class DpDocument extends Document {
           <link rel='shortcut icon' href='/favicon.svg' />
           {this.props.styleTags}
         </Head>
-        <body class='pb-20 md:pb-0'>
+        <body className='pb-20 md:pb-0'>
           <Main />
           <NextScript className='relative' />
         </body>
