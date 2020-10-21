@@ -23,8 +23,8 @@ export async function getAllPosts() {
 export async function getPostBySlug(slug) {
   let regex = new RegExp('\\d{8}_' + slug + '.md');
   const result = await FindFiles('posts', regex);
-  console.log(result);
-  if (result) {
+
+  if (result.length) {
     const post = result[0].file;
     const fileContent = await import(`../posts/${post}`);
     const meta = matter(fileContent.default);
