@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import Link from 'next/link';
-import { getConfig, getAllPosts } from '@api/index';
+import { getConfig, getPostsByYear } from '@api/index';
 import PageLayout from '../../layouts/pageLayout';
 
 export default function JournalPage(props) {
@@ -16,17 +16,24 @@ export default function JournalPage(props) {
           </h1>
         </div>
         <div className='relative z-50'>
-          <ul>
-            {props.posts.map(function (post) {
-              return (
-                <li key={post.slug}>
-                  <Link href={`/journal/${post.slug}`}>
-                    <a>{post.title}</a>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          {props.years.map(function (year) {
+            return (
+              <>
+                <h3>{year.year}</h3>
+                <ul>
+                  {year.posts.map(function (post) {
+                    return (
+                      <li key={post.slug}>
+                        <Link href={`/journal/${post.slug}`}>
+                          <a>{post.title}</a>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            );
+          })}
         </div>
       </PageLayout>
     </>
@@ -35,10 +42,10 @@ export default function JournalPage(props) {
 
 export async function getStaticProps() {
   const config = await getConfig();
-  const allPosts = await getAllPosts();
+  const allPosts = await getPostsByYear();
   return {
     props: {
-      posts: allPosts,
+      years: allPosts,
       title: config.title,
       description: config.description,
     },

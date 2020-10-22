@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import PageLayout from '@layouts/pageLayout';
-import { getAllPosts, getPostBySlug } from '../../api';
+import { getPostBySlug, getAllPosts } from '../../api';
 
 const StyledArticle = styled.article``;
 

@@ -13,13 +13,16 @@ export async function getAllPosts() {
     const meta = matter(content.default);
     let filename = post.split('_');
     const year = post.slice(0, 4);
+    const date = meta.data.date;
 
     posts.push({
+      date: JSON.stringify(date),
       year: year,
       slug: filename[1].replace('.md', ''),
       title: meta.data.title,
     });
   }
+
   return posts;
 }
 
@@ -44,4 +47,38 @@ export async function getPostBySlug(slug) {
 export async function getConfig() {
   const config = await import(`../config.yml`);
   return yaml.safeLoad(config.default);
+}
+
+export async function getPostsByYear() {
+  const posts = await getAllPosts();
+  let years = getYears(posts);
+
+  const postsByYear = [];
+
+  for (let year of years) {
+    let thisYearsPosts = [];
+    for (let post of posts) {
+      if (post.year == year) {
+        thisYearsPosts.push(post);
+      }
+    }
+    postsByYear.push({
+      year: year,
+      posts: thisYearsPosts,
+    });
+  }
+  console.log(postsByYear);
+  return postsByYear;
+}
+
+function getYears(posts) {
+  const years = [];
+
+  posts.forEach((element) => {
+    if (!years.includes(element.year)) {
+      years.push(element.year);
+    }
+  });
+
+  return years.reverse();
 }
