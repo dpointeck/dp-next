@@ -12,7 +12,10 @@ export async function getAllPosts() {
     const content = await import(`../_posts/${post}`);
     const meta = matter(content.default);
     let filename = post.split('_');
+    const year = post.slice(0, 4);
+
     posts.push({
+      year: year,
       slug: filename[1].replace('.md', ''),
       title: meta.data.title,
     });
@@ -29,6 +32,7 @@ export async function getPostBySlug(slug) {
     const fileContent = await import(`../_posts/${post}`);
     const meta = matter(fileContent.default);
     const content = await markdownToHtml(meta.content);
+
     return {
       title: meta.data.title,
       content: content,
