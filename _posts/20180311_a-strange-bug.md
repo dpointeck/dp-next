@@ -1,7 +1,7 @@
 ---
-slug: 'second-post'
-title: "The second post was hard too"
-date: 2020-10-19
+slug: a-strange-bug
+title: I almost went crazy because of this bug
+date: 2018-03-11
 ---
 
 #One morning, when Gregor Samsa woke from troubled dreams.

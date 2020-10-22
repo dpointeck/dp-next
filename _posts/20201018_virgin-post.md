@@ -1,6 +1,7 @@
 ---
 slug: 'first-post'
 title: "It's been long in the making"
+date: 2020-10-18
 ---
 
 #One morning, when Gregor Samsa woke from troubled dreams.

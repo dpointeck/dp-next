@@ -1,7 +1,7 @@
 ---
-slug: 'second-post'
-title: "The second post was hard too"
-date: 2020-10-19
+slug: in-may-we-use-css
+title: May is our CSS month
+date: 2019-05-28
 ---
 
 #One morning, when Gregor Samsa woke from troubled dreams.
