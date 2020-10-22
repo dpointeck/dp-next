@@ -64,7 +64,7 @@ export async function getPostsByYear() {
     }
     postsByYear.push({
       year: year,
-      posts: thisYearsPosts,
+      posts: thisYearsPosts.reverse(),
     });
   }
   console.log(postsByYear);
