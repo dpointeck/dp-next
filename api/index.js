@@ -13,10 +13,13 @@ export async function getAllPosts() {
     const meta = matter(content.default);
     let filename = post.split('_');
     const year = post.slice(0, 4);
-    const date = meta.data.date;
+    const date = new Date(meta.data.date).toLocaleDateString('en-AT', {
+      day: '2-digit',
+      month: 'short',
+    });
 
     posts.push({
-      date: JSON.stringify(date),
+      date: date,
       year: year,
       slug: filename[1].replace('.md', ''),
       title: meta.data.title,
@@ -67,7 +70,7 @@ export async function getPostsByYear() {
       posts: thisYearsPosts.reverse(),
     });
   }
-  console.log(postsByYear);
+
   return postsByYear;
 }
 
