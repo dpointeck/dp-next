@@ -1,20 +1,19 @@
-import { useRouter } from 'next/router';
-import styled from 'styled-components';
-import PageLayout from '@layouts/pageLayout';
-import { getPostBySlug, getAllPosts } from '../../api';
-
-const StyledArticle = styled.article``;
+import { useRouter } from "next/router";
+import styled from "styled-components";
+import PageLayout from "@layouts/pageLayout";
+import { getPostBySlug, getAllPosts } from "../../api";
 
 export default function Post(props) {
   const router = useRouter();
   return (
-    <PageLayout className='relative z-50'>
-      <h1 className='text-center text-3xl md:text-4xl font-bold'>
+    <PageLayout className="relative z-50">
+      <h1 className="text-center text-3xl md:text-4xl font-bold">
         {props.title}
       </h1>
-      <StyledArticle
-        className='prose max-w-3xl mx-auto relative z-50 mt-8'
-        dangerouslySetInnerHTML={{ __html: props.content }}></StyledArticle>
+      <article
+        className="prose max-w-3xl mx-auto relative z-50 mt-8"
+        dangerouslySetInnerHTML={{ __html: props.content }}
+      ></article>
     </PageLayout>
   );
 }

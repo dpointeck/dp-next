@@ -1,10 +1,10 @@
-import { Helmet } from 'react-helmet';
-import Link from 'next/link';
-import styled from 'styled-components';
-import { getConfig, getPostsByYear } from '@api/index';
-import PageLayout from '../../layouts/pageLayout';
-
-import Plus from '@svg/Plus.js';
+import { Helmet } from "react-helmet";
+import Link from "next/link";
+import styled from "styled-components";
+import { getConfig, getPostsByYear } from "@api/index";
+import PageLayout from "../../layouts/pageLayout";
+import PageHeader from "@components/pageHeader.js";
+import Plus from "@svg/Plus.js";
 
 export default function JournalPage(props) {
   return (
@@ -13,11 +13,10 @@ export default function JournalPage(props) {
         <title>Journal</title>
       </Helmet>
       <PageLayout>
-        <div className='pt-4  pb-10 flex justify-center'>
-          <StyledPageHeading className='font-bold font-mono text-center text-accent-1'>
-            <span>Journal</span>
-          </StyledPageHeading>
-        </div>
+        <PageHeader>
+          <span>Journal</span>
+        </PageHeader>
+
         <PostsListYears years={props.years} />
       </PageLayout>
     </>
@@ -37,13 +36,13 @@ export async function getStaticProps() {
 }
 
 const StyledPageHeading = styled.h1`
-  color: #e6da00;
+  color: #1a202c;
   position: relative;
   z-index: 40;
   font-size: 4rem;
 
   &:before {
-    content: '';
+    content: "";
 
     display: block;
     height: 80%;
@@ -92,30 +91,30 @@ const ReadMoreLink = styled.a`
 
 function PostsListYears({ years }) {
   return (
-    <StyledPostsList className='relative z-50 max-w-xl mx-auto'>
+    <StyledPostsList className="relative z-50 max-w-xl mx-auto">
       {years.map(function (year) {
         return (
           <div key={year.year}>
-            <h3 className='font-mono text-4xl'>{year.year}</h3>
+            <h3 className="font-mono text-4xl">{year.year}</h3>
             <hr />
             <ul>
               {year.posts.map(function (post) {
                 return (
-                  <li className='mt-4' key={post.slug}>
+                  <li className="mt-4" key={post.slug}>
                     <Link href={`/journal/${post.slug}`}>
-                      <a className='md:text-xl font-thin truncate pr-3 flex items-end'>
-                        {' '}
-                        <span className='text-xs md:text-sm font-mono mr-3 text-gray-500'>
+                      <a className="md:text-xl font-thin truncate pr-3 flex items-end">
+                        {" "}
+                        <span className="text-xs md:text-sm font-mono mr-3 text-gray-500">
                           {post.date}
                         </span>
-                        <span className='truncate block'>{post.title}</span>
+                        <span className="truncate block">{post.title}</span>
                       </a>
                     </Link>
                     <Link href={`/journal/${post.slug}`}>
-                      <ReadMoreLink className='font-mono flex'>
-                        <span className='mr-3'>read more</span>
-                        <span className='arrow'>
-                          <Plus className='h-5 w-5' />
+                      <ReadMoreLink className="font-mono flex">
+                        <span className="mr-3">read more</span>
+                        <span className="arrow">
+                          <Plus className="h-5 w-5" />
                         </span>
                       </ReadMoreLink>
                     </Link>
