@@ -23,6 +23,7 @@ export async function getAllPosts() {
       year: year,
       slug: filename[1].replace('.md', ''),
       title: meta.data.title,
+      metadesc: meta.data.metadesc,
     });
   }
 
@@ -41,6 +42,7 @@ export async function getPostBySlug(slug) {
 
     return {
       title: meta.data.title,
+      metadesc: meta.data.metadesc,
       content: content,
     };
   }

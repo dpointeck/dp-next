@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Head from 'next/head';
 
 const Hi = styled.h1`
   position: relative;
@@ -67,26 +68,35 @@ const StyledBgTile = styled.div`
 
 export default function IndexPage() {
   return (
-    <StyledHomepage className='container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible'>
-      <div className='relative'>
-        <Hi className='hi font-mono'>
-          <span className='hi__wavy'>👋</span>
-          <span className='hi__top'>Hi there I'm</span>
-          <br />
-          <span className='hi__daniel'>daniel</span>
-          <br />
-          <span className='hi__pointecker'>pointecker</span>
-          <StyledBgTile />
-        </Hi>
-      </div>
-      <div className='max-w-3xl mx-auto mt-10 md:mt-16 relative z-30'>
-        <p className='font-mono text-xl md:text-3xl leading-relaxed'>
-          I'm an software engineer from 🇦🇹 focused on frontend development. This
-          site is ment to be a collection of stuff I constantly forget and have
-          to search everytime I need it. If here’s something helpful for you
-          feel free to grab it.
-        </p>
-      </div>
-    </StyledHomepage>
+    <>
+      <Head>
+        <title>Daniel Pointecker - Software Engineer</title>
+        <meta
+          name='description'
+          content="Hi there! I'm Daniel a Software Engineer from 🇦🇹. Checkout posts around webdevelopment and software engineering plus all kinds of usefull resources."
+        />
+      </Head>
+      <StyledHomepage className='container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible'>
+        <div className='relative'>
+          <Hi className='hi font-mono'>
+            <span className='hi__wavy'>👋</span>
+            <span className='hi__top'>Hi there I'm</span>
+            <br />
+            <span className='hi__daniel'>daniel</span>
+            <br />
+            <span className='hi__pointecker'>pointecker</span>
+            <StyledBgTile />
+          </Hi>
+        </div>
+        <div className='max-w-3xl mx-auto mt-10 md:mt-16 relative z-30'>
+          <p className='font-mono text-xl md:text-3xl leading-relaxed'>
+            I'm an software engineer from 🇦🇹 focused on frontend development.
+            This site is ment to be a collection of stuff I constantly forget
+            and have to search everytime I need it. If here’s something helpful
+            for you feel free to grab it.
+          </p>
+        </div>
+      </StyledHomepage>
+    </>
   );
 }

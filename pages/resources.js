@@ -1,17 +1,21 @@
-import { Helmet } from "react-helmet";
-import PageLayout from "../layouts/pageLayout";
-import PageHeader from "@components/pageHeader";
+import Head from 'next/head';
+import PageLayout from '../layouts/pageLayout';
+import PageHeader from '@components/pageHeader';
 
 export default function ResourcesPage() {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Resources</title>
-      </Helmet>
+        <meta
+          name='description'
+          content='The resources page is still under development.'
+        />
+      </Head>
       <PageLayout>
-        <div className="pb-20">
+        <div className='pb-20'>
           <PageHeader>Resources</PageHeader>
-          <p class="mt-4 text-center">under development</p>
+          <p class='mt-4 text-center'>under development</p>
         </div>
       </PageLayout>
     </>

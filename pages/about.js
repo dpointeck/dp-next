@@ -1,18 +1,24 @@
-import { Helmet } from "react-helmet";
+import Head from 'next/head';
 
-import PageLayout from "../layouts/pageLayout";
-import PageHeader from "@components/pageHeader";
+import PageLayout from '../layouts/pageLayout';
+import PageHeader from '@components/pageHeader';
 
 export default function AboutPage() {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>About</title>
-      </Helmet>
+        <meta
+          name='description'
+          content="Hi there 👋 I'm Daniel Pointecker
+          I'm a self taught web developer from Schärding, Upper Austria 🇦🇹
+          I'm makeing websites since 2014."
+        />
+      </Head>
       <PageLayout>
-        <div className="pt-0 pb-20">
+        <div className='pt-0 pb-20'>
           <PageHeader>About</PageHeader>
-          <article className="prose-xl max-w-2xl mx-auto relative z-50 mt-8">
+          <article className='prose-xl max-w-2xl mx-auto relative z-50 mt-8'>
             <h2>Hi there 👋 I'm Daniel Pointecker </h2>
             <p>
               I'm a self taught web developer from Schärding,
