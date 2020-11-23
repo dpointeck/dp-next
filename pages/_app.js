@@ -1,5 +1,4 @@
 import { ThemeProvider } from 'styled-components';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import theme from '../styles/theme';
