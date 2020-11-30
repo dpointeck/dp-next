@@ -1,7 +1,7 @@
 ---
 slug: 'my-vscode-setup'
 title: 'My late 2020 VScode setup'
-date: 2020-11-21
+date: 2020-11-30
 metadesc: In this post I share my current VScode setup and favourite plugins from 2020.
 ---
 
