@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
 class DpDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -29,14 +29,18 @@ class DpDocument extends Document {
 
   render() {
     return (
-      <Html lang='en'>
+      <Html lang="en">
         <Head>
-          <link rel='shortcut icon' href='/favicon.svg' />
+          <meta
+            name="google-site-verification"
+            content="vTEzO8d5lqdjmewCVAFto1DTheaJF7IyYuuLGjQxGoQ"
+          />
+          <link rel="shortcut icon" href="/favicon.svg" />
           {this.props.styleTags}
         </Head>
-        <body className='pb-20 md:pb-0'>
+        <body className="pb-20 md:pb-0">
           <Main />
-          <NextScript className='relative' />
+          <NextScript className="relative" />
         </body>
       </Html>
     );
