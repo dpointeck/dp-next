@@ -1,6 +1,6 @@
 ---
 slug: "2020-recap-and-whats-coming"
-title: "My late 2020 VScode setup"
+title: "2020 recap and whats next"
 date: 2020-12-31
 metadesc: 2020 recap and whats next
 ---
