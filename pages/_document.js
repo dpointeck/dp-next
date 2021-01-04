@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import Footer from "../components/footer";
 class DpDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -40,6 +41,7 @@ class DpDocument extends Document {
         </Head>
         <body className="pb-20 md:pb-0">
           <Main />
+          <Footer />
           <NextScript className="relative" />
         </body>
       </Html>
