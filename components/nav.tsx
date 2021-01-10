@@ -8,6 +8,7 @@ import IconAbout from "@svg/about.svg";
 import IconJournal from "@svg/journal.svg";
 import IconResources from "@svg/resources.svg";
 import IconUses from "@svg/uses.svg";
+import React from "react";
 
 const socialLinks = [
   {
