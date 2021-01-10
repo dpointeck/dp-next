@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import PageLayout from "../layouts/pageLayout";
-import PageHeader from "@components/pageHeader";
+import PageHeader from "../components/pageHeader";
 
 export default function PrivacyPolicyPage() {
   return (
