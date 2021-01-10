@@ -2,7 +2,7 @@ import { GetStaticPaths } from "next";
 import { useRouter } from "next/router";
 import PageLayout from "@layouts/pageLayout";
 import Head from "next/head";
-import { getPostBySlug, getAllPosts } from "../../api";
+import { getPostBySlug, getAllPosts } from "@api/index";
 
 export default function Post(props) {
   const router = useRouter();

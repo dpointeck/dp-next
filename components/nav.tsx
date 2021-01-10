@@ -1,46 +1,47 @@
-import Link from 'next/link';
-import styled from 'styled-components';
+// @ts-nocheck
+import Link from "next/link";
+import styled from "styled-components";
 
-import IconTwitter from '../svg/twitter.svg';
-import IconGithub from '../svg/github.svg';
+import IconTwitter from "@svg/twitter.svg";
+import IconGithub from "@svg/github.svg";
 
-import IconAbout from '../svg/about.svg';
-import IconJournal from '../svg/journal.svg';
-import IconResources from '../svg/resources.svg';
-import IconUses from '../svg/uses.svg';
+import IconAbout from "@svg/about.svg";
+import IconJournal from "@svg/journal.svg";
+import IconResources from "@svg/resources.svg";
+import IconUses from "@svg/uses.svg";
 
 const socialLinks = [
   {
-    name: 'twitter',
+    name: "twitter",
     icon: IconTwitter,
-    url: 'https://twitter.com/home',
+    url: "https://twitter.com/home",
   },
   {
-    name: 'github',
+    name: "github",
     icon: IconGithub,
-    url: 'https://github.com/dpointeck',
+    url: "https://github.com/dpointeck",
   },
 ];
 
 const pages = [
   {
-    name: 'about',
-    href: '/about',
+    name: "about",
+    href: "/about",
     icon: IconAbout,
   },
   {
-    name: 'journal',
-    href: '/journal',
+    name: "journal",
+    href: "/journal",
     icon: IconJournal,
   },
   {
-    name: 'resources',
-    href: '/resources',
+    name: "resources",
+    href: "/resources",
     icon: IconResources,
   },
   {
-    name: 'uses',
-    href: '/uses',
+    name: "uses",
+    href: "/uses",
     icon: IconUses,
   },
 ];
@@ -73,7 +74,7 @@ const StyledNav = styled.nav`
   z-index: 10;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: -5rem;
     left: 0;
@@ -152,7 +153,7 @@ const Dots = styled.div`
   width: 340px;
   height: 600px;
   color: black;
-  background-image: url('/images/dots.svg');
+  background-image: url("/images/dots.svg");
   background-size: 160px 160px;
 
   @media (min-width: ${(props) => props.theme.screens.md}) {
@@ -163,29 +164,30 @@ const Dots = styled.div`
 
 const Brand = ({ profiles }) => {
   return (
-    <StyledBrand className='brand mt-4 w-full md:w-auto flex justify-between items-center'>
-      <Link href='/'>
-        <a className='text-xl font-bold mr-4 flex items-center'>
-          <div className='brand__image-wrap p-1 rounded-full mr-4'>
+    <StyledBrand className="brand mt-4 w-full md:w-auto flex justify-between items-center">
+      <Link href="/">
+        <a className="text-xl font-bold mr-4 flex items-center">
+          <div className="brand__image-wrap p-1 rounded-full mr-4">
             <img
-              src='/images/daniel_tanja.jpg'
-              alt='Daniel & Tanja'
-              className='rounded-full h-10 w-10'
+              src="/images/daniel_tanja.jpg"
+              alt="Daniel & Tanja"
+              className="rounded-full h-10 w-10"
             />
           </div>
           <span>daniel pointecker</span>
         </a>
       </Link>
-      <nav className='social-nav flex items-center'>
+      <nav className="social-nav flex items-center">
         {profiles.map((link) => {
           return (
             <a
               href={link.url}
               key={link.name}
-              target='_blank'
-              rel='noopener noreferrer'>
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {React.createElement(link.icon, {
-                className: 'w-5 h-5',
+                className: "w-5 h-5",
               })}
             </a>
           );
@@ -252,7 +254,7 @@ const StyledMobileMenu = styled.div`
 
 const Menu = ({ pages }) => {
   return (
-    <StyledNav className='font-mono text-sm'>
+    <StyledNav className="font-mono text-sm">
       {pages.map((page) => (
         <Link href={page.href} key={page.name}>
           <a>
@@ -267,7 +269,7 @@ const Menu = ({ pages }) => {
 
 export const MobileNav = (props) => {
   return (
-    <StyledMobileMenu className='font-mono text-sm'>
+    <StyledMobileMenu className="font-mono text-sm">
       <nav>
         {pages.map((page) => (
           <Link href={page.href} key={page.name}>
@@ -284,15 +286,15 @@ export const MobileNav = (props) => {
 
 export function Nav() {
   return (
-    <StyledHeader className='container mx-auto text-gray-800'>
-      <StyledContainer className='w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5'>
-        <header className='w-full flex items-center justify-between relative z-50'>
+    <StyledHeader className="container mx-auto text-gray-800">
+      <StyledContainer className="w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5">
+        <header className="w-full flex items-center justify-between relative z-50">
           <Brand profiles={socialLinks} />
           <Menu pages={pages} />
         </header>
       </StyledContainer>
-      <Dots className='dots1 absolute text-gray-500 max-w-md' />
-      <Dots className='dots2 absolute hidden lg:block text-gray-900 max-w-md' />
+      <Dots className="dots1 absolute text-gray-500 max-w-md" />
+      <Dots className="dots2 absolute hidden lg:block text-gray-900 max-w-md" />
     </StyledHeader>
   );
 }
