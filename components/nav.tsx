@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-import IconTwitter from "@svg/twitter.svg";
+import IconTwitter from "../svg/twitter.svg";
 import IconGithub from "@svg/github.svg";
 
 import IconAbout from "@svg/about.svg";
