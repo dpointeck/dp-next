@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import Footer from "../components/footer";
+import Footer from "@components/footer";
 
 interface DocProps {
   styleTags;

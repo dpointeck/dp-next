@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
 import { AppProps } from "next/app";
 
-import theme from "../styles/theme";
+import theme from "@styles/theme";
 
 import "../fonts/Inter/inter.css";
 import "../fonts/Greycliff/greycliff.css";
