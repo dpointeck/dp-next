@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
+import { AppProps } from "next/app";
 
 import theme from "../styles/theme";
 
@@ -11,7 +12,7 @@ import "../styles/prism-synthwave.css";
 
 import { Nav, MobileNav } from "../components/nav";
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isHome = router.pathname === "/";
   return (
@@ -25,4 +26,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default App;

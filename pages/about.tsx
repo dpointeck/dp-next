@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import PageLayout from "../layouts/pageLayout";
-import PageHeader from "@components/pageHeader";
+import PageHeader from "../components/pageHeader";
 
 export default function AboutPage() {
   return (
@@ -22,7 +22,7 @@ export default function AboutPage() {
             <h2>Hi there 👋 I'm Daniel Pointecker </h2>
             <p>
               I'm a self taught web developer from Schärding,
-              <nobr> Upper Austria 🇦🇹</nobr>
+              <span className="whitespace-nowrap"> Upper Austria 🇦🇹</span>
               <br />
               I'm makeing websites since 2014.
             </p>
