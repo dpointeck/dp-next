@@ -15,7 +15,7 @@ export default function ResourcesPage() {
       <PageLayout>
         <div className="pb-20">
           <PageHeader>Resources</PageHeader>
-          <p class="mt-4 text-center">under development</p>
+          <p className="mt-4 text-center">under development</p>
         </div>
       </PageLayout>
     </>

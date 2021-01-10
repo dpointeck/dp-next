@@ -11,7 +11,7 @@ export default function UsesPage() {
       <PageLayout>
         <div className="pb-20">
           <PageHeader>Uses</PageHeader>
-          <p class="mt-4 text-center">under development</p>
+          <p className="mt-4 text-center">under development</p>
         </div>
       </PageLayout>
     </>
