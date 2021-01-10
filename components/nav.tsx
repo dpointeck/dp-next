@@ -2,13 +2,13 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-import IconTwitter from "../svg/twitter.svg";
-import IconGithub from "../svg/github.svg";
+import IconTwitter from "@svg/twitter.svg";
+import IconGithub from "@svg/github.svg";
 
-import IconAbout from "../svg/about.svg";
-import IconJournal from "../svg/journal.svg";
-import IconResources from "../svg/resources.svg";
-import IconUses from "../svg/uses.svg";
+import IconAbout from "@svg/about.svg";
+import IconJournal from "@svg/journal.svg";
+import IconResources from "@svg/resources.svg";
+import IconUses from "@svg/uses.svg";
 
 const socialLinks = [
   {
