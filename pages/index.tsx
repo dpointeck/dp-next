@@ -73,7 +73,7 @@ export default function IndexPage() {
         <title>Daniel Pointecker - Software Engineer</title>
         <meta
           name="description"
-          content="Hi there! I'm Daniel a Software Engineer from 🇦🇹. Checkout posts around webdevelopment and software engineering plus all kinds of usefull resources."
+          content="Hi there! I'm Daniel a Software Engineer from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources."
         />
       </Head>
       <StyledHomepage className="container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible">
@@ -92,7 +92,7 @@ export default function IndexPage() {
           <p className="font-mono text-xl md:text-3xl leading-relaxed">
             I'm an software engineer from 🇦🇹 focused on frontend development.
             This site is ment to be a collection of stuff I constantly forget
-            and have to search everytime I need it. If here’s something helpful
+            and have to search every time I need it. If here’s something helpful
             for you feel free to grab it.
           </p>
         </div>
