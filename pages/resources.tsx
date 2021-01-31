@@ -11,6 +11,10 @@ export default function ResourcesPage() {
           name="description"
           content="The resources page is still under development."
         />
+        <link
+          rel="canonical"
+          href="https://https://www.daniel-pointecker.net/resources/"
+        />
       </Head>
       <PageLayout>
         <div className="pb-20">

@@ -12,6 +12,10 @@ export default function PrivacyPolicyPage() {
           name="description"
           content="This Privacy Policy provides information about which data we collect, what we use it for and which rights you have."
         />
+        <link
+          rel="canonical"
+          href="https://https://www.daniel-pointecker.net/privacy-policy/"
+        />
       </Head>
       <PageLayout>
         <div className="pt-0 pb-20">

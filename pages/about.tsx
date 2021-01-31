@@ -14,6 +14,10 @@ export default function AboutPage() {
           I'm a self taught web developer from Schärding, Upper Austria 🇦🇹
           I'm makeing websites since 2014."
         />
+        <link
+          rel="canonical"
+          href="https://https://www.daniel-pointecker.net/about/"
+        />
       </Head>
       <PageLayout>
         <div className="pt-0 pb-20">

@@ -75,6 +75,10 @@ export default function IndexPage() {
           name="description"
           content="Hi there! I'm Daniel a Software Engineer from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources."
         />
+        <link
+          rel="canonical"
+          href="https://https://www.daniel-pointecker.net/"
+        />
       </Head>
       <StyledHomepage className="container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible">
         <div className="relative">

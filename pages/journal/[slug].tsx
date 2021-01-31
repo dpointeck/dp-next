@@ -11,6 +11,10 @@ export default function Post(props) {
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.metadesc} />
+        <link
+          rel="canonical"
+          href={`https://https://www.daniel-pointecker.net/${props.slug}`}
+        />
       </Head>
       <PageLayout className="relative z-50">
         <h1 className="text-center text-3xl md:text-4xl font-bold">

@@ -7,6 +7,10 @@ export default function UsesPage() {
     <>
       <Head>
         <title>Uses</title>
+        <link
+          rel="canonical"
+          href="https://https://www.daniel-pointecker.net/uses/"
+        />
       </Head>
       <PageLayout>
         <div className="pb-20">

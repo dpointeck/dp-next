@@ -8,7 +8,12 @@ export default function SiteNoticePage() {
     <>
       <Head>
         <title>Site Notice</title>
+        <link
+          rel="canonical"
+          href="https://https://www.daniel-pointecker.net/site-notice/"
+        />
       </Head>
+
       <PageLayout>
         <div className="pt-0 pb-20">
           <PageHeader>Site Notice</PageHeader>
