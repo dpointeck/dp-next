@@ -23,7 +23,7 @@ In the next few weeks after the PC build is completed I want to evaluate differe
 
 In the past I would have never thought about Windows 10 as the OS of a web devs choice. But I also used Windows a few days around Christmas on a bootcamp partition on my old iMac before I sold it. And I must say my experience was quite smooth. I tried [WSL2 (Windows Subsystem for Linux)](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) which enables you to run a Linux distro by the side of Windows 10 and together with Docker, VSCode and the Remote Development Plugins its a seamless dev experience and I enjoyed the few hours I tried it. So I also will test the Windows ecosystem and review it.
 
-## Whats up next
+## What's up next?
 
 ### The custom PC build
 
