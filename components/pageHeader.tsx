@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledPageHeading = styled.h1`
   color: #1a202c;
@@ -7,7 +7,7 @@ const StyledPageHeading = styled.h1`
   font-size: 4rem;
 
   &:before {
-    content: "";
+    content: '';
 
     display: block;
     height: 80%;
@@ -23,8 +23,8 @@ const StyledPageHeading = styled.h1`
 
 export default function PageHeader(props) {
   return (
-    <div className="pt-4  pb-10 flex justify-center">
-      <StyledPageHeading className="font-bold font-mono text-center text-accent-1">
+    <div className='pt-4  pb-10 flex justify-center'>
+      <StyledPageHeading className='font-bold font-mono text-center text-accent-1'>
         <span>{props.children}</span>
       </StyledPageHeading>
     </div>
