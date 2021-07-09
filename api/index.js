@@ -2,31 +2,35 @@ import matter from "gray-matter";
 import yaml from "js-yaml";
 import markdownToHtml from "@util/markdown";
 import FindFiles from "file-regex";
+import path from "path";
+import fs from "fs";
+
+const postsDirectory = path.join(process.cwd(), "_posts");
 
 export async function getAllPosts() {
-  const ctx = require.context("../_posts/", false, /\.md$/);
+  const allPosts = fs.readdirSync(postsDirectory);
 
-  const posts = [];
-  for (const key of ctx.keys()) {
-    const post = key.slice(2);
-    const content = await import(`../_posts/${post}`);
-    const meta = matter(content.default);
-    let filename = post.split("_");
-    const year = post.slice(0, 4);
-    const date = new Date(meta.data.date).toLocaleDateString("en-AT", {
+  const posts = allPosts.map((fileName) => {
+    const fileContents = fs.readFileSync(
+      path.join(postsDirectory, fileName),
+      "utf8"
+    );
+    const { data } = matter(fileContents);
+
+    const year = data.date.getFullYear();
+    const date = new Date(data.date);
+    const shortDate = date.toLocaleDateString("en-AT", {
       day: "2-digit",
       month: "short",
     });
-
-    posts.push({
-      date: date,
+    return {
+      slug: data.slug,
+      title: data.title,
+      metadesc: data.metadesc,
+      date: shortDate,
       year: year,
-      slug: filename[1].replace(".md", ""),
-      title: meta.data.title,
-      metadesc: meta.data.metadesc,
-    });
-  }
-
+    };
+  });
   return posts;
 }
 
