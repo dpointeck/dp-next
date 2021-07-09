@@ -166,7 +166,7 @@ const Brand = ({ profiles }) => {
   return (
     <StyledBrand className="brand mt-4 w-full md:w-auto flex justify-between items-center">
       <Link href="/">
-        <a className="text-xl font-bold mr-4 flex items-center">
+        <a className="text-xl font-bold mr-4 flex items-center" aria-label="daniel pointecker">
           <div className="brand__image-wrap p-1 rounded-full mr-4">
             <img
               src="/images/daniel_tanja.jpg"
@@ -183,6 +183,7 @@ const Brand = ({ profiles }) => {
             <a
               href={link.url}
               key={link.name}
+              aria-label={link.name}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -257,7 +258,7 @@ const Menu = ({ pages }) => {
     <StyledNav className="font-mono text-sm">
       {pages.map((page) => (
         <Link href={page.href} key={page.name}>
-          <a>
+          <a aria-label={page.name}>
             {React.createElement(page.icon)}
             <span>{page.name}</span>
           </a>
@@ -273,7 +274,7 @@ export const MobileNav = (props) => {
       <nav>
         {pages.map((page) => (
           <Link href={page.href} key={page.name}>
-            <a>
+            <a aria-label={page.name}>
               {React.createElement(page.icon)}
               <span>{page.name}</span>
             </a>
