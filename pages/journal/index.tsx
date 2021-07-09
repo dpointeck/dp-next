@@ -102,7 +102,7 @@ function PostsListYears({ years }) {
       {years.map(function (year) {
         return (
           <div key={year.year}>
-            <h3 className="font-mono text-4xl">{year.year}</h3>
+            <h2 className="font-mono text-4xl">{year.year}</h2>
             <hr />
             <ul>
               {year.posts.map(function (post) {
