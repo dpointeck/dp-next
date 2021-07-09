@@ -1,5 +1,5 @@
 ---
-slug: "2020-recap-and-whats-coming"
+slug: "the-state-of-2020-and-whats-next"
 title: "2020 recap and whats next"
 date: 2020-12-31
 metadesc: 2020 recap and whats next
