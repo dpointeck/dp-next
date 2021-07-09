@@ -14,7 +14,7 @@ export default function PrivacyPolicyPage() {
         />
         <link
           rel="canonical"
-          href="https://https://www.daniel-pointecker.net/privacy-policy/"
+          href="https://www.daniel-pointecker.net/privacy-policy/"
         />
       </Head>
       <PageLayout>

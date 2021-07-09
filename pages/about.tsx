@@ -16,7 +16,7 @@ export default function AboutPage() {
         />
         <link
           rel="canonical"
-          href="https://https://www.daniel-pointecker.net/about/"
+          href="https://www.daniel-pointecker.net/about/"
         />
       </Head>
       <PageLayout>

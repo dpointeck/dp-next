@@ -13,7 +13,7 @@ export default function Post(props) {
         <meta name="description" content={props.metadesc} />
         <link
           rel="canonical"
-          href={`https://https://www.daniel-pointecker.net/${props.slug}`}
+          href={`https://www.daniel-pointecker.net/${props.slug}`}
         />
       </Head>
       <PageLayout className="relative z-50">

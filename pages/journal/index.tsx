@@ -17,7 +17,7 @@ export default function JournalPage({ years }): unknown {
         ></meta>
         <link
           rel="canonical"
-          href="https://https://www.daniel-pointecker.net/journal/"
+          href="https://www.daniel-pointecker.net/journal/"
         />
       </Head>
       <PageLayout>

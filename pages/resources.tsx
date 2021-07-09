@@ -13,7 +13,7 @@ export default function ResourcesPage() {
         />
         <link
           rel="canonical"
-          href="https://https://www.daniel-pointecker.net/resources/"
+          href="https://www.daniel-pointecker.net/resources/"
         />
       </Head>
       <PageLayout>

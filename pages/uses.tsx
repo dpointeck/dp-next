@@ -9,7 +9,7 @@ export default function UsesPage() {
         <title>Uses</title>
         <link
           rel="canonical"
-          href="https://https://www.daniel-pointecker.net/uses/"
+          href="https://www.daniel-pointecker.net/uses/"
         />
       </Head>
       <PageLayout>
