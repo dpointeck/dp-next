@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
-import { getConfig, getPostsByYear } from "@api/index";
+import { getConfig, getPostsByYear } from "../../lib/post";
 import PageLayout from "@layouts/pageLayout";
 import PageHeader from "@components/pageHeader";
 import Plus from "@svg/Plus.js";
