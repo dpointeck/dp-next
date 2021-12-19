@@ -268,7 +268,7 @@ const Menu = ({ pages }: any) => {
   );
 };
 
-export const MobileNav = (props) => {
+export const MobileNav = (props: any) => {
   return (
     <StyledMobileMenu className="font-mono text-sm">
       <nav>
