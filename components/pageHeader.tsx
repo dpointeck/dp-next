@@ -21,7 +21,7 @@ const StyledPageHeading = styled.h1`
   }
 `;
 
-export default function PageHeader(props) {
+export default function PageHeader(props: any) {
   return (
     <div className='pt-4  pb-10 flex justify-center'>
       <StyledPageHeading className='font-bold font-mono text-center text-accent-1'>
