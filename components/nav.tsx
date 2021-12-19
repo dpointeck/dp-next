@@ -256,7 +256,7 @@ const StyledMobileMenu = styled.div`
 const Menu = ({ pages }: any) => {
   return (
     <StyledNav className="font-mono text-sm">
-      {pages.map((page) => (
+      {pages.map((page: any) => (
         <Link href={page.href} key={page.name}>
           <a aria-label={page.name}>
             {React.createElement(page.icon)}
@@ -272,7 +272,7 @@ export const MobileNav = (props) => {
   return (
     <StyledMobileMenu className="font-mono text-sm">
       <nav>
-        {pages.map((page) => (
+        {pages.map((page: any) => (
           <Link href={page.href} key={page.name}>
             <a aria-label={page.name}>
               {React.createElement(page.icon)}
