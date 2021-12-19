@@ -38,7 +38,7 @@ export async function getStaticProps(ctx:Context) {
 
 export const getStaticPaths: GetStaticPaths = async function () {
   const paths = await getAllPosts();
-  let postPaths = paths.map((post) => ({
+  let postPaths = paths.map((post: any) => ({
     params: {
       slug: post.slug,
     },
