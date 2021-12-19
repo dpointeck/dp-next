@@ -6,7 +6,7 @@ import PageLayout from "@layouts/pageLayout";
 import PageHeader from "@components/pageHeader";
 import Plus from "@svg/Plus.js";
 
-export default function JournalPage({ years }): unknown {
+export default function JournalPage({ years }:any): unknown {
   return (
     <>
       <Head>
@@ -76,7 +76,7 @@ const ReadMoreLink = styled.a`
   margin-left: 3.8rem;
   font-size: 12px;
 
-  @media (min-width: ${(props) => props.theme.screens.md}) {
+  @media (min-width: ${(props:any) => props.theme.screens.md}) {
     display: flex;
     cursor: pointer;
   }
@@ -96,16 +96,16 @@ const ReadMoreLink = styled.a`
   }
 `;
 
-function PostsListYears({ years }) {
+function PostsListYears({ years }:any) {
   return (
     <StyledPostsList className="relative z-50 max-w-xl mx-auto">
-      {years.map(function (year) {
+      {years.map(function (year:any) {
         return (
           <div key={year.year}>
             <h2 className="font-mono text-4xl">{year.year}</h2>
             <hr />
             <ul>
-              {year.posts.map(function (post) {
+              {year.posts.map(function (post:any) {
                 return (
                   <li className="mt-4" key={post.slug}>
                     <Link href={`/journal/${post.slug}`}>

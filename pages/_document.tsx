@@ -3,18 +3,18 @@ import { ServerStyleSheet } from "styled-components";
 import Footer from "@components/footer";
 
 interface DocProps {
-  styleTags;
+  styleTags: any;
 }
 
 class DpDocument extends Document<DocProps> {
-  static async getInitialProps(ctx) {
+  static async getInitialProps(ctx: any) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
+          enhanceApp: (App: any) => (props: any) =>
             sheet.collectStyles(<App {...props} />),
         });
 

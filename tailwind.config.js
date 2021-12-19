@@ -1,15 +1,8 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
-  mode: "jit",
-  purge: {
-    layers: ["utilities"],
-    content: [
-      "./components/**/*.{js,ts,jsx,tsx}",
-      "./pages/**/*.{js,ts,jsx,tsx}",
-    ],
-  },
+  content: [
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontFamily: {
       sans: [
@@ -44,8 +37,4 @@ module.exports = {
   },
   variants: {},
   plugins: [require("@tailwindcss/typography")],
-  future: {
-    removeDeprecatedGabUtilities: true,
-    purgeLayersByDefault: true,
-  },
 };
