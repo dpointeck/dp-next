@@ -178,7 +178,7 @@ const Brand = ({ profiles }: any) => {
         </a>
       </Link>
       <nav className="social-nav flex items-center">
-        {profiles.map((link) => {
+        {profiles.map((link: any) => {
           return (
             <a
               href={link.url}
