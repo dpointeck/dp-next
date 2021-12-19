@@ -162,7 +162,7 @@ const Dots = styled.div`
   }
 `;
 
-const Brand = ({ profiles }) => {
+const Brand = ({ profiles }: any) => {
   return (
     <StyledBrand className="brand mt-4 w-full md:w-auto flex justify-between items-center">
       <Link href="/">
@@ -253,7 +253,7 @@ const StyledMobileMenu = styled.div`
   }
 `;
 
-const Menu = ({ pages }) => {
+const Menu = ({ pages }: any) => {
   return (
     <StyledNav className="font-mono text-sm">
       {pages.map((page) => (
