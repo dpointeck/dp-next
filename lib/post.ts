@@ -34,7 +34,7 @@ export async function getAllPosts() {
   return posts;
 }
 
-export async function getPostBySlug(slug) {
+export async function getPostBySlug(slug: string) {
   let regex = new RegExp("\\d{8}_" + slug + ".md");
   const result = await FindFiles("_posts", regex);
 
@@ -55,8 +55,8 @@ export async function getPostBySlug(slug) {
 }
 
 export async function getConfig() {
-  const config = await import(`../config.yml`);
-  return yaml.safeLoad(config.default);
+  const config = await require(`../config.yml`);
+  return yaml.load(config.default);
 }
 
 export async function getPostsByYear() {
@@ -81,10 +81,10 @@ export async function getPostsByYear() {
   return postsByYear;
 }
 
-function getYears(posts) {
-  const years = [];
+function getYears(posts: any) {
+  const years: any = [];
 
-  posts.forEach((element) => {
+  posts.forEach((element: any) => {
     if (!years.includes(element.year)) {
       years.push(element.year);
     }
