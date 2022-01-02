@@ -12,7 +12,7 @@ import "../styles/prism-synthwave.css";
 
 import { Nav, MobileNav } from "../components/nav";
 
-function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isHome = router.pathname === "/";
   return (
@@ -26,4 +26,4 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export default App;
+

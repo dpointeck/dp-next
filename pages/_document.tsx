@@ -1,24 +1,21 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import Footer from "@components/footer";
+import { ReactElement } from "react";
 
-interface DocProps {
-  styleTags: any;
-}
-
-class DpDocument extends Document<DocProps> {
-  static async getInitialProps(ctx: any) {
+class DpDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext):Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App: any) => (props: any) =>
+          enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
-        });
+        })
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx)
       return {
         ...initialProps,
         styles: (
@@ -27,13 +24,13 @@ class DpDocument extends Document<DocProps> {
             {sheet.getStyleElement()}
           </>
         ),
-      };
+      }
     } finally {
       sheet.seal();
     }
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <Html lang="en">
         <Head>
@@ -42,7 +39,6 @@ class DpDocument extends Document<DocProps> {
             content="vTEzO8d5lqdjmewCVAFto1DTheaJF7IyYuuLGjQxGoQ"
           />
           <link rel="shortcut icon" href="/favicon.svg" />
-          {this.props.styleTags}
         </Head>
         <body className="pb-20 md:pb-0">
           <Main />

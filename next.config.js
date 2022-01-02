@@ -4,5 +4,10 @@ module.exports = {
     config.module.rules.push({ test: /\.yml$/, use: 'raw-loader' });
     return config;
   },
-  swcMinify: true
+  swcMinify: true,
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+    serverComponents: true
+  }
 };
