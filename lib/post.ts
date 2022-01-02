@@ -54,12 +54,12 @@ export async function getPostBySlug(slug: string) {
   return false;
 }
 
-export async function getConfig() {
+export async function getConfig(): Promise<any> {
   const config = await require(`../config.yml`);
   return yaml.load(config.default);
 }
 
-export async function getPostsByYear() {
+export async function getPostsByYear(): Promise<any> {
   const posts = await getAllPosts();
   let years = getYears(posts);
 
@@ -81,7 +81,7 @@ export async function getPostsByYear() {
   return postsByYear;
 }
 
-function getYears(posts: any) {
+function getYears(posts: any): Array<number> {
   const years: any = [];
 
   posts.forEach((element: any) => {
