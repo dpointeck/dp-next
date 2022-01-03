@@ -10,6 +10,8 @@ import { IconJournal } from "@svg/index";
 import { IconResources } from "@svg/index";
 import { IconUses } from "@svg/index";
 
+import styles from './nav.module.scss';
+
 const socialLinks = [
   {
     name: "twitter",
@@ -55,7 +57,6 @@ function StyledHeader ({ children }: Props) {
   return <div className={`container mx-auto text-gray-800 relative`}>{children}</div>
 }
   
-
 const StyledContainer = styled.div`
   background-color: transparent;
   background-image: transparent;
@@ -134,36 +135,14 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledBrand = styled.div`
-  .brand__image-wrap {
-    background-image: linear-gradient(to bottom, #fff95a, #fff22e);
-  }
-
-  .social-nav a:not(:last-child) {
-    margin-right: 0.75rem;
-  }
-`;
-
-const Dots = styled.div`
-  position: absolute;
-  width: 340px;
-  height: 600px;
-  color: black;
-  background-image: url("/images/dots.svg");
-  background-size: 160px 160px;
-
-  @media (min-width: ${(props) => props.theme.screens.md}) {
-    width: 400px;
-    height: 700px;
-  }
-`;
 
 const Brand = ({ profiles }: any) => {
+  console.log(styles)
   return (
-    <StyledBrand className="brand mt-4 w-full md:w-auto flex justify-between items-center">
+    <div className={`${styles.brand} mt-4 w-full md:w-auto flex justify-between items-center`}>
       <Link href="/">
         <a className="text-xl font-bold mr-4 flex items-center" aria-label="daniel pointecker">
-          <div className="brand__image-wrap p-1 rounded-full mr-4">
+          <div className={`${styles['brand__image-wrap']} p-1 rounded-full mr-4`}>
             <img
               src="/images/daniel_tanja.jpg"
               alt="Daniel & Tanja"
@@ -173,7 +152,7 @@ const Brand = ({ profiles }: any) => {
           <span>daniel pointecker</span>
         </a>
       </Link>
-      <nav className="social-nav flex items-center">
+      <nav className={`${styles['social-nav']} flex items-center`}>
         {profiles.map((link: any) => {
           return (
             <a
@@ -190,64 +169,10 @@ const Brand = ({ profiles }: any) => {
           );
         })}
       </nav>
-    </StyledBrand>
+    </div>
   );
 };
 
-const StyledMobileMenu = styled.div`
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-image: ${(props) => props.theme.gradient[100]};
-  z-index: 100;
-  padding: 0.5rem 2rem;
-
-  nav {
-    display: flex;
-    max-width: 480px;
-  }
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 0.75rem;
-    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-
-    &:not(:last-child) {
-      margin-right: 2rem;
-    }
-
-    &:nth-child(1) svg {
-      height: 2rem;
-    }
-
-    &:nth-child(2) svg {
-      height: 1.5rem;
-    }
-
-    &:nth-child(3) svg {
-      height: 1.5rem;
-    }
-
-    &:nth-child(4) svg {
-      height: 1.25rem;
-      margin-left: -0.75rem;
-    }
-  }
-
-  @media (min-width: ${(props) => props.theme.screens.md}) {
-    display: none;
-  }
-`;
 
 const Menu = ({ pages }: any) => {
   return (
@@ -266,7 +191,7 @@ const Menu = ({ pages }: any) => {
 
 export const MobileNav = (props: any) => {
   return (
-    <StyledMobileMenu className="font-mono text-sm">
+    <div className={`${styles.mobileMenu} font-mono text-sm`}>
       <nav>
         {pages.map((page: any) => (
           <Link href={page.href} key={page.name}>
@@ -277,7 +202,7 @@ export const MobileNav = (props: any) => {
           </Link>
         ))}
       </nav>
-    </StyledMobileMenu>
+    </div>
   );
 };
 

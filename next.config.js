@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   webpack: (config) => {
     config.module.rules.push({ test: /\.md$/, use: 'raw-loader' });
@@ -9,5 +11,8 @@ module.exports = {
     // Enables the styled-components SWC transform
     styledComponents: true,
     serverComponents: true
-  }
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+  },
 };
