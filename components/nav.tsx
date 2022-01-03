@@ -46,19 +46,15 @@ const pages = [
   },
 ];
 
-const StyledHeader = styled.div`
-  position: relative;
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+}
 
-  .dots1 {
-    top: 6rem;
-    left: -1rem;
-  }
-
-  .dots2 {
-    top: -12rem;
-    right: -0.75rem;
-  }
-`;
+function StyledHeader ({ children }: Props) {
+  return <div className={`container mx-auto text-gray-800 relative`}>{children}</div>
+}
+  
 
 const StyledContainer = styled.div`
   background-color: transparent;
@@ -287,15 +283,15 @@ export const MobileNav = (props: any) => {
 
 export function Nav() {
   return (
-    <StyledHeader className="container mx-auto text-gray-800">
+    <StyledHeader>
       <StyledContainer className="w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5">
         <header className="w-full flex items-center justify-between relative z-50">
           <Brand profiles={socialLinks} />
           <Menu pages={pages} />
         </header>
       </StyledContainer>
-      <Dots className="dots1 absolute text-gray-500 max-w-md" />
-      <Dots className="dots2 absolute hidden lg:block text-gray-900 max-w-md" />
+      <div className="absolute top-[6rem] left-[-1rem] h-[600px] w-[340px] md:w-[400px] md:h-[700px] text-gray-500 max-w-md bg-[url('/images/dots.svg')] bg-[length:160px_160px]"/>
+      <div className="absolute top-[-12rem] right-[-0.75rem] hidden md:w-[400px] md:h-[700px] lg:block text-gray-900  max-w-md bg-[url('/images/dots.svg')] bg-[length:160px_160px]" />
     </StyledHeader>
   );
 }
