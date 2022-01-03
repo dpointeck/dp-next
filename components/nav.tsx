@@ -137,7 +137,6 @@ const StyledNav = styled.nav`
 
 
 const Brand = ({ profiles }: any) => {
-  console.log(styles)
   return (
     <div className={`${styles.brand} mt-4 w-full md:w-auto flex justify-between items-center`}>
       <Link href="/">
