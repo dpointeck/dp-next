@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import styled from "styled-components";
 
 import { IconTwitter } from "@svg/index";
 import { IconGithub } from "@svg/index";
@@ -53,88 +52,6 @@ type Props = {
   className?: string;
 }
 
-function StyledHeader ({ children }: Props) {
-  return <div className={`container mx-auto text-gray-800 relative`}>{children}</div>
-}
-  
-const StyledContainer = styled.div`
-  background-color: transparent;
-  background-image: transparent;
-  border-radius: 2rem;
-  position: relative;
-`;
-
-const StyledNav = styled.nav`
-  display: none;
-  padding: 1rem 2rem;
-  position: relative;
-  z-index: 10;
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: -5rem;
-    left: 0;
-    width: 100%;
-    height: 12rem;
-    background-image: ${(props) => props.theme.gradient[100]};
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    z-index: -1;
-  }
-
-  a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-
-    &:not(:last-child) {
-      margin-right: 2rem;
-    }
-
-    &:nth-child(1) svg {
-      height: 3.125rem;
-    }
-
-    &:nth-child(2) svg {
-      height: 2.5rem;
-    }
-
-    &:nth-child(3) svg {
-      height: 2.5rem;
-    }
-
-    &:nth-child(4) svg {
-      height: 2rem;
-      margin-left: -0.75rem;
-    }
-
-    &:hover {
-      &:nth-child(1) {
-        transform: rotate(3deg);
-      }
-
-      &:nth-child(2) {
-        transform: rotate(-3deg);
-      }
-
-      &:nth-child(3) {
-        transform: rotate(2.5deg);
-      }
-
-      &:nth-child(4) {
-        transform: rotate(-2.8deg);
-      }
-    }
-  }
-
-  @media (min-width: ${(props) => props.theme.screens.md}) {
-    display: flex;
-  }
-`;
-
 
 const Brand = ({ profiles }: any) => {
   return (
@@ -175,7 +92,7 @@ const Brand = ({ profiles }: any) => {
 
 const Menu = ({ pages }: any) => {
   return (
-    <StyledNav className="font-mono text-sm">
+    <nav className={`${styles.nav} font-mono text-sm`}>
       {pages.map((page: any) => (
         <Link href={page.href} key={page.name}>
           <a aria-label={page.name}>
@@ -184,7 +101,7 @@ const Menu = ({ pages }: any) => {
           </a>
         </Link>
       ))}
-    </StyledNav>
+    </nav>
   );
 };
 
@@ -207,15 +124,15 @@ export const MobileNav = (props: any) => {
 
 export function Nav() {
   return (
-    <StyledHeader>
-      <StyledContainer className="w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5">
+    <div className="container mx-auto text-gray-800 relative">
+      <div className={`${styles.container} w-full p-4 md:px-10 pb-10 pt-0 flex flex-wrap items-start mt-5`}>
         <header className="w-full flex items-center justify-between relative z-50">
           <Brand profiles={socialLinks} />
           <Menu pages={pages} />
         </header>
-      </StyledContainer>
+      </div>
       <div className="absolute top-[6rem] left-[-1rem] h-[600px] w-[340px] md:w-[400px] md:h-[700px] text-gray-500 max-w-md bg-[url('/images/dots.svg')] bg-[length:160px_160px]"/>
       <div className="absolute top-[-12rem] right-[-0.75rem] hidden md:w-[400px] md:h-[700px] lg:block text-gray-900  max-w-md bg-[url('/images/dots.svg')] bg-[length:160px_160px]" />
-    </StyledHeader>
+    </div>
   );
 }

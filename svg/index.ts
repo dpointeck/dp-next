@@ -1,10 +1,10 @@
-import IconTwitter from "./twitter.svg";
-import IconGithub from "./github.svg";
+import { IconTwitter } from "./twitter";
+import { IconGithub } from "./github";
 
-import IconAbout from "./about.svg";
-import IconJournal from "./journal.svg";
-import IconResources from "./resources.svg";
-import IconUses from "./uses.svg";
+import {IconAbout} from "./about";
+import {IconJournal} from "./journal";
+import {IconResources} from "./resources";
+import {IconUses} from "./uses";
 
 export {
   IconAbout,
