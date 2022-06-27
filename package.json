@@ -2,7 +2,7 @@
   "name": "dp-next",
   "version": "1.0.0",
   "engines": {
-    "node": "18.3.0"
+    "node": "16.x"
   },
   "scripts": {
     "dev": "next",
