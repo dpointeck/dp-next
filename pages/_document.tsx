@@ -40,7 +40,7 @@ class DpDocument extends Document {
           />
           <link rel="shortcut icon" href="/favicon.svg" />
         </Head>
-        <body className="pb-20 md:pb-0">
+        <body className="pb-20 md:pb-0 dark:bg-emerald-800 dark:text-gray-100">
           <Main />
           <Footer />
           <NextScript />

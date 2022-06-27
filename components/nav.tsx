@@ -57,7 +57,7 @@ const Brand = ({ profiles }: any) => {
   return (
     <div className={`${styles.brand} mt-4 w-full md:w-auto flex justify-between items-center`}>
       <Link href="/">
-        <a className="text-xl font-bold mr-4 flex items-center" aria-label="daniel pointecker">
+        <a className="text-xl font-bold mr-4 flex items-center dark:text-slate-200" aria-label="daniel pointecker">
           <div className={`${styles['brand__image-wrap']} p-1 rounded-full mr-4`}>
             <img
               src="/images/daniel_tanja.jpg"
@@ -79,7 +79,7 @@ const Brand = ({ profiles }: any) => {
               rel="noopener noreferrer"
             >
               {React.createElement(link.icon, {
-                className: "w-5 h-5",
+                className: "w-5 h-5 dark:text-slate-200",
               })}
             </a>
           );

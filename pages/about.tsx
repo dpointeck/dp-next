@@ -12,7 +12,7 @@ export default function AboutPage() {
           name="description"
           content="Hi there 👋 I'm Daniel Pointecker
           I'm a self taught web developer from Schärding, Upper Austria 🇦🇹
-          I'm makeing websites since 2014."
+          I'm making websites since 2014."
         />
         <link
           rel="canonical"

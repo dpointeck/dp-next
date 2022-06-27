@@ -22,7 +22,7 @@ export default function Post(props:any) {
           {props.title}
         </h1>
         <article
-          className="prose max-w-2xl mx-auto relative z-50 mt-8"
+          className="prose max-w-2xl mx-auto relative z-50 mt-8 dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: props.content }}
         ></article>
       </PageLayout>

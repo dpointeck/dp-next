@@ -54,6 +54,10 @@
   border-radius: 2rem;
   z-index: -1;
 
+  @media(prefers-color-scheme: dark) {
+    background-image: linear-gradient(to bottom, #065f46, #064e3b);
+  }
+
   @media (min-width: 768px) {
     top: 12rem;
     height: 20rem;
