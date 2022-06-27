@@ -1,8 +1,5 @@
-import { ThemeProvider } from "styled-components";
 import { useRouter } from "next/router";
 import { AppProps } from "next/app";
-
-import theme from "@styles/theme";
 
 import "../fonts/Inter/inter.css";
 import "../fonts/Greycliff/greycliff.css";
@@ -17,11 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const isHome = router.pathname === "/";
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <Nav />
-        <Component {...pageProps} />
-        <MobileNav />
-      </ThemeProvider>
+      <Nav />
+      <Component {...pageProps} />
+      <MobileNav />
     </>
   );
 }
