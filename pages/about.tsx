@@ -25,15 +25,15 @@ export default function AboutPage() {
           <article className="prose-xl max-w-2xl mx-auto relative z-50 mt-8">
             <h2>Hi there 👋 I'm Daniel Pointecker </h2>
             <p>
-              I'm a self taught web developer from Schärding,
+              I'm a self taught software developer from Schärding,
               <span className="whitespace-nowrap"> Upper Austria 🇦🇹</span>
               <br />
-              I'm makeing websites since 2014.
+              I'm making websites since 2014.
             </p>
             <p>
-              I love working in webdevelopment because our business is in
+              I love working in web development because our business is in
               constant change and there is always new stuff to learn. My day to
-              day tools are HTML, CSS, Javasript and PHP. At the moment I'm
+              day tools are HTML, CSS, Javascript and PHP. At the moment I'm
               studying golang and try to implement tests in my day to day work.
             </p>
           </article>

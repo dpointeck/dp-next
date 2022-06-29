@@ -5,10 +5,10 @@ export default function IndexPage() {
   return (
     <>
       <Head>
-        <title>Daniel Pointecker - Software Engineer</title>
+        <title>Daniel Pointecker - software dev</title>
         <meta
           name="description"
-          content="Hi there! I'm Daniel a Software Engineer from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources."
+          content="Hi there! I'm Daniel a software dev from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources."
         />
         <link
           rel="canonical"
@@ -29,8 +29,8 @@ export default function IndexPage() {
         </div>
         <div className="max-w-3xl mx-auto mt-10 md:mt-16 relative z-30">
           <p className="font-mono text-xl md:text-3xl leading-relaxed">
-            I'm an software engineer from 🇦🇹 focused on frontend development.
-            This site is ment to be a collection of stuff I constantly forget
+            I'm an software developer from 🇦🇹 focused on frontend development.
+            This site is meant to be a collection of stuff I constantly forget
             and have to search every time I need it. If here’s something helpful
             for you feel free to grab it.
           </p>
