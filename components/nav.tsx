@@ -79,7 +79,7 @@ const Brand = ({ profiles }: any) => {
               rel="noopener noreferrer"
             >
               {React.createElement(link.icon, {
-                className: "w-5 h-5 dark:text-slate-200",
+                className: "w-5 h-5 text-slate-700  dark:text-slate-200",
               })}
             </a>
           );
@@ -96,7 +96,9 @@ const Menu = ({ pages }: any) => {
       {pages.map((page: any) => (
         <Link href={page.href} key={page.name}>
           <a aria-label={page.name}>
-            {React.createElement(page.icon)}
+            {React.createElement(page.icon, {
+              className: "fill-slate-700 dark:fill-slate-200",
+            })}
             <span>{page.name}</span>
           </a>
         </Link>
@@ -112,7 +114,9 @@ export const MobileNav = (props: any) => {
         {pages.map((page: any) => (
           <Link href={page.href} key={page.name}>
             <a aria-label={page.name}>
-              {React.createElement(page.icon)}
+              {React.createElement(page.icon, {
+                className: "fill-slate-700 dark:fill-slate-200",
+              })}
               <span>{page.name}</span>
             </a>
           </Link>
