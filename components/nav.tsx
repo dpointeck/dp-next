@@ -55,9 +55,8 @@ type Props = {
 
 const Brand = ({ profiles }: any) => {
   return (
-    <div className={`${styles.brand} mt-4 w-full md:w-auto flex justify-between items-center`}>
-      <Link href="/">
-        <a className="text-xl font-bold mr-4 flex items-center dark:text-slate-200" aria-label="daniel pointecker">
+    <div className={`${styles.brand} mt-4 w-full md:w-auto flex justify-between items-center`} >
+      <Link href="/" className="text-xl font-bold mr-4 flex items-center dark:text-slate-200" aria-label="daniel pointecker">
           <div className={`${styles['brand__image-wrap']} p-1 rounded-full mr-4`}>
             <img
               src="/images/daniel_tanja.jpg"
@@ -66,7 +65,6 @@ const Brand = ({ profiles }: any) => {
             />
           </div>
           <span>daniel pointecker</span>
-        </a>
       </Link>
       <nav className={`${styles['social-nav']} flex items-center`}>
         {profiles.map((link: any) => {
@@ -95,12 +93,10 @@ const Menu = ({ pages }: any) => {
     <nav className={`${styles.nav} font-mono text-sm`}>
       {pages.map((page: any) => (
         <Link href={page.href} key={page.name}>
-          <a aria-label={page.name}>
             {React.createElement(page.icon, {
               className: "fill-slate-700 dark:fill-slate-200",
             })}
             <span>{page.name}</span>
-          </a>
         </Link>
       ))}
     </nav>
@@ -112,13 +108,11 @@ export const MobileNav = (props: any) => {
     <div className={`${styles.mobileMenu} font-mono text-sm`}>
       <nav>
         {pages.map((page: any) => (
-          <Link href={page.href} key={page.name}>
-            <a aria-label={page.name}>
+          <Link href={page.href} key={page.name} aria-label={page.name}>
               {React.createElement(page.icon, {
                 className: "fill-slate-700 dark:fill-slate-200",
               })}
               <span>{page.name}</span>
-            </a>
           </Link>
         ))}
       </nav>

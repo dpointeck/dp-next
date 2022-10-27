@@ -54,22 +54,18 @@ function PostsListYears({ years }:any) {
               {year.posts.map(function (post:any) {
                 return (
                   <li className="mt-4" key={post.slug}>
-                    <Link href={`/journal/${post.slug}`}>
-                      <a className="md:text-xl font-thin truncate pr-3 flex items-end">
+                    <Link href={`/journal/${post.slug}`} className="md:text-xl font-thin truncate pr-3 flex items-end">
                         {" "}
                         <span className="text-xs md:text-sm font-mono mr-3 text-gray-500 dark:text-slate-50/50">
                           {post.date}
                         </span>
                         <span className="truncate block">{post.title}</span>
-                      </a>
                     </Link>
-                    <Link href={`/journal/${post.slug}`}>
-                      <a className={`${styles.readMoreLink} font-mono flex`}>
+                    <Link href={`/journal/${post.slug}`} className={`${styles.readMoreLink} font-mono flex`}>
                         <span className="mr-3">read more</span>
                         <span className="arrow">
                           <Plus className="h-5 w-5" />
                         </span>
-                      </a>
                     </Link>
                   </li>
                 );
