@@ -1,8 +1,9 @@
 import remark from 'remark';
-import html from 'remark-html';
-import prism from 'remark-prism';
+import remarkHtml from 'remark-html';
+import remarkPrism from 'remark-prism';
 
 export default async function markdownToHtml(markdown: any): Promise<any> {
-  const result = await remark().use(html).use(prism).process(markdown);
+  //@ts-ignore
+  const result = await remark().use(remarkHtml).use(remarkPrism).process(markdown);
   return result.toString();
 }
