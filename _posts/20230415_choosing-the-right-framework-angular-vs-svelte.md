@@ -1,6 +1,6 @@
 ---
 slug: "choosing-the-right-framework-angular-vs-svelte"
-title: "Angular vs. Svelte: Picking the perfect framework for your next side project"
+title: "Angular vs. Svelte: Picking the Perfect Framework for Your Next Side Project"
 date: 2023-04-16
 metadesc: Explore the pros and cons of Angular and Svelte, two popular web development frameworks, and discover which one is the best fit for your specific project needs.
 ---
