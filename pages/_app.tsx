@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
           'dpointeck.dev', 
           'www.dpointeck.dev'
         ],
+      spa: 'auto'
     });
 
     function onRouteChangeComplete() {
