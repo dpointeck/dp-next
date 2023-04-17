@@ -21,20 +21,22 @@ export default function App({ Component, pageProps }: AppProps) {
     //  - Do not include https://
     //  - This must be an exact match of your domain.
     //  - If you're using www. for your domain, make sure you include that here.
-    Fathom.load('FZNGXPBT');
+    Fathom.load('FZNGXPBT', {
+      canonical: false
+    });
 
     function onRouteChangeComplete() {
       Fathom.trackPageview();
     }
     // Record a pageview when route changes
     router.events.on('routeChangeComplete', onRouteChangeComplete);
-    console.log(router)
+  
     // Unassign event listener
     return () => {
       router.events.off('routeChangeComplete', onRouteChangeComplete);
     };
   
-  }, []);
+  }, [router]);
 
   return (
     <>
