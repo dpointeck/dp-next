@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
     //  - Do not include https://
     //  - This must be an exact match of your domain.
     //  - If you're using www. for your domain, make sure you include that here.
-    Fathom.load( String(process.env.FATHOM_SITE_ID) );
+    Fathom.load( `${process.env.NEXT_PUBLIC_FATHOM_SITE_ID}` );
 
     function onRouteChangeComplete() {
       Fathom.trackPageview();

@@ -11,7 +11,7 @@ class DpDocument extends Document {
         <Head>
           <meta
             name="google-site-verification"
-            content={`${String(process.env.GOOGLE_SITE_VERIFY_ID)}`}
+            content={`${String(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID)}`}
           />
           <link rel="shortcut icon" href="/favicon.svg" />
         </Head>
