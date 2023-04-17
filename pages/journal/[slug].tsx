@@ -7,6 +7,7 @@ import { Context } from "vm";
 
 export default function Post(props:any) {
   const router = useRouter();
+  
   return (
     <>
       <Head>
@@ -14,7 +15,7 @@ export default function Post(props:any) {
         <meta name="description" content={props.metadesc} />
         <link
           rel="canonical"
-          href={`https://www.daniel-pointecker.net/${props.slug}`}
+          href={`https://www.daniel-pointecker.net${router.asPath}`}
         />
       </Head>
       <PageLayout className="relative z-50">
