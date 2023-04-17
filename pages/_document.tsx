@@ -1,6 +1,7 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import Footer from "@components/footer";
 import { ReactElement } from "react";
+import * as process from "process";
 
 class DpDocument extends Document {
   
@@ -10,7 +11,7 @@ class DpDocument extends Document {
         <Head>
           <meta
             name="google-site-verification"
-            content="vTEzO8d5lqdjmewCVAFto1DTheaJF7IyYuuLGjQxGoQ"
+            content={`${String(process.env.GOOGLE_SITE_VERIFY_ID)}`}
           />
           <link rel="shortcut icon" href="/favicon.svg" />
         </Head>
