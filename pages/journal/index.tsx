@@ -47,7 +47,7 @@ function PostsListYears({ years }:any) {
     <div className={`${styles.StyledPostsList} relative z-50 max-w-xl mx-auto`}>
       {years.map(function (year:any) {
         return (
-          <div key={year.year}>
+          <div key={year.year} className="mt-16">
             <h2 className="font-mono text-4xl">{year.year}</h2>
             <hr />
             <ul>
