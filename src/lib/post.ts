@@ -1,6 +1,7 @@
+import "server-only";
 import matter from "gray-matter";
 import yaml from "js-yaml";
-import markdownToHtml from "./markdown";
+import {markdownToHtml} from "./markdown";
 import FindFiles from "file-regex";
 import path from "path";
 import fs from "fs";

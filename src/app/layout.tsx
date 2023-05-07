@@ -1,12 +1,19 @@
 import { Nav, MobileNav } from "@components/nav";
+import localFont from 'next/font/local';
 
-import "@fonts/Inter/inter.css";
+const inter = localFont({ src: 
+    "../fonts/Inter/Inter-Regular.woff"
+})
+//import "@fonts/Inter/inter.css";
 import "@fonts/Greycliff/greycliff.css";
 import "@fonts/CodeSaver/codesaver.css";
 import "@styles/index.css";
 import "@styles/prism-synthwave.css";
 import Footer from "@components/footer";
 import Fathom from "@components/Fathom";
+
+
+ 
 
 export const metadata = {
     title: 'Next.js',

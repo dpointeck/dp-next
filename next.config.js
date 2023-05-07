@@ -3,6 +3,7 @@ const nextConfig = {
   webpack: (config) => {
     config.module.rules.push({ test: /\.md$/, use: 'raw-loader' });
     config.module.rules.push({ test: /\.yml$/, use: 'raw-loader' });
+    config.externals = [...config.externals, "canvas", "jsdom"];
     return config;
   },
   swcMinify: true
