@@ -40,6 +40,9 @@
       ],
       "@util/*": [
         "lin/*"
+      ],
+      "@lib/*": [
+        "lib/*"
       ]
     },
     "incremental": true,
