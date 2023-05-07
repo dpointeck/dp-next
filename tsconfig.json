@@ -42,13 +42,19 @@
         "lin/*"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "@types/custom.d.ts"
+    "@types/custom.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
