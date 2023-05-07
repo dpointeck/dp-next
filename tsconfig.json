@@ -21,34 +21,43 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@api/*": [
-        "api/*"
+        "src/api/*"
       ],
       "@layouts/*": [
-        "layouts/*"
+        "src/layouts/*"
       ],
       "@pages/*": [
-        "pages/*"
+        "src/pages/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "src/styles/*"
       ],
       "@svg/*": [
-        "svg/*"
+        "src/svg/*"
       ],
-      "@util/*": [
-        "lin/*"
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@fonts/*": [
+        "src/fonts/*"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "@types/custom.d.ts"
+    "@types/custom.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

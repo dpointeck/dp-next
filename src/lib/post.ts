@@ -40,7 +40,7 @@ export async function getPostBySlug(slug: string) {
 
   if (result.length) {
     const post = result[0].file;
-    const fileContent = await import(`../_posts/${post}`);
+    const fileContent = await import(`../../_posts/${post}`);
     const meta = matter(fileContent.default);
     const content = await markdownToHtml(meta.content);
 
@@ -55,7 +55,7 @@ export async function getPostBySlug(slug: string) {
 }
 
 export async function getConfig(): Promise<any> {
-  const config = await require(`../config.yml`);
+  const config = await require(`../../config.yml`);
   return yaml.load(config.default);
 }
 
