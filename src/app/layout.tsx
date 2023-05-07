@@ -1,10 +1,10 @@
 import { Nav, MobileNav } from "@components/nav";
 
-import "../fonts/Inter/inter.css";
-import "../fonts/Greycliff/greycliff.css";
-import "../fonts/CodeSaver/codesaver.css";
-import "../styles/index.css";
-import "../styles/prism-synthwave.css";
+import "@fonts/Inter/inter.css";
+import "@fonts/Greycliff/greycliff.css";
+import "@fonts/CodeSaver/codesaver.css";
+import "@styles/index.css";
+import "@styles/prism-synthwave.css";
 import Footer from "@components/footer";
 import Fathom from "@components/Fathom";
 

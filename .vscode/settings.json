@@ -2,5 +2,7 @@
   "workbench.colorCustomizations": {
     "activityBar.activeBorder": "#180810"
   },
-  "peacock.color": "#1857a4"
+  "peacock.color": "#1857a4",
+  "typescript.tsdk": "node_modules/.pnpm/typescript@5.0.2/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

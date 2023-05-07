@@ -21,28 +21,28 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": [
-        "components/*"
+        "src/components/*"
       ],
       "@api/*": [
-        "api/*"
+        "src/api/*"
       ],
       "@layouts/*": [
-        "layouts/*"
+        "src/layouts/*"
       ],
       "@pages/*": [
-        "pages/*"
+        "src/pages/*"
       ],
       "@styles/*": [
-        "styles/*"
+        "src/styles/*"
       ],
       "@svg/*": [
-        "svg/*"
-      ],
-      "@util/*": [
-        "lin/*"
+        "src/svg/*"
       ],
       "@lib/*": [
-        "lib/*"
+        "src/lib/*"
+      ],
+      "@fonts/*": [
+        "src/fonts/*"
       ]
     },
     "incremental": true,
