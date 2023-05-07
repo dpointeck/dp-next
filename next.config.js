@@ -5,10 +5,7 @@ const nextConfig = {
     config.module.rules.push({ test: /\.yml$/, use: 'raw-loader' });
     return config;
   },
-  swcMinify: true,
-  experimental: {
-    appDir: true,
-  }
+  swcMinify: true
 };
 
 module.exports = nextConfig;
