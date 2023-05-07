@@ -1,31 +1,23 @@
 import Head from "next/head";
 import Link from "next/link";
 import { getConfig, getPostsByYear } from "../../lib/post";
-import PageLayout from "@layouts/pageLayout";
-import PageHeader from "@components/pageHeader";
 import Plus from "@svg/Plus.js";
 import styles from "./index.module.scss";
+import PageHeader from "@components/pageHeader";
+
+export const metadata = {
+    title: "Journal",
+    description: "Read posts around my findings in web development and software engineering.",
+    canonical: "https://www.daniel-pointecker.net/journal/"
+}
 
 export default function JournalPage({ years }:any): unknown {
   return (
     <>
-      <Head>
-        <title>Journal</title>
-        <meta
-          name="description"
-          content="Read posts around my findings in web development and software engineering."
-        ></meta>
-        <link
-          rel="canonical"
-          href="https://www.daniel-pointecker.net/journal/"
-        />
-      </Head>
-      <PageLayout>
         <PageHeader>
           <span>Journal</span>
         </PageHeader>
         <PostsListYears years={years} />
-      </PageLayout>
     </>
   );
 }

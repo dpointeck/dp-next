@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import PageLayout from "../layouts/pageLayout";
+import PageLayout from "../../layouts/pageLayout";
 import PageHeader from "@components/pageHeader";
 
 export default function SiteNoticePage() {

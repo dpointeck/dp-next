@@ -16,6 +16,7 @@
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.14",
     "babel-plugin-inline-react-svg": "^2.0.2",
+    "eslint-config-next": "^13.4.1",
     "file-regex": "^3.1.0",
     "glob": "^7.2.3",
     "gray-matter": "^4.0.3",
@@ -40,7 +41,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "eslint-config-next": "^13.2.4",
     "fathom-client": "^3.5.0"
   }
 }
