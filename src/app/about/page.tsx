@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.daniel-pointecker.net/about/"
     }
-
 }
 
 

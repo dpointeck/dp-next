@@ -39,20 +39,17 @@ export async function getPostBySlug(slug: string) {
   let regex = new RegExp("\\d{8}_" + slug + ".md");
   const result = await FindFiles("_posts", regex);
 
-  if (result.length) {
     const post = result[0].file;
     const fileContent = await import(`../../_posts/${post}`);
     const meta = matter(fileContent.default);
     const content = await markdownToHtml(meta.content);
 
     return {
-      title: meta.data.title,
-      metadesc: meta.data.metadesc,
-      content: content,
-      slug: meta.data.slug,
+      title: meta.data.title ?? "",
+      metadesc: meta.data.metadesc ?? "",
+      content: content ?? "",
+      slug: meta.data.slug ?? "",
     };
-  }
-  return false;
 }
 
 export async function getConfig(): Promise<any> {
