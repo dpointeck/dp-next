@@ -3,6 +3,15 @@ import PageHeader from "@components/pageHeader";
 import Plus from "@svg/Plus.js";
 import styles from "./index.module.scss";
 import { getPostsByYear } from "@lib/post";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Journal",
+    description: `My journal about work and side projects`,
+    alternates: {
+        canonical: "https://www.daniel-pointecker.net/journal/"
+    }
+}
 
 export default async function Page() {
     const posts = await getPostsByYear();
