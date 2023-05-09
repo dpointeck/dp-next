@@ -48,7 +48,7 @@ function PostsListYears({ posts }:any) {
                         <span className="truncate block">{post.title}</span>
                     </Link>
                     <Link href={`/journal/${post.slug}`} className={`${styles.readMoreLink} font-mono flex`}>
-                        <span className="mr-3">read more</span>
+                        <span className="mr-3">read full article</span>
                         <span className="arrow">
                           <Plus className="h-5 w-5" />
                         </span>
