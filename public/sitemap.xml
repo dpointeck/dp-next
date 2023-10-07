@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://www.daniel-pointecker.net</loc>
+        <lastmod>2023-06-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.daniel-pointecker.net/journal</loc>
+        <lastmod>2023-06-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.daniel-pointecker.net/journal/go-itsi</loc>
+        <lastmod>2022-05-23</lastmod>
+    </url>
+    <url>
+        <loc>https://www.daniel-pointecker.net/journal/my-vscode-setup</loc>
+        <lastmod>2021-05-23</lastmod>
+    </url>
+    <url>
+        <loc>https://www.daniel-pointecker.net/journal/the-state-of-2020-and-whats-next</loc>
+        <lastmod>2021-12-23</lastmod>
+    </url>
+    <url>
+        <loc>https://www.daniel-pointecker.net/journal/macos-alternatives-for-web-development</loc>
+        <lastmod>2021-01-26</lastmod>
+    </url>
+    <url>
+        <loc>https://www.daniel-pointecker.net/journal/favourite-mac-apps-2021</loc>
+        <lastmod>2021-11-05</lastmod>
+    </url>
+    <url>
+        <loc>
+            https://www.daniel-pointecker.net/journal/announcing-my-journey-to-build-a-ebook-reader-desktop-app</loc>
+        <lastmod>2023-05-05</lastmod>
+    </url>
+    <url>
+        <loc>
+            https://www.daniel-pointecker.net/journal/choosing-the-right-framework-angular-vs-svelte</loc>
+        <lastmod>2023-06-13</lastmod>
+    </url>
+    <url>
+        <loc>
+            https://www.daniel-pointecker.net/journal/building-timetrim-nuxtjs3-app-deployed-netlify-lunchbreak</loc>
+        <lastmod>2023-07-20</lastmod>
+    </url>
+    <url>
+        <loc>
+            https://www.daniel-pointecker.net/journal/learning-github-actions-automation-journey</loc>
+        <lastmod>2023-08-05</lastmod>
+    </url>
+</urlset>
+</xml>
