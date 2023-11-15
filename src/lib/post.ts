@@ -1,33 +1,24 @@
 import "server-only";
-import matter from "gray-matter";
 import yaml from "js-yaml";
-import {markdownToHtml} from "./markdown";
-import FindFiles from "file-regex";
-import path from "path";
-import fs from "fs";
+import { allPosts } from 'contentlayer/generated'
+import { getYear, parseISO } from "date-fns";
 
-const postsDirectory = path.join(process.cwd(), "_posts");
 
 export async function getAllPosts() {
-  const allPosts = fs.readdirSync(postsDirectory);
 
-  const posts = allPosts.map((fileName) => {
-    const fileContents = fs.readFileSync(
-      path.join(postsDirectory, fileName),
-      "utf8"
-    );
-    const { data } = matter(fileContents);
+  const posts = allPosts.map((post) => {
+   
 
-    const year = data.date.getFullYear();
-    const date = new Date(data.date);
+    const date = parseISO(post.date);
+    const year = getYear(date);
     const shortDate = date.toLocaleDateString("en-AT", {
       day: "2-digit",
       month: "short",
     });
     return {
-      slug: data.slug,
-      title: data.title,
-      metadesc: data.metadesc,
+      slug: post.slug,
+      title: post.title,
+      metadesc: post.metadesc,
       date: shortDate,
       year: year,
     };
@@ -36,19 +27,13 @@ export async function getAllPosts() {
 }
 
 export async function getPostBySlug(slug: string) {
-  let regex = new RegExp("\\d{8}_" + slug + ".md");
-  const result = await FindFiles("_posts", regex);
-
-    const post = result[0].file;
-    const fileContent = await import(`../../_posts/${post}`);
-    const meta = matter(fileContent.default);
-    const content = await markdownToHtml(meta.content);
+    const post = allPosts.find((post) => post.slug === slug);
 
     return {
-      title: meta.data.title ?? "",
-      metadesc: meta.data.metadesc ?? "",
-      content: content ?? "",
-      slug: meta.data.slug ?? "",
+      title: post?.title ?? "",
+      metadesc: post?.metadesc ?? "",
+      content:  post?.body.html ??"",
+      slug: post?.slug ?? "",
     };
 }
 

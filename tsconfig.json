@@ -43,7 +43,8 @@
       ],
       "@fonts/*": [
         "src/fonts/*"
-      ]
+      ],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "incremental": true,
     "plugins": [
@@ -57,7 +58,8 @@
     "**/*.ts",
     "**/*.tsx",
     "@types/custom.d.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
   ],
   "exclude": [
     "node_modules"
