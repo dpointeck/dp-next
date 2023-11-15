@@ -1,3 +1,5 @@
+const { withContentlayer } = require('next-contentlayer')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config) => {
@@ -6,7 +8,8 @@ const nextConfig = {
     config.externals = [...config.externals, "canvas", "jsdom", "remark-prism"];
     return config;
   },
-  swcMinify: true
+  swcMinify: true,
+  reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);
