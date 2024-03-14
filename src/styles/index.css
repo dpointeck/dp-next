@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* Your own custom utilities */
+html {
+  margin-left: calc(100vw - 100%);
+}
+
 .prose pre code {
   font-size: 0.875rem;
 }
