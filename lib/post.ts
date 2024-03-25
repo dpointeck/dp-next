@@ -38,7 +38,7 @@ export async function getPostBySlug(slug: string) {
 }
 
 export async function getConfig(): Promise<any> {
-  const config = await require(`../../config.yml`);
+  const config = await require(`../config.yml`);
   return yaml.load(config.default);
 }
 

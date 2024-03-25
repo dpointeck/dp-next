@@ -1,4 +1,4 @@
-import { Nav, MobileNav } from "@components/nav";
+import { Nav, MobileNav } from "components/nav";
 import localFont from 'next/font/local';
 
 const inter = localFont({ src: 
@@ -9,8 +9,8 @@ import "@fonts/Greycliff/greycliff.css";
 import "@fonts/CodeSaver/codesaver.css";
 import "@styles/index.css";
 import "@styles/prism-synthwave.css";
-import Footer from "@components/footer";
-import Fathom from "@components/Fathom";
+import Footer from "components/footer";
+import Fathom from "components/Fathom";
 
 export default function RootLayout({
     children,

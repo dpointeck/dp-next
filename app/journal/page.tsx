@@ -1,8 +1,8 @@
 import Link from "next/link";
-import PageHeader from "@components/pageHeader";
+import PageHeader from "components/pageHeader";
 import Plus from "@svg/Plus.js";
 import styles from "./index.module.scss";
-import { getPostsByYear } from "@lib/post";
+import { getPostsByYear } from "lib/post";
 import { Metadata } from "next";
 import { allPosts } from 'contentlayer/generated'
 

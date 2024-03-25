@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getPostBySlug } from "@lib/post";
+import { getPostBySlug } from "lib/post";
 
 type PageProps = {
     params: { slug: string }

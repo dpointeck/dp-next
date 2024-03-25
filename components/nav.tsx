@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 
-import { IconTwitter } from "@svg/index";
-import { IconGithub } from "@svg/index";
+import { IconTwitter } from "svg/index";
+import { IconGithub } from "svg/index";
 
-import { IconAbout } from "@svg/index";
-import { IconJournal } from "@svg/index";
-import { IconResources } from "@svg/index";
-import { IconUses } from "@svg/index";
+import { IconAbout } from "svg/index";
+import { IconJournal } from "svg/index";
+import { IconResources } from "svg/index";
+import { IconUses } from "svg/index";
 
 import styles from './nav.module.scss';
 
