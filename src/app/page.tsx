@@ -2,7 +2,10 @@ import styles from "./index.module.scss";
 
 export const metadata = {
     title: "Daniel Pointecker - software dev",
-    description: "Hi there! I'm Daniel a software dev from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources"
+    description: "Hi there! I'm Daniel a software dev from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources",
+    alternates: {
+        canonical: "https://www.daniel-pointecker.net"
+    }
 }
 
 export default function IndexPage() {
