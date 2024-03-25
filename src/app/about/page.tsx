@@ -9,7 +9,7 @@ export const metadata: Metadata = {
           I'm a self taught web developer from Schärding, Upper Austria 🇦🇹
           I'm making websites since 2014`,
     alternates: {
-        canonical: "https://www.daniel-pointecker.net/about/"
+        canonical: "https://www.daniel-pointecker.net/about"
     }
 }
 
