@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Journal",
     description: `My journal about work and side projects`,
     alternates: {
-        canonical: "https://www.daniel-pointecker.net/journal/"
+        canonical: "https://www.daniel-pointecker.net/journal"
     }
 }
 
