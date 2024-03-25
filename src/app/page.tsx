@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import styles from "./index.module.scss";
 
 export const metadata = {
@@ -11,6 +12,9 @@ export const metadata = {
 export default function IndexPage() {
     return (
         <>
+            <Head>
+                <meta name="robots" content="all" />
+            </Head>
             <link
                 rel="canonical"
                 href="https://www.daniel-pointecker.net/"
