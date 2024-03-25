@@ -1,5 +1,6 @@
 import PageHeader from "components/pageHeader";
 import { Metadata } from "next";
+import { getData } from "lib/uses";
 
 export const metadata: Metadata = {
     title: "Uses",
@@ -8,12 +9,37 @@ export const metadata: Metadata = {
     }
 }
 
-export default function UsesPage() {
+export default async function UsesPage() {
+    const usesData = await getData();
+    console.log(usesData);
     return (
         <>
             <div className="pb-20">
                 <PageHeader>Uses</PageHeader>
-                <p className="mt-4 text-center">under development</p>
+                <section>
+                    <h2>Tech</h2>
+                    <ul>
+                        {usesData.equiptment.map((item: string) => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ul>
+                </section>
+                <section>
+                    <h2>Software</h2>
+                    <ul>
+                        {usesData.software.map((item: string) => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ul>
+                </section>
+                <section>
+                    <h2>EDC</h2>
+                    <ul>
+                        {usesData.edc.map((item: string) => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ul>
+                </section>
             </div>
         </>
     );
