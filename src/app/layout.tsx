@@ -26,7 +26,6 @@ export default function RootLayout({
                     content={`${String(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID)}`}
                 />
                 <meta name="robots" content="all" />
-            </Head>
             </head>
             <body className="pb-20 md:pb-0 dark:bg-emerald-800 dark:text-gray-100">
                 <Fathom />
