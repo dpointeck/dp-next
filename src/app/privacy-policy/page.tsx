@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     title: "Privacy Policy",
     description: "This Privacy Policy provides information about which data we collect, what we use it for and which rights you have.",
     alternates: {
-        canonical: "https://www.daniel-pointecker.net/privacy-policy/"
+        canonical: "https://www.daniel-pointecker.net/privacy-policy"
     }
 }
 

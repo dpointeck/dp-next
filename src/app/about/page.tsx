@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Metadata } from "next";
 
 import PageHeader from "../../components/pageHeader";
