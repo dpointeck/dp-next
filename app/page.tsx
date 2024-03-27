@@ -13,7 +13,7 @@ export default function IndexPage() {
         <>
             <link
                 rel="canonical"
-                href="https://www.daniel-pointecker.net/"
+                href="https://www.daniel-pointecker.net"
             />
             <div className="container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible">
                 <div className="relative">

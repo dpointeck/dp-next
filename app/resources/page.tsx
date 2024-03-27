@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Resources",
     alternates: {
-        canonical: "https://www.daniel-pointecker.net/resources/"
+        canonical: "https://www.daniel-pointecker.net/resources"
     }
 }
 

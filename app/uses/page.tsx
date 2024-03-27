@@ -5,7 +5,7 @@ import { getData } from "lib/uses";
 export const metadata: Metadata = {
     title: "Uses",
     alternates: {
-        canonical: "https://www.daniel-pointecker.net/uses/"
+        canonical: "https://www.daniel-pointecker.net/uses"
     }
 }
 

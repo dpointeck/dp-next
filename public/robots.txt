@@ -1,4 +1,2 @@
 User-Agent: *
-Disallow: /uses
-Disallow: /resources
 Sitemap: https://www.daniel-pointecker.net/sitemap.xml
