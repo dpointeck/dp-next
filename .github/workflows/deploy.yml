@@ -18,13 +18,13 @@ jobs:
           password: ${{secrets.CR_PAT}}
 
       - name: 👷‍♂️ Build and push Docker image
-        uses: docker/build-push-action@v5.3.0
+        uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
         env:
-          IMAGE_TAG: $GITHUB_SHA
+          IMAGE_TAG: ${{ github.sha }}
           IMAGE_NAME: dp-next
   deploy:
     name: 🐳 Deploy
@@ -43,8 +43,8 @@ jobs:
             docker stop ${{ env.CONTAINER_NAME }} 
             docker rm ${{ env.CONTAINER_NAME }}
             docker pull ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-            docker run -d --restart=always --name ${{ env.CONTAINER_NAME }} -p 8001:3000 ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+            docker run -d --restart=always --name ${{ env.CONTAINER_NAME }} -p 8002:3000 ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
         env:
-          IMAGE_TAG: $GITHUB_SHA
+          IMAGE_TAG: ${{ github.sha }}
           IMAGE_NAME: dp-next
           CONTAINER_NAME: dp-next
