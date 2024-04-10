@@ -46,5 +46,8 @@ COPY --from=build /app/.next /app/.next
 COPY --from=build /app/public /app/public
 COPY --from=build /app/package.json /app/package.json
 
+ENV NEXT_PUBLIC_FATHOM_SITE_ID=FZNGXPBT
+ENV NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID=vTEzO8d5lqdjmewCVAFto1DTheaJF7IyYuuLGjQxGoQ
+
 USER bun
 CMD [ "bun", "run", "start" ]
