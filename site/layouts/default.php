@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?= snippet('nav') ?>
     <?= $slot ?>
 </body>
 

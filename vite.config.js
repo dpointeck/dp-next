@@ -9,7 +9,7 @@ export default ({ mode }) => ({
     outDir: resolve(process.cwd(), 'dist'),
     emptyOutDir: true,
     rollupOptions: {
-      input: ['resources/js/index.js'],
+      input: ['resources/ts/index.ts'],
     },
   },
   plugins: [kirby()],
