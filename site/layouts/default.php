@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?= vite()->css('js/index.ts') ?>
-    <?= vite()->js('js/index.ts', ['defer' => true]) ?>
+    <?= vite()->css('ts/index.ts') ?>
+    <?= vite()->js('ts/index.ts', ['defer' => true]) ?>
 </head>
 
 <body>

@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'MasstransitMono';
+    src: url('masstransitmono.woff2') format('woff2'),
+        url('masstransitmono.woff') format('woff');
+}
