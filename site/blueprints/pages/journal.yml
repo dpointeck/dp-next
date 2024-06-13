@@ -1,0 +1,24 @@
+title: Journal
+
+columns:
+  main:
+    width: 1/1
+    sections:
+      drafts:
+        type: pages
+        status: drafts
+        info: "{{page.date}}"
+        template: post
+        sortable: false
+        options:
+          draft: true
+      posts:
+        type: pages
+        info: "{{page.date}}"
+        status: published
+        template: post
+        search: true
+        sortable: false
+        sortBy: status asc date desc
+
+
