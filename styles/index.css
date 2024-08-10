@@ -1,6 +1,7 @@
-@layer variables, base, layout, components;
+@layer base, layout, components;
 
 @import 'variables.css';
+@import 'base.css';
 
 html {
   margin-left: calc(100vw - 100%);

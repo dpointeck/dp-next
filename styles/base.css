@@ -1,0 +1,15 @@
+@layer base {
+   
+    * {
+        transition: background-color 0.1s ease, color 0.14s ease, border-color 0.14s ease;
+      }
+   
+    body {
+        background-color: var(--primary-background-color);
+        color: var(--primary-text-color);
+    }
+
+    a, a:visited, a:active, a:link {
+        color: var(--primary-text-color);
+    }
+}
