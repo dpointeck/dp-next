@@ -26,12 +26,11 @@ export default async function Page({ params }: PageProps) {
 
     return (
         <>
-            <div className="relative z-50">
-                <h1 className="text-center text-3xl md:text-4xl font-bold">
+            <div>
+                <h1>
                     { title }
                 </h1>
                 <article
-                    className="prose max-w-2xl mx-auto relative z-50 mt-8 dark:prose-invert"
                     dangerouslySetInnerHTML={{ __html: content }}
                 ></article>
             </div>

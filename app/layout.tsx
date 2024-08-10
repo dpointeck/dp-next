@@ -1,10 +1,10 @@
-import { Nav, MobileNav } from "components/nav";
+import { Nav } from "components/nav";
 import localFont from 'next/font/local';
 
 const inter = localFont({ src: 
     "../fonts/Inter/Inter-Regular.woff"
 })
-//import "@fonts/Inter/inter.css";
+
 import "@fonts/Greycliff/greycliff.css";
 import "@fonts/CodeSaver/codesaver.css";
 import "@styles/index.css";
@@ -27,11 +27,10 @@ export default function RootLayout({
                 />
                 <meta name="robots" content="all" />
             </head>
-            <body className="pb-20 md:pb-0 dark:bg-emerald-800 dark:text-gray-100">
+            <body>
                 <Fathom />
                 <Nav />
-                <MobileNav />
-                <div className="layout-page container mx-auto p-4 md:px-10">
+                <div>
                     {children}
                 </div>
                 <Footer />

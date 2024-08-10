@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <>
-            <div className="pt-0 pb-20">
+            <div>
                 <PageHeader>About</PageHeader>
-                <article className="prose-xl max-w-2xl mx-auto relative z-50 mt-8">
+                <article>
                     <h2>
                         Hi there! 👋 I'm Daniel Pointecker
                     </h2> 

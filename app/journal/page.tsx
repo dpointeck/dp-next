@@ -31,27 +31,27 @@ export default async function Page() {
 
 function PostsListYears({ posts }:any) {
   return (
-    <div className={`${styles.StyledPostsList} relative z-50 max-w-xl mx-auto`}>
+    <div>
       {posts.map(function (year:any) {
         return (
-          <div key={year.year} className="mt-16">
-            <h2 className="font-mono text-4xl">{year.year}</h2>
+          <div key={year.year}>
+            <h2>{year.year}</h2>
             <hr />
             <ul>
               {year.posts.map(function (post:any) {
                 return (
-                  <li className="mt-4" key={post.slug}>
-                    <Link href={`/journal/${post.slug}`} className="md:text-xl font-thin truncate pr-3 flex items-end">
+                  <li key={post.slug}>
+                    <Link href={`/journal/${post.slug}`}>
                         {" "}
-                        <span className="text-xs md:text-sm font-mono mr-3 text-gray-500 dark:text-slate-50/50">
+                        <span>
                           {post.date}
                         </span>
-                        <span className="truncate block">{post.title}</span>
+                        <span>{post.title}</span>
                     </Link>
-                    <Link href={`/journal/${post.slug}`} className={`${styles.readMoreLink} font-mono flex`}>
-                        <span className="mr-3">read full article</span>
-                        <span className="arrow">
-                          <Plus className="h-5 w-5" />
+                    <Link href={`/journal/${post.slug}`}>
+                        <span >read full article</span>
+                        <span>
+                          <Plus />
                         </span>
                     </Link>
                   </li>

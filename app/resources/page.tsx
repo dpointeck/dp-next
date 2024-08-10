@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default function ResourcesPage() {
     return (
         <>
-            <div className="pb-20">
+            <div>
                 <PageHeader>Resources</PageHeader>
-                <p className="mt-4 text-center">coming soon</p>
+                <p>coming soon</p>
             </div>
         </>
     );

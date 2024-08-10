@@ -14,7 +14,7 @@ export default async function UsesPage() {
     console.log(usesData);
     return (
         <>
-            <div className="pb-20">
+            <div>
                 <PageHeader>Uses</PageHeader>
                 <section>
                     <h2>Tech</h2>

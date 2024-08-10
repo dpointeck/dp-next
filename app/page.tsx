@@ -15,20 +15,19 @@ export default function IndexPage() {
                 rel="canonical"
                 href="https://www.daniel-pointecker.net"
             />
-            <div className="container p-4 md:p-10 mx-auto relative overflow-hidden md:overflow-visible">
-                <div className="relative">
-                    <h1 className={`${styles.hi} font-mono`}>
-                        <span className={styles.hi__wavy}>👋</span>
-                        <span className={styles.hi__top}>Hi there I'm</span>
+            <div>
+                <div>
+                    <h1>
+                        <span>👋</span>
+                        <span>Hi there I'm</span>
                         <br />
-                        <span className={styles.hi__daniel}>daniel</span>
+                        <span>daniel</span>
                         <br />
-                        <span className={styles.hi__pointecker}>pointecker</span>
-                        <div className={styles.bgTile} />
+                        <span>pointecker</span>
                     </h1>
                 </div>
-                <div className="max-w-3xl mx-auto mt-10 md:mt-16 relative z-30">
-                    <p className="font-mono text-xl md:text-3xl leading-relaxed">
+                <div>
+                    <p>
                         I'm an software developer from 🇦🇹 focused on frontend development.
                         This site is meant to be a collection of stuff I constantly forget
                         and have to search every time I need it. If here’s something helpful

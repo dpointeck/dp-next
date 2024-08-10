@@ -1,14 +1,10 @@
 import "server-only";
-import yaml from "js-yaml";
 import { allPosts } from 'contentlayer/generated'
 import { getYear, parseISO } from "date-fns";
 
 
 export async function getAllPosts() {
-
   const posts = allPosts.map((post) => {
-   
-
     const date = parseISO(post.date);
     const year = getYear(date);
     const shortDate = date.toLocaleDateString("en-AT", {
@@ -35,11 +31,6 @@ export async function getPostBySlug(slug: string) {
       content:  post?.body.html ??"",
       slug: post?.slug ?? "",
     };
-}
-
-export async function getConfig(): Promise<any> {
-  const config = await require(`../config.yml`);
-  return yaml.load(config.default);
 }
 
 export async function getPostsByYear(): Promise<any> {
