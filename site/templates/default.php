@@ -1,3 +1,1 @@
-<?php layout() ?>
-
-<h1><?= $page->title() ?></h1>
+<div>seas</div>
