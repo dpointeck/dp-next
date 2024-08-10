@@ -8,7 +8,6 @@ const inter = localFont({ src:
 import "@fonts/Greycliff/greycliff.css";
 import "@fonts/CodeSaver/codesaver.css";
 import "@styles/index.css";
-import "@styles/prism-synthwave.css";
 import Footer from "components/footer";
 import Fathom from "components/Fathom";
 

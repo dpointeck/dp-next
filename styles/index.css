@@ -1,12 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer variables, base, layout, components;
 
-/* Your own custom utilities */
+@import 'variables.css';
+
 html {
   margin-left: calc(100vw - 100%);
-}
-
-.prose pre code {
-  font-size: 0.875rem;
 }
