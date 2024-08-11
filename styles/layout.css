@@ -1,0 +1,10 @@
+@layer layout {
+    
+    .site-header {
+        padding: 24px;
+    }
+
+    .site-content {
+        padding: 24px;
+    }
+}

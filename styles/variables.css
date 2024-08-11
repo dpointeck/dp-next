@@ -1,6 +1,8 @@
 :root {
     --primary-background-color: #d6d3d1;
     --primary-text-color: #333;
+    --font-sans: var(--font-greycliff), system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-mono: var(--font-code-saver), ui-monospace;
 }
 
 [data-theme="dark"] {

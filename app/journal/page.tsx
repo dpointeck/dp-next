@@ -1,11 +1,7 @@
 import Link from "next/link";
 import PageHeader from "components/pageHeader";
-import Plus from "@svg/Plus.js";
-import styles from "./index.module.scss";
 import { getPostsByYear } from "lib/post";
 import { Metadata } from "next";
-import { allPosts } from 'contentlayer/generated'
-
 
 export const metadata: Metadata = {
     title: "Journal",
@@ -50,9 +46,6 @@ function PostsListYears({ posts }:any) {
                     </Link>
                     <Link href={`/journal/${post.slug}`}>
                         <span >read full article</span>
-                        <span>
-                          <Plus />
-                        </span>
                     </Link>
                   </li>
                 );

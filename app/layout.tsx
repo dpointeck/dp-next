@@ -30,7 +30,7 @@ export default function RootLayout({
             <body>
                 <Fathom />
                 <Nav />
-                <div>{children}</div>
+                <main className="site-content">{children}</main>
                 <Footer />
             </body>
         </html>
