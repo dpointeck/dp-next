@@ -8,7 +8,6 @@ const nextConfig = {
     config.externals = [...config.externals, "canvas", "jsdom", "remark-prism"];
     return config;
   },
-  swcMinify: true,
   reactStrictMode: true,
 };
 
