@@ -29,7 +29,7 @@ export default function IndexPage() {
                 </div>
                 <div className="max-w-3xl mx-auto mt-10 md:mt-16 relative z-30">
                     <p className="font-mono text-xl md:text-3xl leading-relaxed">
-                        I'm an software developer from 🇦🇹 focused on frontend development.
+                        I'm a software developer from 🇦🇹 focused on frontend development.
                         This site is meant to be a collection of stuff I constantly forget
                         and have to search every time I need it. If here’s something helpful
                         for you feel free to grab it.
