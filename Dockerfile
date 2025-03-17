@@ -40,5 +40,5 @@ COPY --from=builder /app/package.json ./package.json
 # Expose the port Next.js runs on
 EXPOSE 3000
 
-# Start the Next.js application in production mode
-CMD ["pnpm", "start"]
+# Start the Next.js application in production mode directly with Node
+CMD ["node", "node_modules/next/dist/bin/next", "start"]
