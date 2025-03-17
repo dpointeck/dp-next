@@ -1,27 +1,44 @@
-# base node image
-#FROM node:18-bullseye-slim as base
+# Base Node image
 FROM node:20-bookworm-slim as base
 
-# set for base and all layer that inherit from it
-ENV NODE_ENV development
+# Define build arguments for public environment variables
+ARG NEXT_PUBLIC_FATHOM_SITE_ID
+ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID
 
-# Install all node_modules, including dev dependencies
-FROM base as deps
+# Build stage: install dependencies and build the app
+FROM base as builder
 
 WORKDIR /app
 
-ADD package.json .npmrc ./
+# Copy package files
+COPY package.json .npmrc ./
+
+# Install pnpm and dependencies
 RUN npm install -g pnpm
+COPY pnpm-lock.yaml* ./
 RUN pnpm install
 
-# Finally, build the production image with minimal footprint
-FROM base
+# Copy source files and build the application
+COPY . .
+RUN pnpm build
 
-ENV NEXT_PUBLIC_FATHOM_SITE_ID=FZNGXPBT
-ENV NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID=vTEzO8d5lqdjmewCVAFto1DTheaJF7IyYuuLGjQxGoQ
+# Production stage: create the final image
+FROM base as production
+
+ENV NODE_ENV=production
+# Public env variables will be set at runtime or via build args
 
 WORKDIR /app
-COPY --from=deps /app/node_modules /app/node_modules
-ADD . .
 
-CMD [ "npm", "run", "dev" ]
+# Copy only necessary files from the builder stage
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Expose the port Next.js runs on
+EXPOSE 3000
+
+# Start the Next.js application in production mode
+CMD ["pnpm", "start"]
