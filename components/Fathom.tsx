@@ -1,28 +1,31 @@
-'use client'
-import { load, trackPageview } from 'fathom-client'
-import { useEffect, Suspense } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
+"use client";
 
+import { load, trackPageview } from "fathom-client";
+import { useEffect, Suspense } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 function TrackPageView() {
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+
+    // Load the Fathom script on mount
     useEffect(() => {
         load(`${process.env.NEXT_PUBLIC_FATHOM_SITE_ID}`, {
-            spa: 'auto',
-        })
+            auto: false,
+        });
+    }, []);
 
-        // Initialize Fathom when the app loads
-        // Example: yourdomain.com
-        //  - Do not include https://
-        //  - This must be an exact match of your domain.
-        //  - If you're using www. for your domain, make sure you include that here.
-        trackPageview()
+    // Record a pageview when route changes
+    useEffect(() => {
+        if (!pathname) return;
 
-        // Record a pageview when route changes
-    }, [pathname, searchParams])
+        trackPageview({
+            url: pathname + searchParams?.toString(),
+            referrer: document.referrer,
+        });
+    }, [pathname, searchParams]);
 
-    return null
+    return null;
 }
 
 export default function Fathom() {
@@ -30,5 +33,5 @@ export default function Fathom() {
         <Suspense fallback={null}>
             <TrackPageView />
         </Suspense>
-    )
+    );
 }
