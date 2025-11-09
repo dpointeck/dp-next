@@ -1,9 +1,16 @@
 import { Metadata } from "next";
-import { getPostBySlug } from "lib/post";
+import { getPostBySlug, getAllPosts } from "lib/post";
 
 type PageProps = {
     params: Promise<{ slug: string }>;
 };
+
+export async function generateStaticParams() {
+    const posts = await getAllPosts();
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
     // Await params to access the slug property

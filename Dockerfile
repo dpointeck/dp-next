@@ -20,7 +20,6 @@ RUN pnpm install
 
 # Copy source files and build the application
 COPY . .
-RUN pnpm exec contentlayer build
 RUN pnpm build
 
 # Production stage: create the final image

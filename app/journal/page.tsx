@@ -4,7 +4,6 @@ import Plus from "@svg/Plus.js";
 import styles from "./index.module.scss";
 import { getPostsByYear } from "lib/post";
 import { Metadata } from "next";
-import { allPosts } from 'contentlayer/generated'
 
 
 export const metadata: Metadata = {
