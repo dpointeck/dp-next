@@ -1,14 +1,13 @@
 import { Metadata } from "next";
 import { getPostBySlug } from "lib/post";
 
-// Using the projected PageProps from the error message directly
 type PageProps = {
-    params: Promise<any> & { slug: string };
+    params: Promise<{ slug: string }>;
 };
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    // Access the slug property directly, treating params as both a Promise and an object with slug
-    const slug = params.slug;
+    // Await params to access the slug property
+    const { slug } = await params;
     const { title, metadesc } = await getPostBySlug(slug);
 
     return {
@@ -21,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function Page({ params }: PageProps) {
-    // Access the slug property directly
-    const slug = params.slug;
+    // Await params to access the slug property
+    const { slug } = await params;
     const { title, content } = await getPostBySlug(slug);
 
     return (

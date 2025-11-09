@@ -8,6 +8,7 @@
     "export": "next build && next export"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "@tailwindcss/typography": "^0.5.14",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^14.18.63",
@@ -24,7 +25,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^9.6.0",
     "sass": "^1.77.8",
-    "tailwindcss": "^3.4.9",
+    "tailwindcss": "^4.1.17",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4"
   },
@@ -33,7 +34,7 @@
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
     "fathom-client": "^3.7.2",
-    "next": "^15.1.0",
+    "next": "^16.0.1",
     "next-contentlayer": "^0.3.4",
     "raw-loader": "^4.0.2",
     "react": "^19.0.0",

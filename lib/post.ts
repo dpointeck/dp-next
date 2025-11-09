@@ -38,8 +38,11 @@ export async function getPostBySlug(slug: string) {
 }
 
 export async function getConfig(): Promise<any> {
-  const config = await require(`../config.yml`);
-  return yaml.load(config.default);
+  const fs = await import('fs/promises');
+  const path = await import('path');
+  const configPath = path.join(process.cwd(), 'config.yml');
+  const configContent = await fs.readFile(configPath, 'utf-8');
+  return yaml.load(configContent);
 }
 
 export async function getPostsByYear(): Promise<any> {
