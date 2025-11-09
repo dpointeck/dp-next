@@ -1,5 +1,5 @@
 # Base Node image
-FROM node:20-bookworm-slim as base
+FROM node:22-bookworm-slim as base
 
 # Define build arguments for public environment variables
 ARG NEXT_PUBLIC_FATHOM_SITE_ID
