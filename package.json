@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "vite": "^7.2.4",
+    "vite-plugin-kirby": "^5.6.1"
+  },
+  "name": "dp-next",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "dev": "vite"
+  }
+}
