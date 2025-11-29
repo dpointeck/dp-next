@@ -1,6 +1,6 @@
 <head>
-    <?= vite()->css('main.css') ?>
-    <?= vite()->js('main.js') ?>
+    <?= vite()->css('css/main.css') ?>
+    <?= vite()->js('js/main.js') ?>
 </head>
 
 <h1><?= $page->title() ?></h1>
