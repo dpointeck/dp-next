@@ -3,22 +3,29 @@
 @layer global {
   :root {
     /* Font stacks */
-    --font-display: 'Visby CF', 'Trebuchet MS', sans-serif;
-    --font-sans: 'Visby CF', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --font-mono: 'CodeSaver', 'Menlo', 'Monaco', 'Courier New', monospace;
+    --font-display: "Visby CF", "Trebuchet MS", sans-serif;
+    --font-sans:
+      "Visby CF", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "CodeSaver", "Menlo", "Monaco", "Courier New", monospace;
   }
 
   html {
     font-family: var(--font-sans);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-display);
     font-weight: 700;
   }
 
-  code, pre {
+  code,
+  pre {
     font-family: var(--font-mono);
   }
 }
-

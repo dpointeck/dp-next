@@ -1,47 +1,47 @@
 /* CodeSaver Font */
 @font-face {
-  font-family: 'CodeSaver';
-  src: url('../fonts/code-saver_regular.woff2') format('woff2');
+  font-family: "CodeSaver";
+  src: url("../fonts/code-saver_regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CodeSaver';
-  src: url('../fonts/code-saver_italic.woff2') format('woff2');
+  font-family: "CodeSaver";
+  src: url("../fonts/code-saver_italic.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CodeSaver';
-  src: url('../fonts/code-saver_medium.woff2') format('woff2');
+  font-family: "CodeSaver";
+  src: url("../fonts/code-saver_medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CodeSaver';
-  src: url('../fonts/code-saver_medium-Italic.woff2') format('woff2');
+  font-family: "CodeSaver";
+  src: url("../fonts/code-saver_medium-Italic.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CodeSaver';
-  src: url('../fonts/code-saver_bold.woff2') format('woff2');
+  font-family: "CodeSaver";
+  src: url("../fonts/code-saver_bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'CodeSaver';
-  src: url('../fonts/code-saver_bold-italic.woff2') format('woff2');
+  font-family: "CodeSaver";
+  src: url("../fonts/code-saver_bold-italic.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -49,128 +49,128 @@
 
 /* Visby CF Font (Greycliff) */
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-Thin.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-Thin.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-ThinOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-ThinOblique.woff2") format("woff2");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-Light.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-LightOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-LightOblique.woff2") format("woff2");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-Regular.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-RegularOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-RegularOblique.woff2") format("woff2");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-Medium.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-MediumOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-MediumOblique.woff2") format("woff2");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-DemiBold.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-DemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-DemiBoldOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-DemiBoldOblique.woff2") format("woff2");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-Bold.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-BoldOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-BoldOblique.woff2") format("woff2");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-ExtraBold.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-ExtraBold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-ExtraBoldOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-ExtraBoldOblique.woff2") format("woff2");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-Heavy.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-Heavy.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Visby CF';
-  src: url('../fonts/VisbyCF-HeavyOblique.woff2') format('woff2');
+  font-family: "Visby CF";
+  src: url("../fonts/VisbyCF-HeavyOblique.woff2") format("woff2");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -178,8 +178,8 @@
 
 /* Visuela Font */
 @font-face {
-  font-family: 'Visuela';
-  src: url('../fonts/visuela.woff') format('woff');
+  font-family: "Visuela";
+  src: url("../fonts/visuela.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

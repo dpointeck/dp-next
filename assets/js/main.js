@@ -1,8 +1,6 @@
-import { Site } from './site.js';
+import { Site } from "./site.js";
 
 function main() {
-
-
   const site = new Site();
 
   site.run();
