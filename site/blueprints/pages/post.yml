@@ -1,0 +1,33 @@
+title: Blog Post
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          title:
+            type: text
+            required: true
+          text:
+            type: textarea
+            size: huge
+  sidebar:
+    width: 1/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          slug:
+            type: text
+            help: Used in the URL (auto-generated from folder name if blank)
+          date:
+            type: date
+          metadesc:
+            type: textarea
+            size: small
+            help: Meta description for SEO
+            width: 1/1
+      files:
+        type: files
