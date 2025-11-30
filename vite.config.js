@@ -32,7 +32,7 @@ export default ({ mode }) => ({
         '../content/**/*',
       ],
       // or disable watching
-      watch: false,
+      // watch: false,
 
       // Where the automatically generated `vite.config.php` file should be
       // placed. This has to match Kirby's config folder!

@@ -32,9 +32,9 @@
     "optimize-autoloader": true
   },
   "scripts": {
-    "start": [
-      "Composer\\Config::disableProcessTimeout",
-      "@php -S localhost:8000 kirby/router.php"
+    "dev": [
+       "Composer\\Config::disableProcessTimeout",
+       "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php -S localhost:8000 kirby/router.php\" \"npm run dev\""
     ]
   }
 }
