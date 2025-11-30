@@ -2,206 +2,284 @@
 
 ## Project Overview
 
-**dp-next** is a modern personal blog/portfolio website built with Next.js 15 and React 19. It's designed as a personal site for Daniel Pointecker, a software developer from Austria, featuring a journal section, resources page, and various utility pages.
+**dp-next** is a personal blog and portfolio website built with **Kirby CMS** and vanilla CSS/JavaScript. It's designed as a personal site for Daniel Pointecker, a software developer from Austria, featuring a journal section, resources page, and various utility pages.
 
 ### Key Technologies & Architecture
 
-- **Framework**: Next.js 15 (App Router)
-- **React**: 19.0.0 with React Server Components
-- **TypeScript**: Full TypeScript implementation
-- **Styling**: Tailwind CSS + SCSS modules (hybrid approach)
-- **Content Management**: Contentlayer for markdown-based content
-- **Analytics**: Fathom Analytics integration
-- **Build Tool**: Uses Bun (lockfile present)
+- **CMS**: Kirby 5.x (PHP-based, file-driven content management)
+- **Styling**: Vanilla CSS with CSS custom properties and cascade layers
+- **JavaScript**: Vanilla JavaScript (ES modules, no frameworks)
+- **Language**: PHP 8.1+ for templates and server logic
+- **Build Process**: None (no-build setup) - vanilla CSS and JS served directly
+- **Asset Management**: Optional kirby-vite plugin for production builds
+- **Fonts**: Custom WOFF2 fonts (Visby CF, CodeSaver)
 
 ## Architecture Patterns
 
-### 1. **App Router Structure** (Next.js 15)
+### 1. **Content Structure** (File-Based)
 ```
-app/
-├── layout.tsx           # Root layout with navigation, fonts, analytics
-├── page.tsx            # Home page with animated hero section
-├── about/page.tsx      # About page
-├── journal/            # Blog section
-│   ├── page.tsx        # Journal index with posts by year
-│   └── [slug]/page.tsx # Dynamic blog post pages
-├── resources/page.tsx  # Resources page
-├── uses/page.tsx       # Uses page (tools & equipment)
-├── privacy-policy/page.tsx
-└── site-notice/page.tsx
+content/
+├── home/
+│   └── home.txt              # Home page content
+├── journal/
+│   ├── journal.txt           # Journal index/overview
+│   └── [post-slug]/
+│       └── index.txt         # Individual blog post
+├── about/
+│   └── index.txt             # About page
+├── uses/
+│   └── uses.txt              # Uses/equipment page
+├── resources/
+│   └── resources.txt         # Resources page
+├── privacy-policy/
+│   └── privacy-policy.txt    # Privacy policy
+└── site-notice/
+    └── site-notice.txt       # Site notice
 ```
 
-### 2. **Content Management with Contentlayer**
-- **Posts**: Stored in `_posts/` directory as Markdown files
-- **Schema**: Defined in `contentlayer.config.ts`
-- **Fields**: `title`, `date`, `slug`, `metadesc`
-- **Processing**: Uses `rehype-pretty-code` with Shiki for syntax highlighting
-- **Theme**: GitHub Light theme for code blocks
+All content is stored as plain text files with frontmatter (YAML format). Kirby manages content through the CMS interface or direct file editing.
+
+### 2. **Template Architecture** (PHP)
+```
+site/
+├── templates/
+│   └── default.php           # Base template for all pages
+├── snippets/                 # Reusable template partials
+├── blueprints/
+│   ├── site.yml             # Site-wide blueprint
+│   └── pages/
+│       └── default.yml      # Default page blueprint
+└── config/
+    └── vite.config.php      # Asset pipeline config
+```
+
+Templates are PHP files that receive content from Kirby. The `default.php` template is used for all pages and handles rendering.
 
 ### 3. **Styling Architecture**
-- **Primary**: Tailwind CSS with custom configuration
-- **Secondary**: SCSS modules for component-specific styles
-- **Fonts**: Custom font loading (Greycliff, Inter, CodeSaver)
-- **Dark Mode**: CSS-based dark mode support with `prefers-color-scheme`
-- **Colors**: Custom yellow/green gradient branding
+- **Approach**: Vanilla CSS with no build dependencies
+- **Methodology**: CSS Cascade Layers (`@layer`) for organization
+- **Variables**: CSS custom properties in `:root` for theming
+- **Fonts**: WOFF2 format with preloading in template `<head>`
+- **Dark Mode**: `@media (prefers-color-scheme: dark)` media query support
+- **Responsiveness**: Mobile-first with standard media queries
 
-### 4. **Component Organization**
+### 4. **JavaScript Organization**
 ```
-components/
-├── nav.tsx              # Main navigation (desktop + mobile)
-├── footer.tsx           # Site footer
-├── pageHeader.tsx       # Reusable page header component
-└── Fathom.tsx          # Analytics tracking component
+assets/js/
+├── main.js              # Entry point - initializes Site class
+└── site.js              # Main Site class with functionality
 ```
 
-### 5. **Library Structure**
+- Uses vanilla JavaScript with ES modules
+- Classes and OOP patterns for code organization
+- No external dependencies or frameworks
+- Scripts loaded with `defer` attribute and `type="module"`
+
+### 5. **Asset Structure**
 ```
-lib/
-├── post.ts             # Post data fetching and processing
-└── uses.ts             # YAML data loading for uses page
+assets/
+├── css/
+│   ├── main.css         # Primary stylesheet with @layer organization
+│   └── fonts.css        # Font-face declarations
+├── js/
+│   ├── main.js          # Entry point
+│   └── site.js          # Site functionality
+└── fonts/               # Custom WOFF2 font files
 ```
 
 ## Development Workflow
 
-### Available Scripts
+### Available Commands
 ```bash
-npm run dev      # Development server
-npm run build    # Production build
-npm run start    # Production server
-npm run export   # Static export
+composer install  # Install PHP dependencies
+composer run dev  # Start development server (localhost:8000)
 ```
 
 ### Key Configuration Files
-- `next.config.js` - Next.js configuration with Contentlayer integration
-- `tailwind.config.js` - Tailwind configuration with custom fonts and colors
-- `contentlayer.config.ts` - Content processing configuration
-- `tsconfig.json` - TypeScript configuration with path aliases
+- `composer.json` - PHP dependencies (Kirby CMS, kirby-vite plugin)
+- `composer.lock` - Locked dependency versions
+- `site/blueprints/` - Content structure definitions (YAML)
+- `site/config/vite.config.php` - Asset pipeline configuration
+- `.htaccess` - Apache routing configuration
+- `index.php` - Application entry point
 
-### Path Aliases (tsconfig.json)
-```typescript
-"@components/*": ["components/*"]
-"@api/*": ["api/*"]
-"@layouts/*": ["layouts/*"]
-"@pages/*": ["pages/*"]
-"@styles/*": ["styles/*"]
-"@svg/*": ["svg/*"]
-"@lib/*": ["lib/*"]
-"@fonts/*": ["fonts/*"]
+### Kirby Bootstrap Process
+The `index.php` file boots Kirby by:
+```php
+require 'kirby/bootstrap.php';
+echo (new Kirby)->render();
 ```
+
+Kirby automatically routes requests to appropriate templates based on the content folder structure.
 
 ## Content Structure
 
 ### Blog Posts
-- **Location**: `_posts/` directory
-- **Format**: Markdown with frontmatter
-- **Naming**: `YYYYMMDD_slug.md` pattern
-- **Required Fields**:
+- **Location**: `content/journal/` directory
+- **Format**: Plain text files with YAML frontmatter
+- **Structure**: Each post is a folder with an `index.txt` file
+- **Content File Example**:
   ```yaml
-  ---
-  slug: post-slug
-  title: "Post Title"
-  date: YYYY-MM-DD
-  metadesc: "SEO description"
-  ---
+  Title: Post Title
+  Date: YYYY-MM-DD
+
+  ----
+
+  Post content in plain text/HTML format
   ```
 
-### Data Files
-- **Uses**: `data/uses.yml` - Equipment and software lists
-- **Config**: `config.yml` - Site configuration
+### Page Content Files
+All pages use `.txt` files with YAML frontmatter:
+- `content/home/home.txt` - Home page
+- `content/about/index.txt` - About page
+- `content/uses/uses.txt` - Uses/equipment page
+- `content/resources/resources.txt` - Resources page
+- `content/privacy-policy/privacy-policy.txt` - Privacy policy
+- `content/site-notice/site-notice.txt` - Site notice
+
+### Blueprints (Content Schema)
+Blueprints define which fields are available in the Kirby Panel:
+- Located in `site/blueprints/pages/`
+- YAML format for field definitions
+- Define content structure and editor UI
 
 ## Styling Guidelines
 
-### Color Scheme
-- **Primary Brand**: Yellow gradient (`#FFF95A` to `#FFF22E`)
-- **Dark Mode**: Green gradient (`#064e3b` to `#065f46`)
-- **Accent**: `#333` for text elements
+### CSS Architecture
+- **Approach**: Vanilla CSS with cascade layers for maintainability
+- **Organization**: Defined using `@layer reset, global, utilities, components, overrides`
+- **Variables**: CSS custom properties in `:root` scope
+- **No Build Tool**: CSS is served directly without compilation
 
 ### Typography
-- **Sans-serif**: Greycliff (primary), Inter (fallback)
-- **Monospace**: CodeSaver (primary)
-- **Hierarchy**: Font-mono for technical content, sans for body text
+```css
+:root {
+  --font-display: "Visby CF", "Trebuchet MS", sans-serif;
+  --font-sans: "Visby CF", -apple-system, BlinkMacSystemFont, ...;
+  --font-mono: "CodeSaver", "Menlo", "Monaco", ...;
+}
+```
 
-### Component Styling
-- **Approach**: Tailwind-first with SCSS modules for complex layouts
-- **Responsiveness**: Mobile-first with `md:` breakpoints
-- **Animations**: CSS transitions for hover effects
+- **Display/Headings**: Visby CF (custom font)
+- **Body**: Visby CF with system font fallbacks
+- **Monospace**: CodeSaver for code blocks and technical content
+
+### Color & Theming
+- **Light Mode**: Default color scheme optimized for light backgrounds
+- **Dark Mode**: Activated via `@media (prefers-color-scheme: dark)`
+- **Custom Properties**: Colors defined as CSS variables for easy theming
+- **Branding**: Yellow/green gradient aesthetic
+
+### Font Loading
+- **Format**: WOFF2 (modern, optimized)
+- **Preloading**: Critical fonts preloaded in template `<head>` for performance
+- **Location**: `assets/fonts/` directory
+- **Declaration**: `assets/css/fonts.css` handles all `@font-face` definitions
+
+### Responsive Design
+- **Mobile-First**: Base styles for mobile, enhanced with media queries
+- **Breakpoints**: Standard media queries (typically `min-width: 768px` for tablet up)
+- **Viewport Meta**: Set in template for mobile optimization
 
 ## Special Features
 
-### 1. **Animated Hero Section**
-- Custom SCSS animations in `app/index.module.scss`
-- Responsive typography with vw units
-- Branded background tiles with gradients
+### 1. **File-Based Content Management**
+- Pure file-based storage (no database required)
+- Version control friendly content
+- Direct file editing or Kirby Panel UI
 
-### 2. **Dual Navigation**
-- Desktop: Horizontal navigation with icon hover effects
-- Mobile: Fixed bottom navigation bar
-- Custom SVG icons in `svg/` directory
+### 2. **Template Rendering**
+- PHP templates receive page data from Kirby
+- Single `default.php` template handles all pages
+- Kirby provides helper functions like `$page->title()`, `$page->content()`
 
-### 3. **Content Processing**
-- Automatic syntax highlighting with Shiki
-- Custom rehype plugins for code formatting
-- SEO optimization with canonical URLs
+### 3. **Asset Preloading**
+- Critical fonts preloaded in `<head>` for better Core Web Vitals
+- CSS and JS loaded efficiently with `defer` and `async` attributes
 
 ### 4. **Dark Mode Support**
-- CSS-based dark mode using `prefers-color-scheme`
-- Consistent color scheme across all components
-- Gradient variations for different themes
+- CSS-based dark mode using `prefers-color-scheme` media query
+- No JavaScript required for theme switching
+- Consistent styling across all components
 
 ## Development Best Practices
 
-### Code Organization
-- **Server Components**: Use `"server-only"` import for server-side logic
-- **Client Components**: Minimal use, mainly for interactive elements
-- **Type Safety**: Full TypeScript coverage with strict mode
-- **Path Aliases**: Use configured aliases for clean imports
+### PHP Template Practices
+- **Template Logic**: Keep template logic minimal - use Kirby helper methods
+- **Variable Scope**: Content data accessed via `$page` object
+- **Security**: Use `$page->text()` for escaped output when appropriate
+- **Reusability**: Extract common markup into `site/snippets/`
+
+### CSS/Styling Practices
+- **No Build Tool**: Edit CSS directly in `assets/css/`
+- **Naming**: Use descriptive class names (avoid single-letter abbreviations)
+- **Specificity**: Leverage cascade layers to avoid specificity wars
+- **Custom Properties**: Use CSS variables for themeable values
+- **Mobile First**: Write mobile styles first, enhance with `@media` queries
+
+### JavaScript Practices
+- **Vanilla JS**: Use ES modules and modern JavaScript APIs
+- **Classes**: Organize code into ES6 classes
+- **No Dependencies**: Avoid external libraries where vanilla JS suffices
+- **Performance**: Load scripts with `defer` for non-critical functionality
 
 ### Content Management
-- **Markdown**: Write posts in Markdown with proper frontmatter
-- **Images**: Store in `public/images/` directory
-- **SEO**: Include metadesc in all posts and pages
-- **URLs**: Use canonical URLs for better SEO
-
-### Performance Considerations
-- **Font Loading**: Local font files with `next/font/local`
-- **Image Optimization**: Next.js Image component where applicable
-- **Static Generation**: Most pages are statically generated
-- **Analytics**: Lightweight Fathom Analytics integration
+- **File Structure**: Use folders for posts, not just flat files
+- **Frontmatter**: Follow YAML format in `.txt` files
+- **Naming**: Use descriptive folder names for post slugs
+- **SEO**: Include proper titles and descriptions in content
 
 ## Environment Setup
 
 ### Requirements
-- Node.js (for Next.js)
-- Bun (preferred package manager)
-- TypeScript knowledge
-- Tailwind CSS familiarity
+- PHP 8.1 or higher
+- Composer (for dependency management)
+- Local development server
 
 ### Getting Started
-1. Install dependencies: `bun install`
-2. Run development server: `bun run dev`
-3. Add new posts to `_posts/` directory
-4. Customize styles in `tailwind.config.js` or component SCSS modules
+1. Clone repository
+2. Run `composer install`
+3. Start dev server: `composer run dev`
+4. Access site at `http://localhost:8000`
+5. Edit content in `content/` folders or via Kirby Panel
 
 ## Content Creation Guidelines
 
 ### Writing Blog Posts
-1. Create file in `_posts/` with date prefix
-2. Include required frontmatter fields
-3. Use standard Markdown syntax
-4. Add code blocks with language specification for syntax highlighting
-5. Include meta description for SEO
+1. Create new folder in `content/journal/` with slug name
+2. Add `index.txt` file with content
+3. Include Title and Date in frontmatter:
+   ```
+   Title: My Blog Post
+   Date: 2025-01-15
+   ```
+4. Write content after `----` separator
+5. Use standard HTML or Markdown (depending on Kirby setup)
 
 ### Adding New Pages
-1. Create new directory in `app/`
-2. Add `page.tsx` with proper metadata export
-3. Include canonical URL in metadata
-4. Add navigation link if needed in `components/nav.tsx`
+1. Create directory in `content/` (e.g., `content/my-page/`)
+2. Add `index.txt` with required frontmatter
+3. Template uses `default.php` to render page
+4. Update navigation if needed by modifying template
+
+### Template Modifications
+1. Edit `site/templates/default.php` to change page rendering
+2. Create snippets in `site/snippets/` for reusable components
+3. Access page content via Kirby API: `$page->title()`, `$page->text()`, etc.
+
+## Kirby Panel
+
+The Kirby Panel provides a web-based editor at `/panel`:
+- Edit page content through web interface
+- Manage file structure graphically
+- Define custom fields via blueprints in `site/blueprints/`
 
 ## Deployment Notes
 
-- **Platform**: Designed for static deployment (Next.js export)
-- **Build**: Uses standard Next.js build process
-- **Assets**: Self-contained with local fonts and images
-- **Analytics**: Fathom Analytics configured (requires environment variables)
+- **Platform**: Works on any PHP 8.1+ hosting
+- **Build**: No build step needed - serve directly
+- **Assets**: All assets (CSS, JS, fonts) self-contained
+- **Content**: All content stored in version-controlled text files
+- **Performance**: Static file delivery, minimal server load
 
-This architecture provides a solid foundation for a personal blog with modern web development practices, emphasizing performance, SEO, and maintainability.
+This architecture provides a lightweight, maintainable personal blog using Kirby CMS with vanilla CSS and JavaScript, emphasizing simplicity, performance, and ease of deployment.

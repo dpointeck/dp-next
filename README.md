@@ -1,36 +1,145 @@
-<img src="http://getkirby.com/assets/images/github/plainkit.jpg" width="300">
+# dp-next: Personal Blog & Portfolio
 
-**Kirby: the CMS that adapts to any project, loved by developers and editors alike.**
-The Plainkit is a minimal Kirby setup with the basics you need to start a project from scratch. It is the ideal choice if you are already familiar with Kirby and want to start step-by-step.
+A personal blog and portfolio website for Daniel Pointecker built with **Kirby CMS** and vanilla CSS/JavaScript. No build tools required.
 
-You can learn more about Kirby at [getkirby.com](https://getkirby.com).
+## Overview
 
-### Try Kirby for free
+**dp-next** is a lightweight, file-based content management system featuring:
+- A journal/blog section with date-organized posts
+- Resources page
+- About, Uses, Privacy Policy, and Site Notice pages
+- Vanilla CSS styling with custom font loading
+- Pure JavaScript for interactivity
 
-You can try Kirby and the Plainkit on your local machine or on a test server as long as you need to make sure it is the right tool for your next project. … and when you’re convinced, [buy your license](https://getkirby.com/buy).
+## Tech Stack
 
-### Get going
+- **CMS**: Kirby 5.x (PHP-based, file-driven)
+- **Styling**: Vanilla CSS with CSS custom properties and layers
+- **JavaScript**: Vanilla JavaScript (no frameworks)
+- **Fonts**: Custom WOFF2 fonts (Visby CF, CodeSaver)
+- **Server**: PHP 8.1+ development server
 
-Read our guide on [how to get started with Kirby](https://getkirby.com/docs/guide/quickstart).
+## Getting Started
 
-You can [download the latest version](https://github.com/getkirby/plainkit/archive/main.zip) of the Plainkit.
-If you are familiar with Git, you can clone Kirby's Plainkit repository from Github.
+### Prerequisites
+- PHP 8.1 or higher
+- Composer (for dependency management)
 
-    git clone https://github.com/getkirby/plainkit.git
+### Installation
 
-## What's Kirby?
+```bash
+# Install dependencies
+composer install
 
--   **[getkirby.com](https://getkirby.com)** – Get to know the CMS.
--   **[Try it](https://getkirby.com/try)** – Take a test ride with our online demo. Or download one of our kits to get started.
--   **[Documentation](https://getkirby.com/docs/guide)** – Read the official guide, reference and cookbook recipes.
--   **[Issues](https://github.com/getkirby/kirby/issues)** – Report bugs and other problems.
--   **[Feedback](https://feedback.getkirby.com)** – You have an idea for Kirby? Share it.
--   **[Forum](https://forum.getkirby.com)** – Whenever you get stuck, don't hesitate to reach out for questions and support.
--   **[Discord](https://chat.getkirby.com)** – Hang out and meet the community.
--   **[Mastodon](https://mastodon.social/@getkirby)** – Spread the word.
--   **[Bluesky](https://bsky.app/profile/getkirby.com)** – Spread the word.
+# Start development server
+composer run dev
 
----
+# Server runs at http://localhost:8000
+```
 
-© 2009 Bastian Allgeier
-[getkirby.com](https://getkirby.com) · [License agreement](https://getkirby.com/license)
+## Project Structure
+
+```
+dp-next/
+├── content/              # Page content (text files)
+│   ├── home/
+│   ├── journal/
+│   ├── resources/
+│   ├── uses/
+│   ├── about/
+│   ├── privacy-policy/
+│   └── site-notice/
+├── site/
+│   ├── templates/        # Page templates (PHP)
+│   ├── blueprints/       # Content structure definitions (YAML)
+│   ├── snippets/         # Reusable template partials
+│   ├── config/           # Kirby configuration
+│   └── plugins/          # Custom plugins (kirby-vite)
+├── assets/
+│   ├── css/              # Vanilla CSS stylesheets
+│   │   ├── main.css      # Primary stylesheet
+│   │   └── fonts.css     # Font definitions
+│   ├── js/               # Vanilla JavaScript
+│   │   ├── main.js       # Entry point
+│   │   └── site.js       # Site functionality
+│   └── fonts/            # Custom font files
+├── media/                # User-uploaded files
+├── kirby/                # Kirby CMS core (managed by Composer)
+└── public/               # Publicly served assets (if using Vite)
+```
+
+## Content Management
+
+### Adding Blog Posts
+
+Posts are stored in the `content/journal/` directory and are file-based:
+
+1. Create a new directory in `content/journal/`
+2. Add an `index.txt` file with your post content
+
+Blog posts are organized by folder and managed through Kirby's content interface.
+
+### Page Templates
+
+Templates are stored in `site/templates/` as PHP files:
+- `default.php` - Base template for all pages
+- Custom templates can be created per page type
+
+### Content Blueprints
+
+Page structures are defined in `site/blueprints/pages/` using YAML:
+- `default.yml` - Standard page blueprint
+- Custom blueprints define which fields are available in the content editor
+
+## Styling
+
+### CSS Architecture
+
+The project uses vanilla CSS with:
+- **CSS Cascade Layers**: `@layer` organization for maintainability
+- **CSS Custom Properties**: Root-level variables for colors, fonts, spacing
+- **Mobile-First**: Responsive design using media queries
+- **Dark Mode**: `prefers-color-scheme` media query support
+
+### Fonts
+
+Custom fonts are loaded via WOFF2 format:
+- **Display**: Visby CF (headings)
+- **Body**: Visby CF (fallback system fonts)
+- **Monospace**: CodeSaver (code blocks)
+
+Fonts are preloaded in templates for optimal performance.
+
+## JavaScript
+
+JavaScript files use standard vanilla JS without dependencies:
+- `site.js` - Main site functionality class
+- `main.js` - Application entry point
+
+Scripts are loaded as ES modules with `defer` attribute.
+
+## Development
+
+### Available Commands
+
+```bash
+composer run dev       # Start development server on localhost:8000
+```
+
+### Configuration Files
+
+- `composer.json` - PHP dependencies
+- `site/config/vite.config.php` - Vite plugin configuration (if using asset compilation)
+- `.htaccess` - Web server routing
+
+## Resources
+
+- [Kirby Documentation](https://getkirby.com/docs)
+- [Kirby Content Folder Structure](https://getkirby.com/docs/guide/content)
+- [Kirby Templating](https://getkirby.com/docs/guide/templates)
+
+## License
+
+Kirby CMS is proprietary software. See [Kirby License](https://getkirby.com/license) for details.
+
+For this project's custom code: © Daniel Pointecker
