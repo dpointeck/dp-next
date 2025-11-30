@@ -1,3 +1,6 @@
+@import "reset.css" layer(reset);
+@import "fonts.css" layer(global);
+
 @layer global {
   :root {
     /* Font stacks */
