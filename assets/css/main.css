@@ -1,5 +1,3 @@
-@layer reset, global, utilities, components, overrides;
-
 @layer global {
   :root {
     /* Font stacks */
