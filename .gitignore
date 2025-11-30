@@ -49,9 +49,6 @@ Icon
 
 /site/config/.license
 
-# plugins
-/site/plugins/kirby-vite/
-
 # development
 vendor/
 node_modules/

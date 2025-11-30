@@ -1,0 +1,29 @@
+{
+  "name": "arnoson/kirby-vite",
+  "description": "Vite helper for Kirby CMS",
+  "version": "5.6.1",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "keywords": [
+    "vite",
+    "kirby3",
+    "kirby4",
+    "kirby5"
+  ],
+  "authors": [
+    {
+      "name": "Arno Schlipf"
+    }
+  ],
+  "scripts": {
+    "test": "composer --working-dir=packages/kirby-vite test"
+  },
+  "require": {
+    "getkirby/composer-installer": "^1.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "getkirby/composer-installer": true
+    }
+  }
+}
