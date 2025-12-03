@@ -45,7 +45,7 @@ jobs:
             docker stop ${{ env.CONTAINER_NAME }} 
             docker rm ${{ env.CONTAINER_NAME }}
             docker pull ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-            docker run -d --restart=always --name ${{ env.CONTAINER_NAME }} -p 8002:3000 -e NEXT_PUBLIC_FATHOM_SITE_ID=${{ secrets.FATHOM_SITE_ID }} ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+            docker run -d --restart=always --name ${{ env.CONTAINER_NAME }} -p 127.0.0.1:8002:3000 -e NEXT_PUBLIC_FATHOM_SITE_ID=${{ secrets.FATHOM_SITE_ID }} ghcr.io/${{ github.actor }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
         env:
           IMAGE_TAG: ${{ github.sha }}
           IMAGE_NAME: dp-next
