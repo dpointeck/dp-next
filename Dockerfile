@@ -1,8 +1,11 @@
+# Base Bun image
 FROM oven/bun:1.3.5 AS base
 
+# Define build arguments for public environment variables
 ARG NEXT_PUBLIC_FATHOM_SITE_ID
 ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID
 
+# Build stage: install dependencies and build the app
 FROM base AS builder
 
 WORKDIR /app
@@ -22,9 +25,9 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-# Create a non-root user and group
-RUN addgroup --system --gid 1001 bunjs && \
-    adduser --system --uid 1001 --ingroup bunjs nextjs
+# Create a non-root user and group (Alpine syntax)
+RUN addgroup -S -g 1001 bunjs && \
+    adduser -S -u 1001 -G bunjs nextjs
 
 # Copy only necessary files from the builder stage
 COPY --from=builder /app/next.config.js ./
