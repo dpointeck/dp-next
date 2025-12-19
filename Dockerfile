@@ -1,29 +1,25 @@
-# Base Node image
-FROM node:22-bookworm-slim as base
+# Base Bun image
+FROM oven/bun:1.3.5 AS base
 
 # Define build arguments for public environment variables
 ARG NEXT_PUBLIC_FATHOM_SITE_ID
 ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID
 
 # Build stage: install dependencies and build the app
-FROM base as builder
+FROM base AS builder
 
 WORKDIR /app
 
-# Copy package files
-COPY package.json .npmrc ./
-
-# Install pnpm and dependencies
-RUN npm install -g pnpm
-COPY pnpm-lock.yaml* ./
-RUN pnpm install
+# Copy package files and install dependencies
+COPY package.json bun.lockb ./
+RUN bun install --frozen-lockfile
 
 # Copy source files and build the application
 COPY . .
-RUN pnpm build
+RUN bun run build
 
 # Production stage: create the final image
-FROM base as production
+FROM base AS production
 
 ENV NODE_ENV=production
 # Public env variables will be set at runtime or via build args
@@ -40,5 +36,5 @@ COPY --from=builder /app/package.json ./package.json
 # Expose the port Next.js runs on
 EXPOSE 3000
 
-# Start the Next.js application in production mode directly with Node
-CMD ["node", "node_modules/next/dist/bin/next", "start"]
+# Start the Next.js application in production mode
+CMD ["bun", "run", "start"]

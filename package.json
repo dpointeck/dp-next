@@ -34,7 +34,7 @@
     "date-fns": "^2.30.0",
     "fathom-client": "^3.7.2",
     "gray-matter": "^4.0.3",
-    "next": "^16.0.7",
+    "next": "^16.1.0",
     "raw-loader": "^4.0.2",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
