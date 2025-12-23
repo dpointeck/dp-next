@@ -41,6 +41,21 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       },
     ],
     links: [
+      // Preload critical fonts to reduce FOUT
+      {
+        rel: 'preload',
+        href: '/fonts/Greycliff/GreycliffCF-Regular.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossOrigin: 'anonymous',
+      },
+      {
+        rel: 'preload',
+        href: '/fonts/Greycliff/GreycliffCF-Bold.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossOrigin: 'anonymous',
+      },
       {
         rel: 'stylesheet',
         href: appCss,
