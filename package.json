@@ -23,6 +23,7 @@
     "@tanstack/react-start": "^1.132.0",
     "@tanstack/router-plugin": "^1.132.0",
     "date-fns": "^4.1.0",
+    "fathom-client": "^3.7.2",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.561.0",
     "nitro": "latest",

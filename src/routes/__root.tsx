@@ -7,6 +7,7 @@ import {
 
 import { Nav, MobileNav } from '../components/Nav'
 import { Footer } from '../components/Footer'
+import Fathom from '../components/Fathom'
 
 import appCss from '../styles.css?url'
 
@@ -34,6 +35,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content:
           "Hi there! I'm Daniel a software dev from Austria. Checkout posts around web development and software engineering plus all kinds of useful resources",
       },
+      {
+        name: 'google-site-verification',
+        content: import.meta.env.VITE_GOOGLE_SITE_VERIFY_ID || '',
+      },
     ],
     links: [
       {
@@ -57,6 +62,7 @@ function RootComponent() {
         <HeadContent />
       </head>
       <body className="pb-20 md:pb-0">
+        <Fathom />
         <Nav />
         <MobileNav />
         <div className="layout-page container mx-auto p-4 md:px-10">
