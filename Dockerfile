@@ -5,8 +5,12 @@ ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID
 
 # Build stage
 FROM base AS builder
+ARG NEXT_PUBLIC_FATHOM_SITE_ID
+ARG NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID
+ENV VITE_FATHOM_SITE_ID=$NEXT_PUBLIC_FATHOM_SITE_ID
+ENV VITE_GOOGLE_SITE_VERIFY_ID=$NEXT_PUBLIC_GOOGLE_SITE_VERIFY_ID
 WORKDIR /app
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
 COPY . .
 RUN bun run build
@@ -17,14 +21,11 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 RUN groupadd -r -g 1001 bunjs && \
-    useradd -r -u 1001 -g bunjs nextjs
+    useradd -r -u 1001 -g bunjs appuser
 
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
+COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/package.json ./package.json
-COPY --from=builder --chown=nextjs:bunjs /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
 
-USER nextjs
+USER appuser
 EXPOSE 3000
-CMD ["bun", "run", "start"]
+CMD ["bun", "run", ".output/server/index.mjs"]
