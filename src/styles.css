@@ -1,15 +1,76 @@
 @import "tailwindcss";
 
-body {
-  @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Font faces */
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Greycliff/GreycliffCF-Regular.woff2") format("woff2"),
+    url("/fonts/Greycliff/GreycliffCF-Regular.woff") format("woff");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Greycliff/GreycliffCF-Medium.woff2") format("woff2"),
+    url("/fonts/Greycliff/GreycliffCF-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Greycliff/GreycliffCF-Bold.woff2") format("woff2"),
+    url("/fonts/Greycliff/GreycliffCF-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Codesaver";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/CodeSaver/CodeSaver-Regular.woff2") format("woff2"),
+    url("/fonts/CodeSaver/CodeSaver-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Codesaver";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/CodeSaver/CodeSaver-Bold.woff2") format("woff2"),
+    url("/fonts/CodeSaver/CodeSaver-Bold.woff") format("woff");
+}
+
+@layer base {
+  :root {
+    --font-sans: "Greycliff", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-mono: "Codesaver", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-accent-1: #333;
+  }
+
+  html {
+    margin-left: calc(100vw - 100%);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #065f46;
+    color: #f3f4f6;
+  }
 }

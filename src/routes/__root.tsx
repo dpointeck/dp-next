@@ -1,14 +1,12 @@
 import {
   HeadContent,
+  Outlet,
   Scripts,
   createRootRouteWithContext,
 } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
 
-import Header from '../components/Header'
-
-import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
+import { Nav, MobileNav } from '../components/Nav'
+import { Footer } from '../components/Footer'
 
 import appCss from '../styles.css?url'
 
@@ -29,7 +27,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Daniel Pointecker - software dev',
+      },
+      {
+        name: 'description',
+        content:
+          "Hi there! I'm Daniel a software dev from Austria. Checkout posts around web development and software engineering plus all kinds of useful resources",
       },
     ],
     links: [
@@ -37,33 +40,29 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'shortcut icon',
+        href: '/favicon.svg',
+      },
     ],
   }),
 
-  shellComponent: RootDocument,
+  component: RootComponent,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootComponent() {
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
-      <body>
-        <Header />
-        {children}
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-            TanStackQueryDevtools,
-          ]}
-        />
+      <body className="pb-20 md:pb-0">
+        <Nav />
+        <MobileNav />
+        <div className="layout-page container mx-auto p-4 md:px-10">
+          <Outlet />
+        </div>
+        <Footer />
         <Scripts />
       </body>
     </html>
