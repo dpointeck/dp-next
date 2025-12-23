@@ -21,7 +21,7 @@ function AboutPage() {
   return (
     <div className="pt-0 pb-20">
       <PageHeader>About</PageHeader>
-      <article className="prose-xl max-w-2xl mx-auto relative z-50 mt-8">
+      <article className="prose prose-xl max-w-2xl mx-auto relative z-50 mt-8 dark:prose-invert">
         <h2>Hi there! I'm Daniel Pointecker</h2>
         <p>
           a self-taught software developer from the picturesque town of

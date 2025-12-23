@@ -22,7 +22,7 @@ function PrivacyPolicyPage() {
   return (
     <div className="pt-0 pb-20">
       <PageHeader>Privacy Policy</PageHeader>
-      <article className="prose max-w-2xl mx-auto relative z-50 mt-8">
+      <article className="prose max-w-2xl mx-auto relative z-50 mt-8 dark:prose-invert">
         <p>
           As this is just a simple site / blog, I do not process any data from
           viewers at all. I do not use webtrackers like google analytics and
