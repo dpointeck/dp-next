@@ -3,7 +3,7 @@ import { createServerFn } from '@tanstack/react-start'
 import { PageHeader } from '../../components/PageHeader'
 import { IconPlus } from '../../svg'
 import { getPostsByYear } from '../../lib/post'
-import './index.css'
+import '../../components/Journal.css'
 
 const fetchPostsByYear = createServerFn({ method: 'GET' }).handler(async () => {
   return getPostsByYear()
