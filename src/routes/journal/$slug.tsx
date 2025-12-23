@@ -3,9 +3,9 @@ import { createServerFn } from '@tanstack/react-start'
 import { getPostBySlug } from '../../lib/post'
 
 const fetchPost = createServerFn({ method: 'GET' })
-  .validator((slug: string) => slug)
-  .handler(async ({ data: slug }) => {
-    return getPostBySlug(slug)
+  .inputValidator((d: string) => d)
+  .handler(async ({ data }) => {
+    return getPostBySlug(data)
   })
 
 export const Route = createFileRoute('/journal/$slug')({
