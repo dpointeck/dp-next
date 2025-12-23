@@ -25,6 +25,8 @@ RUN groupadd -r -g 1001 bunjs && \
 
 COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/src/data ./src/data
+COPY --from=builder /app/_posts ./_posts
 
 USER appuser
 EXPOSE 3000
