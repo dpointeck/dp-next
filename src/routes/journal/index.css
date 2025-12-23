@@ -1,0 +1,29 @@
+.styledPostsList h3:not(:first-child) {
+  margin-top: 2.75rem;
+}
+
+.readMoreLink {
+  display: none;
+  margin-top: 0.5rem;
+  margin-left: 3.8rem;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .readMoreLink {
+    display: flex;
+    cursor: pointer;
+  }
+}
+
+.readMoreLink .arrow {
+  opacity: 0;
+  transform-origin: center center;
+  transform: rotate(-20deg) translateY(-5px);
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.readMoreLink:hover .arrow {
+  opacity: 1;
+  transform: rotate(0) translateY(0);
+}
