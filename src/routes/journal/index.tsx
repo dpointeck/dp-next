@@ -1,13 +1,8 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { createServerFn } from '@tanstack/react-start'
 import { PageHeader } from '../../components/PageHeader'
 import { IconPlus } from '../../svg'
-import { getPostsByYear } from '../../lib/post'
+import { fetchPostsByYear } from '../../lib/post.server'
 import '../../components/Journal.css'
-
-const fetchPostsByYear = createServerFn({ method: 'GET' }).handler(async () => {
-  return getPostsByYear()
-})
 
 export const Route = createFileRoute('/journal/')({
   component: JournalPage,

@@ -1,12 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { createServerFn } from '@tanstack/react-start'
-import { getPostBySlug } from '../../lib/post'
-
-const fetchPost = createServerFn({ method: 'GET' })
-  .inputValidator((d: string) => d)
-  .handler(async ({ data }) => {
-    return getPostBySlug(data)
-  })
+import { fetchPost } from '../../lib/post.server'
 
 export const Route = createFileRoute('/journal/$slug')({
   component: PostPage,

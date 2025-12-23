@@ -9,7 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UsesRouteImport } from './routes/uses'
+import { Route as SiteNoticeRouteImport } from './routes/site-notice'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as JournalIndexRouteImport } from './routes/journal/index'
+import { Route as JournalSlugRouteImport } from './routes/journal/$slug'
 import { Route as DemoTanstackQueryRouteImport } from './routes/demo/tanstack-query'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
@@ -20,9 +27,44 @@ import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr
 import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
 import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
 
+const UsesRoute = UsesRouteImport.update({
+  id: '/uses',
+  path: '/uses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SiteNoticeRoute = SiteNoticeRouteImport.update({
+  id: '/site-notice',
+  path: '/site-notice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalIndexRoute = JournalIndexRouteImport.update({
+  id: '/journal/',
+  path: '/journal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalSlugRoute = JournalSlugRouteImport.update({
+  id: '/journal/$slug',
+  path: '/journal/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoTanstackQueryRoute = DemoTanstackQueryRouteImport.update({
@@ -73,7 +115,14 @@ const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/resources': typeof ResourcesRoute
+  '/site-notice': typeof SiteNoticeRoute
+  '/uses': typeof UsesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/journal': typeof JournalIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
@@ -85,7 +134,14 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/resources': typeof ResourcesRoute
+  '/site-notice': typeof SiteNoticeRoute
+  '/uses': typeof UsesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/journal': typeof JournalIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
@@ -98,7 +154,14 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/resources': typeof ResourcesRoute
+  '/site-notice': typeof SiteNoticeRoute
+  '/uses': typeof UsesRoute
   '/demo/tanstack-query': typeof DemoTanstackQueryRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/journal/': typeof JournalIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/api/tq-todos': typeof DemoApiTqTodosRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
@@ -112,7 +175,14 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/privacy-policy'
+    | '/resources'
+    | '/site-notice'
+    | '/uses'
     | '/demo/tanstack-query'
+    | '/journal/$slug'
+    | '/journal'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
     | '/demo/start/api-request'
@@ -124,7 +194,14 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/privacy-policy'
+    | '/resources'
+    | '/site-notice'
+    | '/uses'
     | '/demo/tanstack-query'
+    | '/journal/$slug'
+    | '/journal'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
     | '/demo/start/api-request'
@@ -136,7 +213,14 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/privacy-policy'
+    | '/resources'
+    | '/site-notice'
+    | '/uses'
     | '/demo/tanstack-query'
+    | '/journal/$slug'
+    | '/journal/'
     | '/demo/api/names'
     | '/demo/api/tq-todos'
     | '/demo/start/api-request'
@@ -149,7 +233,14 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ResourcesRoute: typeof ResourcesRoute
+  SiteNoticeRoute: typeof SiteNoticeRoute
+  UsesRoute: typeof UsesRoute
   DemoTanstackQueryRoute: typeof DemoTanstackQueryRoute
+  JournalSlugRoute: typeof JournalSlugRoute
+  JournalIndexRoute: typeof JournalIndexRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
   DemoApiTqTodosRoute: typeof DemoApiTqTodosRoute
   DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
@@ -162,11 +253,60 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/uses': {
+      id: '/uses'
+      path: '/uses'
+      fullPath: '/uses'
+      preLoaderRoute: typeof UsesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/site-notice': {
+      id: '/site-notice'
+      path: '/site-notice'
+      fullPath: '/site-notice'
+      preLoaderRoute: typeof SiteNoticeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/': {
+      id: '/journal/'
+      path: '/journal'
+      fullPath: '/journal'
+      preLoaderRoute: typeof JournalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/$slug': {
+      id: '/journal/$slug'
+      path: '/journal/$slug'
+      fullPath: '/journal/$slug'
+      preLoaderRoute: typeof JournalSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/tanstack-query': {
@@ -237,7 +377,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ResourcesRoute: ResourcesRoute,
+  SiteNoticeRoute: SiteNoticeRoute,
+  UsesRoute: UsesRoute,
   DemoTanstackQueryRoute: DemoTanstackQueryRoute,
+  JournalSlugRoute: JournalSlugRoute,
+  JournalIndexRoute: JournalIndexRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
   DemoApiTqTodosRoute: DemoApiTqTodosRoute,
   DemoStartApiRequestRoute: DemoStartApiRequestRoute,
