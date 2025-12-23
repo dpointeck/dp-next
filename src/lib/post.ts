@@ -20,6 +20,7 @@ interface PostMetadata {
   title: string
   metadesc: string
   date: string
+  rawDate: string // ISO date for sorting
   year: number
 }
 
@@ -95,6 +96,7 @@ export async function getAllPosts(): Promise<PostMetadata[]> {
         title: data.title,
         metadesc: data.metadesc,
         date: shortDate,
+        rawDate: dateString,
         year: year,
       }
     })
@@ -135,15 +137,18 @@ export async function getPostsByYear(): Promise<
   { year: number; posts: PostMetadata[] }[]
 > {
   const posts = await getAllPosts()
-  const years = getYears(posts)
 
+  // Sort all posts by date descending (most recent first)
+  posts.sort((a, b) => b.rawDate.localeCompare(a.rawDate))
+
+  const years = getYears(posts)
   const postsByYear = []
 
   for (const year of years) {
     const thisYearsPosts = posts.filter((post) => post.year === year)
     postsByYear.push({
       year: year,
-      posts: thisYearsPosts.reverse(),
+      posts: thisYearsPosts,
     })
   }
 
@@ -157,5 +162,6 @@ function getYears(posts: PostMetadata[]): Array<number> {
     years.add(post.year)
   })
 
-  return Array.from(years).reverse()
+  // Sort years descending (newest first)
+  return Array.from(years).sort((a, b) => b - a)
 }

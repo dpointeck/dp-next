@@ -1,52 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* Font faces */
-@font-face {
-  font-family: "Greycliff";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/Greycliff/GreycliffCF-Regular.woff2") format("woff2"),
-    url("/fonts/Greycliff/GreycliffCF-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Greycliff";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/fonts/Greycliff/GreycliffCF-Medium.woff2") format("woff2"),
-    url("/fonts/Greycliff/GreycliffCF-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Greycliff";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/Greycliff/GreycliffCF-Bold.woff2") format("woff2"),
-    url("/fonts/Greycliff/GreycliffCF-Bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Codesaver";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/CodeSaver/CodeSaver-Regular.woff2") format("woff2"),
-    url("/fonts/CodeSaver/CodeSaver-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Codesaver";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/CodeSaver/CodeSaver-Bold.woff2") format("woff2"),
-    url("/fonts/CodeSaver/CodeSaver-Bold.woff") format("woff");
-}
-
 @layer base {
   :root {
     --font-sans: "Greycliff", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

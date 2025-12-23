@@ -13,6 +13,49 @@ import appCss from '../styles.css?url'
 
 import type { QueryClient } from '@tanstack/react-query'
 
+const fontFaceCSS = `
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Greycliff/GreycliffCF-Regular.woff2") format("woff2"),
+    url("/fonts/Greycliff/GreycliffCF-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Greycliff/GreycliffCF-Medium.woff2") format("woff2"),
+    url("/fonts/Greycliff/GreycliffCF-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Greycliff";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Greycliff/GreycliffCF-Bold.woff2") format("woff2"),
+    url("/fonts/Greycliff/GreycliffCF-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Codesaver";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/CodeSaver/CodeSaver-Regular.woff2") format("woff2"),
+    url("/fonts/CodeSaver/CodeSaver-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Codesaver";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/CodeSaver/CodeSaver-Bold.woff2") format("woff2"),
+    url("/fonts/CodeSaver/CodeSaver-Bold.woff") format("woff");
+}
+`
+
 interface MyRouterContext {
   queryClient: QueryClient
 }
@@ -74,6 +117,7 @@ function RootComponent() {
   return (
     <html lang="en">
       <head>
+        <style dangerouslySetInnerHTML={{ __html: fontFaceCSS }} />
         <HeadContent />
       </head>
       <body className="pb-20 md:pb-0">
