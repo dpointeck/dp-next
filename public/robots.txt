@@ -1,2 +1,3 @@
-User-Agent: *
-Sitemap: https://www.daniel-pointecker.net/sitemap.xml
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
