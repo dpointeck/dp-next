@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsesRouteImport } from './routes/uses'
 import { Route as SiteNoticeRouteImport } from './routes/site-notice'
 import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ProgressiveImageDemoRouteImport } from './routes/progressive-image-demo'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -32,11 +31,6 @@ const SiteNoticeRoute = SiteNoticeRouteImport.update({
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgressiveImageDemoRoute = ProgressiveImageDemoRouteImport.update({
-  id: '/progressive-image-demo',
-  path: '/progressive-image-demo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -69,7 +63,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/progressive-image-demo': typeof ProgressiveImageDemoRoute
   '/resources': typeof ResourcesRoute
   '/site-notice': typeof SiteNoticeRoute
   '/uses': typeof UsesRoute
@@ -80,7 +73,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/progressive-image-demo': typeof ProgressiveImageDemoRoute
   '/resources': typeof ResourcesRoute
   '/site-notice': typeof SiteNoticeRoute
   '/uses': typeof UsesRoute
@@ -92,7 +84,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/progressive-image-demo': typeof ProgressiveImageDemoRoute
   '/resources': typeof ResourcesRoute
   '/site-notice': typeof SiteNoticeRoute
   '/uses': typeof UsesRoute
@@ -105,7 +96,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/privacy-policy'
-    | '/progressive-image-demo'
     | '/resources'
     | '/site-notice'
     | '/uses'
@@ -116,7 +106,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/privacy-policy'
-    | '/progressive-image-demo'
     | '/resources'
     | '/site-notice'
     | '/uses'
@@ -127,7 +116,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/privacy-policy'
-    | '/progressive-image-demo'
     | '/resources'
     | '/site-notice'
     | '/uses'
@@ -139,7 +127,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ProgressiveImageDemoRoute: typeof ProgressiveImageDemoRoute
   ResourcesRoute: typeof ResourcesRoute
   SiteNoticeRoute: typeof SiteNoticeRoute
   UsesRoute: typeof UsesRoute
@@ -168,13 +155,6 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/progressive-image-demo': {
-      id: '/progressive-image-demo'
-      path: '/progressive-image-demo'
-      fullPath: '/progressive-image-demo'
-      preLoaderRoute: typeof ProgressiveImageDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -219,7 +199,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ProgressiveImageDemoRoute: ProgressiveImageDemoRoute,
   ResourcesRoute: ResourcesRoute,
   SiteNoticeRoute: SiteNoticeRoute,
   UsesRoute: UsesRoute,
