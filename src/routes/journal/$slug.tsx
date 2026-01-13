@@ -1,7 +1,10 @@
+import { useRef } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { fetchPostWithNavigation } from '../../lib/post.server'
 import { PostNavigation } from '../../components/PostNavigation'
 import { PostSwipeTransition } from '../../components/PostSwipeTransition'
+import { useProgressiveImages } from '../../hooks'
+import '../../components/ProgressiveMarkdownImages.css'
 
 export const Route = createFileRoute('/journal/$slug')({
   component: PostPage,
@@ -22,6 +25,10 @@ export const Route = createFileRoute('/journal/$slug')({
 
 function PostPage() {
   const post = Route.useLoaderData()
+  const articleRef = useRef<HTMLElement>(null)
+
+  // Enhance images with progressive loading
+  useProgressiveImages(articleRef, { contentKey: post.slug })
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -30,6 +37,7 @@ function PostPage() {
           {post.title}
         </h1>
         <article
+          ref={articleRef}
           className="prose prose-lg dark:prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />

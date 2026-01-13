@@ -84,3 +84,46 @@ metadesc: "SEO description"
 
 Post content here...
 ```
+
+## Images in Blog Posts
+
+Images in blog posts automatically get **progressive loading** with a pixelated placeholder effect. The image loads a tiny version first (displayed pixelated), then fades to the full resolution when loaded.
+
+### Supported Image Services
+
+For the best pixelated placeholder effect, use images from these CDNs:
+
+| Service | Example URL |
+|---------|-------------|
+| **Unsplash** | `https://images.unsplash.com/photo-xxx?w=1200` |
+| **Cloudinary** | `https://res.cloudinary.com/xxx/image/upload/v1/photo.jpg` |
+| **Imgix** | `https://xxx.imgix.net/photo.jpg?w=1200` |
+
+These services allow dynamic resizing, so the hook automatically generates a tiny 20px placeholder.
+
+### Using Unsplash (Recommended)
+
+1. Find an image on [Unsplash](https://unsplash.com)
+2. Copy the image URL (right-click → Copy Image Address)
+3. Add width parameter for optimal loading:
+
+```markdown
+![Mountain landscape](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80)
+```
+
+**Tip:** Use `w=1200` or `w=800` for a good balance of quality and file size.
+
+### Local Images
+
+For local images in `/public/images/`, the progressive loader falls back to a blur effect (no pixelated placeholder). To get the pixelated effect with local images, you would need to:
+
+1. Generate a tiny placeholder manually (20px wide)
+2. Or upload images to a supported CDN
+
+### How It Works
+
+1. Images are detected after the markdown renders
+2. For supported CDNs, a tiny 20px placeholder URL is generated
+3. The placeholder loads immediately and displays pixelated (`image-rendering: pixelated`)
+4. The full image lazy-loads when scrolled into view
+5. Once loaded, it fades in over the pixelated placeholder
