@@ -19,9 +19,9 @@ export const Route = createFileRoute('/about')({
 
 function AboutPage() {
   return (
-    <div className="pt-0 pb-20">
+    <div className="max-w-2xl mx-auto">
       <PageHeader>About</PageHeader>
-      <article className="prose prose-xl max-w-2xl mx-auto relative z-50 mt-8 dark:prose-invert">
+      <article className="prose prose-lg dark:prose-invert max-w-none">
         <h2>Hi there! I'm Daniel Pointecker</h2>
         <p>
           a self-taught software developer from the picturesque town of

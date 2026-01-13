@@ -13,9 +13,9 @@ export const Route = createFileRoute('/resources')({
 
 function ResourcesPage() {
   return (
-    <div className="pb-20">
+    <div className="max-w-2xl mx-auto">
       <PageHeader>Resources</PageHeader>
-      <p className="mt-4 text-center">coming soon</p>
+      <p className="mt-8 text-muted">coming soon</p>
     </div>
   )
 }

@@ -22,10 +22,10 @@ function PostPage() {
   const post = Route.useLoaderData()
 
   return (
-    <div className="relative z-50">
-      <h1 className="text-center text-3xl md:text-4xl font-bold">{post.title}</h1>
+    <div className="max-w-2xl mx-auto">
+      <h1 className="text-3xl md:text-4xl font-semibold mb-8 text-primary tracking-tight leading-tight">{post.title}</h1>
       <article
-        className="prose max-w-2xl mx-auto relative z-50 mt-8 dark:prose-invert"
+        className="prose prose-lg dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </div>

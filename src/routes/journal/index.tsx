@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { PageHeader } from '../../components/PageHeader'
-import { IconPlus } from '../../svg'
 import { fetchPostsByYear } from '../../lib/post.server'
 import '../../components/Journal.css'
 
@@ -37,33 +36,26 @@ function PostsListYears({
   posts: { year: number; posts: { slug: string; title: string; date: string }[] }[]
 }) {
   return (
-    <div className="styledPostsList relative z-50 max-w-xl mx-auto">
+    <div className="styledPostsList max-w-2xl mx-auto">
       {posts.map((year) => (
-        <div key={year.year} className="mt-16">
-          <h2 className="font-mono text-4xl">{year.year}</h2>
-          <hr />
-          <ul>
+        <div key={year.year} className="mt-16 first:mt-0">
+          <h2 className="text-2xl font-semibold mb-8 text-primary tracking-tight">{year.year}</h2>
+          <ul className="space-y-4">
             {year.posts.map((post) => (
-              <li className="mt-4" key={post.slug}>
+              <li key={post.slug}>
                 <Link
                   to="/journal/$slug"
                   params={{ slug: post.slug }}
-                  className="md:text-xl font-thin truncate pr-3 flex items-end"
+                  className="block group py-3 -mx-3 px-3 rounded-lg transition-colors bg-hover"
                 >
-                  <span className="text-xs md:text-sm font-mono mr-3 text-gray-500 dark:text-slate-50/50">
-                    {post.date}
-                  </span>
-                  <span className="truncate block">{post.title}</span>
-                </Link>
-                <Link
-                  to="/journal/$slug"
-                  params={{ slug: post.slug }}
-                  className="readMoreLink font-mono flex"
-                >
-                  <span className="mr-3">read full article</span>
-                  <span className="arrow">
-                    <IconPlus className="h-5 w-5" />
-                  </span>
+                  <div className="flex items-baseline gap-4">
+                    <span className="text-sm text-muted font-mono flex-shrink-0 tabular-nums">
+                      {post.date}
+                    </span>
+                    <span className="text-secondary group-hover:text-primary transition-colors font-medium">
+                      {post.title}
+                    </span>
+                  </div>
                 </Link>
               </li>
             ))}

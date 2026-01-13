@@ -5,7 +5,7 @@ import {
   createRootRouteWithContext,
 } from '@tanstack/react-router'
 
-import { Nav, MobileNav } from '../components/Nav'
+import { Nav } from '../components/Nav'
 import { Footer } from '../components/Footer'
 import Fathom from '../components/Fathom'
 
@@ -18,7 +18,7 @@ const fontFaceCSS = `
   font-family: "Greycliff";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/Greycliff/GreycliffCF-Regular.woff2") format("woff2"),
     url("/fonts/Greycliff/GreycliffCF-Regular.woff") format("woff");
 }
@@ -26,7 +26,7 @@ const fontFaceCSS = `
   font-family: "Greycliff";
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/Greycliff/GreycliffCF-Medium.woff2") format("woff2"),
     url("/fonts/Greycliff/GreycliffCF-Medium.woff") format("woff");
 }
@@ -34,7 +34,7 @@ const fontFaceCSS = `
   font-family: "Greycliff";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/Greycliff/GreycliffCF-Bold.woff2") format("woff2"),
     url("/fonts/Greycliff/GreycliffCF-Bold.woff") format("woff");
 }
@@ -42,7 +42,7 @@ const fontFaceCSS = `
   font-family: "Codesaver";
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/CodeSaver/CodeSaver-Regular.woff2") format("woff2"),
     url("/fonts/CodeSaver/CodeSaver-Regular.woff") format("woff");
 }
@@ -50,7 +50,7 @@ const fontFaceCSS = `
   font-family: "Codesaver";
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/CodeSaver/CodeSaver-Bold.woff2") format("woff2"),
     url("/fonts/CodeSaver/CodeSaver-Bold.woff") format("woff");
 }
@@ -118,15 +118,83 @@ function RootComponent() {
     <html lang="en">
       <head>
         <style dangerouslySetInnerHTML={{ __html: fontFaceCSS }} />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical CSS for icons - prevent FOUC */
+            .social-link svg,
+            .social-link .icon {
+              width: 1rem !important;
+              height: 1rem !important;
+              display: block;
+              flex-shrink: 0;
+            }
+            /* Theme switcher button sizing */
+            button[aria-label="Toggle theme"] {
+              width: 24px !important;
+              height: 24px !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+              padding: 4px !important;
+            }
+            button[aria-label="Toggle theme"] svg {
+              width: 16px !important;
+              height: 16px !important;
+            }
+            /* Navigation visibility - prevent both showing */
+            .desktop-nav { 
+              display: none !important; 
+            }
+            @media (min-width: 768px) {
+              .desktop-nav { 
+                display: block !important; 
+              }
+            }
+            .mobile-nav {
+              display: flex !important;
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+              z-index: 100;
+            }
+            @media (min-width: 768px) {
+              .mobile-nav { 
+                display: none !important; 
+              }
+            }
+          `
+        }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme');
+                const root = document.documentElement;
+                if (theme === 'dark') {
+                  root.classList.add('dark');
+                } else if (theme === 'light') {
+                  root.classList.remove('dark');
+                } else {
+                  // System preference
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (prefersDark) {
+                    root.classList.add('dark');
+                  } else {
+                    root.classList.remove('dark');
+                  }
+                }
+              })();
+            `,
+          }}
+        />
         <HeadContent />
       </head>
       <body className="pb-20 md:pb-0">
         <Fathom />
         <Nav />
-        <MobileNav />
-        <div className="layout-page container mx-auto p-4 md:px-10">
+        <main className="layout-page container mx-auto px-4 md:px-8 py-8">
           <Outlet />
-        </div>
+        </main>
         <Footer />
         <Scripts />
       </body>

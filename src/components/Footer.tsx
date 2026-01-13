@@ -2,13 +2,19 @@ import { Link } from '@tanstack/react-router'
 
 export function Footer() {
   return (
-    <footer className="pt-6 pb-6 relative z-50 container mx-auto flex justify-center font-mono">
-      <nav className="text-xs">
-        <Link to="/site-notice" className="mr-6">
+    <footer className="pt-12 pb-8 container mx-auto flex justify-center">
+      <nav className="text-sm flex gap-4 items-center" aria-label="Footer navigation">
+        <Link 
+          to="/site-notice" 
+          className="footer-link"
+        >
           Site Notice
         </Link>
-        &middot;
-        <Link to="/privacy-policy" className="ml-6">
+        <span aria-hidden="true">&middot;</span>
+        <Link 
+          to="/privacy-policy" 
+          className="footer-link"
+        >
           Privacy
         </Link>
       </nav>

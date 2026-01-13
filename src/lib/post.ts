@@ -48,8 +48,11 @@ async function renderMarkdownToHtml(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode as any, {
-      theme: 'github-light',
-      keepBackground: true,
+      theme: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      keepBackground: false,
       onVisitLine(node: any) {
         if (node.children.length === 0) {
           node.children = [{ type: 'text', value: ' ' }]

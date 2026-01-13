@@ -33,28 +33,28 @@ function UsesPage() {
   const usesData = Route.useLoaderData()
 
   return (
-    <div className="pb-20">
+    <div className="max-w-2xl mx-auto">
       <PageHeader>Uses</PageHeader>
-      <div className="max-w-2xl mx-auto relative z-50 mt-8">
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Tech</h2>
-          <ul className="list-disc list-inside space-y-2">
+      <div className="mt-8 space-y-12">
+        <section>
+          <h2 className="text-xl font-semibold mb-4 text-primary tracking-tight">Tech</h2>
+          <ul className="space-y-2.5 text-secondary">
             {usesData.equiptment.map((item: string) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Software</h2>
-          <ul className="list-disc list-inside space-y-2">
+        <section>
+          <h2 className="text-xl font-semibold mb-4 text-primary tracking-tight">Software</h2>
+          <ul className="space-y-2.5 text-secondary">
             {usesData.software.map((item: string) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
-        <section className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">EDC</h2>
-          <ul className="list-disc list-inside space-y-2">
+        <section>
+          <h2 className="text-xl font-semibold mb-4 text-primary tracking-tight">EDC</h2>
+          <ul className="space-y-2.5 text-secondary">
             {usesData.edc.map((item: string) => (
               <li key={item}>{item}</li>
             ))}

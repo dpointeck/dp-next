@@ -25,26 +25,16 @@ export const Route = createFileRoute('/')({
 
 function HomePage() {
   return (
-    <div className="relative overflow-hidden md:overflow-visible">
-      <div className="relative">
-        <h1 className="hi font-mono">
-          <span className="hi__wavy">👋</span>
-          <span className="hi__top">Hi there I'm</span>
-          <br />
-          <span className="hi__daniel">daniel</span>
-          <br />
-          <span className="hi__pointecker">pointecker</span>
-          <div className="bgTile" />
-        </h1>
-      </div>
-      <div className="max-w-3xl mx-auto mt-10 md:mt-16 relative z-30">
-        <p className="font-mono text-xl md:text-3xl leading-relaxed">
-          I'm a software developer from 🇦🇹 focused on frontend development.
-          This site is meant to be a collection of stuff I constantly forget and
-          have to search every time I need it. If here's something helpful for
-          you feel free to grab it.
-        </p>
-      </div>
+    <div className="max-w-2xl mx-auto mt-16 md:mt-24">
+      <h1 className="text-4xl md:text-5xl font-semibold mb-8 text-primary leading-tight tracking-tight">
+        Hi, I'm Daniel.
+      </h1>
+      <p className="text-lg md:text-xl leading-relaxed text-secondary">
+        I'm a software developer from 🇦🇹 focused on frontend development.
+        This site is a collection of things I constantly forget and
+        have to search every time I need them. If there's something helpful for
+        you, feel free to grab it.
+      </p>
     </div>
   )
 }
