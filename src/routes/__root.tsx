@@ -15,11 +15,21 @@ import appCss from '../styles.css?url'
 import type { QueryClient } from '@tanstack/react-query'
 
 const fontFaceCSS = `
+/* Fallback font with adjusted metrics to match Greycliff - prevents CLS */
+@font-face {
+  font-family: "Greycliff Fallback";
+  src: local("BlinkMacSystemFont"), local("-apple-system"), local("Segoe UI"), local("Roboto"), local("Arial");
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 @font-face {
   font-family: "Greycliff";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/Greycliff/GreycliffCF-Regular.woff2") format("woff2"),
     url("/fonts/Greycliff/GreycliffCF-Regular.woff") format("woff");
 }
@@ -27,7 +37,7 @@ const fontFaceCSS = `
   font-family: "Greycliff";
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/Greycliff/GreycliffCF-Medium.woff2") format("woff2"),
     url("/fonts/Greycliff/GreycliffCF-Medium.woff") format("woff");
 }
@@ -35,15 +45,26 @@ const fontFaceCSS = `
   font-family: "Greycliff";
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/Greycliff/GreycliffCF-Bold.woff2") format("woff2"),
     url("/fonts/Greycliff/GreycliffCF-Bold.woff") format("woff");
 }
+
+/* Fallback font with adjusted metrics for monospace */
+@font-face {
+  font-family: "Codesaver Fallback";
+  src: local("Menlo"), local("Monaco"), local("Consolas"), local("Liberation Mono"), local("Courier New");
+  size-adjust: 100%;
+  ascent-override: 90%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
 @font-face {
   font-family: "Codesaver";
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/CodeSaver/CodeSaver-Regular.woff2") format("woff2"),
     url("/fonts/CodeSaver/CodeSaver-Regular.woff") format("woff");
 }
@@ -51,7 +72,7 @@ const fontFaceCSS = `
   font-family: "Codesaver";
   font-style: normal;
   font-weight: 700;
-  font-display: optional;
+  font-display: swap;
   src: url("/fonts/CodeSaver/CodeSaver-Bold.woff2") format("woff2"),
     url("/fonts/CodeSaver/CodeSaver-Bold.woff") format("woff");
 }
