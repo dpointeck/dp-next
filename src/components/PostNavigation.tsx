@@ -25,6 +25,8 @@ function useViewTransitionNavigate() {
     (slug: string, direction: NavigationDirection) => {
       const performNavigation = () => {
         navigate({ to: '/journal/$slug', params: { slug } })
+        // Always scroll to top when navigating between posts
+        window.scrollTo({ top: 0, behavior: 'instant' })
       }
 
       // Check for View Transition API support
