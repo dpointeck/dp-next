@@ -48,8 +48,11 @@ async function renderMarkdownToHtml(markdown: string): Promise<string> {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode as any, {
-      theme: 'github-light',
-      keepBackground: true,
+      theme: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      keepBackground: false,
       onVisitLine(node: any) {
         if (node.children.length === 0) {
           node.children = [{ type: 'text', value: ' ' }]
@@ -131,6 +134,13 @@ export async function getPostBySlug(
     content: '',
     slug: '',
   }
+}
+
+export async function getLatestPosts(count: number): Promise<PostMetadata[]> {
+  const posts = await getAllPosts()
+
+  // Sort by date descending and take the first N
+  return posts.sort((a, b) => b.rawDate.localeCompare(a.rawDate)).slice(0, count)
 }
 
 export async function getPostsByYear(): Promise<

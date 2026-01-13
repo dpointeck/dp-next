@@ -1,31 +1,5 @@
 .pageHeading {
-  color: #1a202c;
-  position: relative;
-  z-index: 40;
-  font-size: 4rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .pageHeading {
-    color: #e2e8f0;
-  }
-}
-
-.pageHeading::before {
-  content: "";
-  display: block;
-  height: 80%;
-  width: 110%;
-  position: absolute;
-  top: 2.8rem;
-  left: -5%;
-  z-index: -1;
-  background-image: linear-gradient(to top right, #fff95a, #fff22e);
-  border-radius: 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  .pageHeading::before {
-    background-image: linear-gradient(to bottom, #065f46, #064e3b);
-  }
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
