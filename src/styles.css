@@ -48,6 +48,12 @@
     line-height: 1.7;
     letter-spacing: -0.011em;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
   }
 
   .font-mono {
