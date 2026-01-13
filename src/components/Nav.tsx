@@ -1,6 +1,6 @@
 import { Link, useLocation } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import { IconTwitter, IconGithub } from '../svg'
+import { IconTwitter, IconGithub, IconHome } from '../svg'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { PageTransition } from './PageTransition'
 import './Nav.css'
@@ -27,6 +27,17 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
       className={`nav-link ${isActive ? 'active' : ''}`}
     >
       {children}
+    </Link>
+  )
+}
+
+function HomeLink() {
+  const location = useLocation()
+  const isActive = location.pathname === '/'
+  
+  return (
+    <Link to="/" className={`mobile-home-link ${isActive ? 'active' : ''}`} aria-label="Home">
+      <IconHome className="mobile-home-icon" />
     </Link>
   )
 }
@@ -98,6 +109,7 @@ export function Nav() {
       {/* Mobile Navigation */}
       <nav className="mobile-nav" aria-label="Mobile navigation">
         <div className="mobile-nav-content">
+          <HomeLink />
           {pages.map((page) => (
             <NavLink key={page.name} href={page.href}>
               {page.name}
