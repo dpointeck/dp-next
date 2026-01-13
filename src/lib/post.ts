@@ -136,6 +136,49 @@ export async function getPostBySlug(
   }
 }
 
+interface PostNavLink {
+  slug: string
+  title: string
+}
+
+interface PostWithNavigation {
+  title: string
+  metadesc: string
+  content: string
+  slug: string
+  prevPost: PostNavLink | null
+  nextPost: PostNavLink | null
+}
+
+export async function getPostWithNavigation(
+  slug: string
+): Promise<PostWithNavigation> {
+  const allPosts = await getAllPosts()
+  
+  // Sort by date descending (newest first)
+  const sortedPosts = allPosts.sort((a, b) => b.rawDate.localeCompare(a.rawDate))
+  
+  // Find current post index
+  const currentIndex = sortedPosts.findIndex((post) => post.slug === slug)
+  
+  // Get prev/next posts (prev = newer, next = older)
+  const prevPost = currentIndex > 0 
+    ? { slug: sortedPosts[currentIndex - 1].slug, title: sortedPosts[currentIndex - 1].title }
+    : null
+  const nextPost = currentIndex < sortedPosts.length - 1
+    ? { slug: sortedPosts[currentIndex + 1].slug, title: sortedPosts[currentIndex + 1].title }
+    : null
+
+  // Get the full post content
+  const post = await getPostBySlug(slug)
+
+  return {
+    ...post,
+    prevPost,
+    nextPost,
+  }
+}
+
 export async function getLatestPosts(count: number): Promise<PostMetadata[]> {
   const posts = await getAllPosts()
 

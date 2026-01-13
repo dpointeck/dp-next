@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { fetchPost } from '../../lib/post.server'
+import { fetchPostWithNavigation } from '../../lib/post.server'
+import { PostNavigation } from '../../components/PostNavigation'
 
 export const Route = createFileRoute('/journal/$slug')({
   component: PostPage,
-  loader: ({ params }) => fetchPost({ data: params.slug }),
+  loader: ({ params }) => fetchPostWithNavigation({ data: params.slug }),
   head: ({ loaderData }) => ({
     meta: [
       { title: loaderData?.title || 'Post' },
@@ -28,6 +29,7 @@ function PostPage() {
         className="prose prose-lg dark:prose-invert max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+      <PostNavigation prevPost={post.prevPost} nextPost={post.nextPost} />
     </div>
   )
 }
