@@ -1,5 +1,5 @@
 import { createServerFn } from '@tanstack/react-start'
-import { getPostBySlug, getPostsByYear } from './post'
+import { getLatestPosts, getPostBySlug, getPostsByYear } from './post'
 
 export const fetchPost = createServerFn({ method: 'POST' })
   .inputValidator((d: string) => d)
@@ -10,5 +10,11 @@ export const fetchPost = createServerFn({ method: 'POST' })
 export const fetchPostsByYear = createServerFn({ method: 'GET' }).handler(
   async () => {
     return getPostsByYear()
+  }
+)
+
+export const fetchLatestPosts = createServerFn({ method: 'GET' }).handler(
+  async () => {
+    return getLatestPosts(3)
   }
 )

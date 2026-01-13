@@ -136,6 +136,13 @@ export async function getPostBySlug(
   }
 }
 
+export async function getLatestPosts(count: number): Promise<PostMetadata[]> {
+  const posts = await getAllPosts()
+
+  // Sort by date descending and take the first N
+  return posts.sort((a, b) => b.rawDate.localeCompare(a.rawDate)).slice(0, count)
+}
+
 export async function getPostsByYear(): Promise<
   { year: number; posts: PostMetadata[] }[]
 > {
