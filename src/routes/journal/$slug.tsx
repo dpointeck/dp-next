@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { fetchPostWithNavigation } from '../../lib/post.server'
 import { PostNavigation } from '../../components/PostNavigation'
+import { PostSwipeTransition } from '../../components/PostSwipeTransition'
 
 export const Route = createFileRoute('/journal/$slug')({
   component: PostPage,
@@ -24,11 +25,15 @@ function PostPage() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-8 text-primary tracking-tight leading-tight">{post.title}</h1>
-      <article
-        className="prose prose-lg dark:prose-invert max-w-none"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <PostSwipeTransition>
+        <h1 className="text-3xl md:text-4xl font-semibold mb-8 text-primary tracking-tight leading-tight">
+          {post.title}
+        </h1>
+        <article
+          className="prose prose-lg dark:prose-invert max-w-none"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+      </PostSwipeTransition>
       <PostNavigation prevPost={post.prevPost} nextPost={post.nextPost} />
     </div>
   )
