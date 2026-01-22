@@ -2,34 +2,31 @@ import { useRouter } from '@tanstack/react-router'
 import { useState, useEffect, useRef } from 'react'
 import './PageTransition.css'
 
-const ANIMATION_DURATION = 800 // Full animation duration in ms
+const ANIMATION_DURATION = 600
 
-export function PageTransition() {
+export function PageTransitionLogo() {
   const router = useRouter()
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    // Subscribe to router navigation events
     const unsubscribe = router.subscribe('onBeforeNavigate', () => {
-      // Clear any existing timeout
-      if (animationTimeoutRef.current) {
-        clearTimeout(animationTimeoutRef.current)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
       }
       
-      // Start the animation
+      // Just animate the logo on navigation
       setIsTransitioning(true)
       
-      // Always let the animation complete fully
-      animationTimeoutRef.current = setTimeout(() => {
+      timeoutRef.current = setTimeout(() => {
         setIsTransitioning(false)
       }, ANIMATION_DURATION)
     })
 
     return () => {
       unsubscribe()
-      if (animationTimeoutRef.current) {
-        clearTimeout(animationTimeoutRef.current)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
       }
     }
   }, [router])

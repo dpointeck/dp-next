@@ -2,7 +2,7 @@ import { Link, useLocation } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { IconTwitter, IconGithub, IconHome } from '../svg'
 import { ThemeSwitcher } from './ThemeSwitcher'
-import { PageTransition } from './PageTransition'
+import { PageTransitionLogo } from './PageTransition'
 import './Nav.css'
 
 const socialLinks = [
@@ -93,7 +93,7 @@ export function Nav() {
               </div>
             </div>
             <div className="nav-logo">
-              <PageTransition />
+              <PageTransitionLogo />
             </div>
             <div className="nav-menu">
               {pages.map((page) => (
