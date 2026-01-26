@@ -13,7 +13,6 @@ const socialLinks = [
 const pages = [
   { name: 'about', href: '/about' },
   { name: 'journal', href: '/journal' },
-  { name: 'resources', href: '/resources' },
   { name: 'uses', href: '/uses' },
 ]
 

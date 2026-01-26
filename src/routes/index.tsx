@@ -13,7 +13,7 @@ export const Route = createFileRoute('/')({
       {
         name: 'description',
         content:
-          "Hi there! I'm Daniel a software dev from 🇦🇹. Checkout posts around web development and software engineering plus all kinds of useful resources",
+          "Hi there! I'm Daniel a software dev from 🇦🇹. Checkout posts around web development and software engineering",
       },
     ],
     links: [

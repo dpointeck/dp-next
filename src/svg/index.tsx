@@ -2,7 +2,6 @@ export { IconTwitter } from './twitter'
 export { IconGithub } from './github'
 export { IconAbout } from './about'
 export { IconJournal } from './journal'
-export { IconResources } from './resources'
 export { IconUses } from './uses'
 export { IconHome } from './home'
 

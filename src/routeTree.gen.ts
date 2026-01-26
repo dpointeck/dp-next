@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UsesRouteImport } from './routes/uses'
 import { Route as SiteNoticeRouteImport } from './routes/site-notice'
-import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -26,11 +25,6 @@ const UsesRoute = UsesRouteImport.update({
 const SiteNoticeRoute = SiteNoticeRouteImport.update({
   id: '/site-notice',
   path: '/site-notice',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -63,17 +57,15 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/resources': typeof ResourcesRoute
   '/site-notice': typeof SiteNoticeRoute
   '/uses': typeof UsesRoute
   '/journal/$slug': typeof JournalSlugRoute
-  '/journal': typeof JournalIndexRoute
+  '/journal/': typeof JournalIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/resources': typeof ResourcesRoute
   '/site-notice': typeof SiteNoticeRoute
   '/uses': typeof UsesRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -84,7 +76,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/resources': typeof ResourcesRoute
   '/site-notice': typeof SiteNoticeRoute
   '/uses': typeof UsesRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -96,17 +87,15 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/privacy-policy'
-    | '/resources'
     | '/site-notice'
     | '/uses'
     | '/journal/$slug'
-    | '/journal'
+    | '/journal/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/privacy-policy'
-    | '/resources'
     | '/site-notice'
     | '/uses'
     | '/journal/$slug'
@@ -116,7 +105,6 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/privacy-policy'
-    | '/resources'
     | '/site-notice'
     | '/uses'
     | '/journal/$slug'
@@ -127,7 +115,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ResourcesRoute: typeof ResourcesRoute
   SiteNoticeRoute: typeof SiteNoticeRoute
   UsesRoute: typeof UsesRoute
   JournalSlugRoute: typeof JournalSlugRoute
@@ -148,13 +135,6 @@ declare module '@tanstack/react-router' {
       path: '/site-notice'
       fullPath: '/site-notice'
       preLoaderRoute: typeof SiteNoticeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -181,7 +161,7 @@ declare module '@tanstack/react-router' {
     '/journal/': {
       id: '/journal/'
       path: '/journal'
-      fullPath: '/journal'
+      fullPath: '/journal/'
       preLoaderRoute: typeof JournalIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
@@ -199,7 +179,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ResourcesRoute: ResourcesRoute,
   SiteNoticeRoute: SiteNoticeRoute,
   UsesRoute: UsesRoute,
   JournalSlugRoute: JournalSlugRoute,
