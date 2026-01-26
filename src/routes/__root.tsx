@@ -99,7 +99,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
       {
         name: 'description',
         content:
-          "Hi there! I'm Daniel a software dev from Austria. Checkout posts around web development and software engineering plus all kinds of useful resources",
+          "Hi there! I'm Daniel a software dev from Austria. Checkout posts around web development and software engineering",
       },
       {
         name: 'google-site-verification',
