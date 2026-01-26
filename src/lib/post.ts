@@ -13,6 +13,7 @@ interface PostFrontMatter {
   title: string
   date: string
   metadesc: string
+  published?: boolean
 }
 
 interface PostMetadata {
@@ -22,6 +23,7 @@ interface PostMetadata {
   date: string
   rawDate: string // ISO date for sorting
   year: number
+  published: boolean
 }
 
 async function getMarkdownFiles(): Promise<string[]> {
@@ -101,11 +103,13 @@ export async function getAllPosts(): Promise<PostMetadata[]> {
         date: shortDate,
         rawDate: dateString,
         year: year,
+        published: data.published !== false, // Default to true if not specified
       }
     })
   )
 
-  return posts
+  // Filter to only return published posts
+  return posts.filter((post) => post.published)
 }
 
 export async function getPostBySlug(
