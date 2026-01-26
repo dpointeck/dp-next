@@ -3,6 +3,7 @@ slug: "announcing-my-journey-to-build-a-ebook-reader-desktop-app"
 title: "Building a desktop eBook Reader App: A Developer's Journey"
 date: 2023-03-25
 metadesc: Follow a developer's journey to create his first eBook reader app, designed to enhance the reading experience, improve search functionality, and integrate AI-powered features. Stay tuned for updates on technology choices, challenges, and progress.
+published: false
 ---
 
 Are you an avid reader who's still clinging to physical books because you haven't found the perfect eBook reader app for windows? You're not alone. As a fellow bookworm, I've struggled to find an eBook reader app that truly captures the essence of reading while providing a seamless and enjoyable experience. That's why I've decided to take matters into my own hands and build the eBook reader app from scratch.
