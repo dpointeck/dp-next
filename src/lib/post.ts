@@ -103,7 +103,7 @@ export async function getAllPosts(): Promise<PostMetadata[]> {
         date: shortDate,
         rawDate: dateString,
         year: year,
-        published: data.published !== false, // Default to true if not specified
+        published: data.published ?? true, // Default to true if not specified
       }
     })
   )
