@@ -3,6 +3,7 @@ slug: reading-database-design-for-mere-mortals
 title: Reading "Database Design for Mere Mortals" – Chapter 4 Notes
 date: 2025-07-18
 metadesc: Reflections on Chapter 4 of "Database Design for Mere Mortals" by Michael J. Hernandez. Covers mission statements, table relationships, and applying the design process to a blog API project.
+published: false
 ---
 # Reading "Database Design for Mere Mortals" by **Michael J. Hernandez**
 
